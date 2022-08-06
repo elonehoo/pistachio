@@ -1,46 +1,48 @@
-export { nextTick } from 'vue'
-import {
-  createApp,
+import type {
   Component,
   ComponentPublicInstance,
-} from "vue"
+} from 'vue'
+import {
+  createApp,
+} from 'vue'
+export { nextTick } from 'vue'
 
 export const createVue = <
   T extends Component,
-  TProps extends Record<string, unknown>
+  TProps extends Record<string, unknown>,
 >(
-  component: T,
-  props?: TProps
-) => {
+    component: T,
+    props?: TProps,
+  ) => {
   const app = createApp(
     {
-      template: `<div></div>`,
+      template: '<div></div>',
       ...component,
     },
-    props
-  );
+    props,
+  )
 
-  const el = document.createElement("div")
+  const el = document.createElement('div')
 
-  document.body.appendChild(el);
+  document.body.appendChild(el)
 
   const mount = (): ComponentPublicInstance<TProps> => {
-    return app.mount(el as any) as any;
-  };
+    return app.mount(el as any) as any
+  }
 
-  const destroy = () => app.unmount();
+  const destroy = () => app.unmount()
 
   app.config.warnHandler = (err: any) => {
-    throw err;
-  };
+    throw err
+  }
 
   app.config.errorHandler = (err: any) => {
-    throw err;
-  };
+    throw err
+  }
   return {
     app,
     el,
     mount,
     destroy,
-  };
+  }
 }

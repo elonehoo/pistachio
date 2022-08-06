@@ -1,11 +1,13 @@
 {
   "name": "vue-hooks",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "core-dev":"pnpm -C packages/core run build",
-    "test":"pnpm -C test run test"
+    "test":"pnpm -C test run test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@elonehoo/eslint-config": "^2.0.0",

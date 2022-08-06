@@ -1,5 +1,7 @@
-import {watch,Ref} from 'vue'
-import {RefTyped,NO_OP,wrap} from '../utils'
+import type { Ref } from 'vue'
+import { watch } from 'vue'
+import type { RefTyped } from '../utils'
+import { NO_OP, wrap } from '../utils'
 
 export type RemoveEventFunction = () => void
 
@@ -15,11 +17,11 @@ export function useEvent<
     addEventListener: (
       name: string,
       listener: EventListenerOrEventListenerObject
-    ) => any;
-    removeEventListener: Function;
+    ) => any
+    removeEventListener: Function
   },
   M,
-  K extends keyof M
+  K extends keyof M,
 >(
   el: T | Ref<T | undefined>,
   name: K,
@@ -32,11 +34,11 @@ export function useEvent<
       name: string,
       listener: EventListenerOrEventListenerObject,
       options?: boolean | AddEventListenerOptions
-    ) => any;
-    removeEventListener: Function;
+    ) => any
+    removeEventListener: Function
   },
   M,
-  K extends keyof M
+  K extends keyof M,
 >(
   el: T | Ref<T | undefined>,
   name: K,
@@ -58,40 +60,39 @@ export function useEvent(
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-
 export function useEvent(
   el: Element | Ref<Element | undefined> | RefTyped<Window> | RefTyped<any>,
   name: string,
   listener: EventListenerOrEventListenerObject,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ): RemoveEventFunction {
-  let remove = NO_OP;
+  let remove = NO_OP
 
   if (el) {
-    const element: Ref<Element> = wrap(el as Element);
+    const element: Ref<Element> = wrap(el as Element)
 
     const removeEventListener = (e: Element) =>
-      e.removeEventListener(name, listener);
+      e.removeEventListener(name, listener)
     const addEventListener = (e: Element) =>
-      e.addEventListener(name, listener, options);
+      e.addEventListener(name, listener, options)
 
     const removeWatch = watch(
       element,
       (n, _, cleanUp) => {
         if (n) {
-          addEventListener(n);
-          cleanUp(() => removeEventListener(n));
+          addEventListener(n)
+          cleanUp(() => removeEventListener(n))
         }
       },
-      { immediate: true }
-    );
+      { immediate: true },
+    )
 
     remove = () => {
-      removeEventListener(element.value);
-      removeWatch();
-    };
+      removeEventListener(element.value)
+      removeWatch()
+    }
   }
 
-  return remove;
+  return remove
 }
 
