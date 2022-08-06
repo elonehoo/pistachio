@@ -16,3 +16,5 @@ export function wrap(o: any): any {
 }
 
 export const isArray = Array.isArray
+
+export const NO_OP = () => {}

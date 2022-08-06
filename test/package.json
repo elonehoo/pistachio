@@ -1,0 +1,13 @@
+{
+  "name": "vue-hooks",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^0.21.0",
+    "@elonehoo/vue-hooks":"workspace:*"
+  }
+}

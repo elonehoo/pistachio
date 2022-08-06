@@ -1,9 +1,21 @@
 {
-  "name": "@elonehoo/vue-hooks-monorepo",
+  "name": "vue-hooks",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite"
+    "core-dev":"pnpm -C packages/core run build",
+    "test":"pnpm -C test run test"
+  },
+  "devDependencies": {
+    "@elonehoo/eslint-config": "^2.0.0",
+    "@elonehoo/rimraf": "^0.0.1",
+    "@types/node": "^18.6.4",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.21.0",
+    "tsup": "^6.2.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vue": "^3.2.37"
   }
 }
