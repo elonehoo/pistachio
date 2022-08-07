@@ -1,0 +1,16 @@
+{
+  "name": "@elonehoo/vue-hooks-docs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress --port 3344 --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "@elonehoo/vue-hooks":"workspace:*",
+    "vitepress": "1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  }
+}
