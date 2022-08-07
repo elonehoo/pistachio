@@ -1,11 +1,11 @@
 {
-  "name": "vue-hooks",
+  "name": "@elonehoo/vue-hooks-monorepo",
   "type": "module",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "core-dev":"pnpm -C packages/core run build",
-    "test":"pnpm -C test run test",
+    "core-dev": "pnpm -C packages/core run build",
+    "test": "pnpm -C test run test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -17,7 +17,14 @@
     "eslint": "^8.21.0",
     "tsup": "^6.2.1",
     "typescript": "^4.7.4",
-    "vite": "^3.0.4",
+    "happy-dom": "^6.0.4",
+    "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "@vue/compiler-dom": "^3.2.37",
+    "@vue/devtools-api": "^6.2.1",
+    "@vue/runtime-dom": "^3.2.37",
+    "@vue/shared": "^3.2.37",
     "vue": "^3.2.37"
   }
 }

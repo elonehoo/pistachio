@@ -2,9 +2,8 @@
   "name": "@elonehoo/vue-hooks",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
