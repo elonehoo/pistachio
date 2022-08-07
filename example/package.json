@@ -1,0 +1,17 @@
+{
+  "name": "@elonehoo/vue-hooks-example",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 3333 --open"
+  },
+  "dependencies": {
+    "vue-router": "^4.1.3"
+  },
+  "devDependencies": {
+    "@elonehoo/vue-hooks":"workspace:*",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/compiler-sfc": "^3.2.37"
+  }
+}
