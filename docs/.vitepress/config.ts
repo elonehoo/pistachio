@@ -48,8 +48,8 @@ export default defineConfig({
       copyright: 'Copyright © 2022-PRESENT Elone Hoo',
     },
     nav: [
-      { text: 'Docs', link: '/docs/' },
-      { text: 'composable', link: '/composable' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'composabl', link: '/composable/event' },
       {
         text: `v${version}`,
         items: [
@@ -62,110 +62,32 @@ export default defineConfig({
     ],
     sidebar: {
       // TODO: bring sidebar of apis and config back
-      '/docs/': [
+      '/guide/': [
         {
           text: 'Getting Started',
           items: [
             {
-              text: 'Why Pick',
-              link: '/docs/why',
+              text: 'Why vue-hooks',
+              link: '/guide/why',
             },
             {
               text: 'Installation',
-              link: '/docs/',
+              link: '/guide/',
             },
             {
               text: 'Usage',
-              link: '/docs/usage',
+              link: '/guide/usage',
             },
           ],
         },
       ],
-      '/components/': [
+      '/composable/': [
         {
-          text: 'Layout',
+          text: 'Event',
           items: [
             {
-              text: 'Grid',
-              link: '/components/grid',
-            },
-          ],
-        },
-        {
-          text: 'Theme',
-          items: [
-            {
-              text: 'Color',
-              link: '/components/color',
-            },
-            {
-              text: 'Icon',
-              link: '/components/icon',
-            },
-          ],
-        },
-        {
-          text: 'component',
-          items: [
-            {
-              text: 'Alert',
-              link: '/components/alert',
-            },
-            {
-              text: 'Avatar',
-              link: '/components/avatar',
-            },
-            {
-              text: 'Breadcrumb',
-              link: '/components/breadcrumb',
-            },
-            {
-              text: 'Button',
-              link: '/components/button',
-            },
-            {
-              text: 'Card',
-              link: '/components/card',
-            },
-            {
-              text: 'CheckBox',
-              link: '/components/checkBox',
-            },
-            {
-              text: 'Chip',
-              link: '/components/chip',
-            },
-            {
-              text: 'Collapse',
-              link: '/components/collapse',
-            },
-            {
-              text: 'Dialog',
-              link: '/components/dialog',
-            },
-            {
-              text: 'Divider',
-              link: '/components/divider',
-            },
-            {
-              text: 'Images',
-              link: '/components/images',
-            },
-            {
-              text: 'Input',
-              link: '/components/input',
-            },
-            {
-              text:'Input Number',
-              link:'/components/input-number',
-            },
-            {
-              text:'List',
-              link:'/components/list',
-            },
-            {
-              text:'Loading',
-              link:'/components/loading',
+              text: 'event',
+              link: '/composable/event',
             },
           ],
         },

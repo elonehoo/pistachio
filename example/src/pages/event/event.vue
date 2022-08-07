@@ -1,14 +1,3 @@
-<template>
-  <div ref="elref" id="elref">
-    Mouse
-    <p>x: {{ state.x }}</p>
-    <p>y: {{ state.y }}</p>
-
-    <button @click="remove">remove</button>
-  </div>
-</template>
-
-
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { useEvent } from "@elonehoo/vue-hooks"
@@ -23,5 +12,15 @@ const remove = useEvent(elref, "mousemove", (e) => {
   state.y = e.y;
 });
 </script>
+
+<template>
+  <div ref="elref" id="elref">
+    Mouse
+    <p>x: {{ state.x }}</p>
+    <p>y: {{ state.y }}</p>
+
+    <button @click="remove">remove</button>
+  </div>
+</template>
 
 <style></style>

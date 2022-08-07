@@ -15,13 +15,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /docs/
+      link: /guide/
     - theme: alt
       text: composable
-      link: /composable/
+      link: /composable/event
     - theme: alt
       text: Why vue-hooks?
-      link: /docs/why
+      link: /guide/why
     - theme: alt
       text: View on GitHub
       link: https://github.com/elonehoo/vue-hooks
