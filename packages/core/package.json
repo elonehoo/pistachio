@@ -2,14 +2,23 @@
   "name": "@elonehoo/vue-hooks",
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsup",
+    "build": "rimraf dist && vite build",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@elonehoo/vite-plugin-type-ts": "^0.0.1"
   }
 }

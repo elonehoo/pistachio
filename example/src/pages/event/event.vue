@@ -13,13 +13,12 @@
 import { reactive, ref } from "vue";
 import { useEvent } from "@elonehoo/vue-hooks"
 
-const elref = ref(null);
+const elref = ref<any>(null);
 const state = reactive({
   x: 0,
   y: 0
 });
-const remove = useEvent(elref, "mousemove", e => {
-  console.log(e);
+const remove = useEvent(elref, "mousemove", (e) => {
   state.x = e.x;
   state.y = e.y;
 });

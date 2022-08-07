@@ -38,9 +38,9 @@ describe('event', () => {
 
     destroy()
 
-    // expect(element.removeEventListener).toHaveBeenCalledWith(
-    //   'load',
-    //   mockHandler,
-    // )
+    expect(element.removeEventListener).toHaveBeenCalledWith(
+      'load',
+      mockHandler,
+    )
   })
 })
