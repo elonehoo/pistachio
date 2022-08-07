@@ -1,6 +1,5 @@
 {
   "name": "@elonehoo/vue-hooks-docs",
-  "type": "module",
   "main": "index.js",
   "version": "0.0.0",
   "private": true,
