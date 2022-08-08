@@ -19,6 +19,6 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@elonehoo/vite-plugin-type-ts": "^0.0.1"
+    "@elonehoo/vite-plugin-type-ts": "0.0.1"
   }
 }
