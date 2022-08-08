@@ -1,6 +1,6 @@
 import type { IWindow } from 'happy-dom'
 import { describe, expect, it, vi } from 'vitest'
-import { useEvent } from '@elonehoo/vue-hooks'
+import { useMouse } from '@elonehoo/vue-hooks'
 import { createVue } from './utils'
 
 declare global {
@@ -19,7 +19,7 @@ describe('event', () => {
     const { mount, destroy } = createVue({
       template: '<div></div>',
       setup() {
-        useEvent(element, 'load', mockHandler, options)
+        useMouse(element, 'load', mockHandler, options)
       },
     })
     expect(element.addEventListener).not.toHaveBeenCalled()

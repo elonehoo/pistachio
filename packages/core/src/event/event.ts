@@ -3,14 +3,14 @@ import { RefTyped,NO_OP, wrap } from '../utils'
 
 export type RemoveEventFunction = () => void
 
-export function useEvent<K extends keyof DocumentEventMap>(
+export function useMouse<K extends keyof DocumentEventMap>(
   el: RefTyped<Document>,
   name: K,
   listener: (this: Document, ev: DocumentEventMap[K]) => any,
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-export function useEvent<
+export function useMouse<
   T extends {
     addEventListener: (
       name: string,
@@ -26,7 +26,7 @@ export function useEvent<
   listener: (this: T, ev: M[K]) => any
 ): RemoveEventFunction
 
-export function useEvent<
+export function useMouse<
   T extends {
     addEventListener: (
       name: string,
@@ -44,28 +44,28 @@ export function useEvent<
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-export function useEvent<K extends keyof WindowEventMap>(
+export function useMouse<K extends keyof WindowEventMap>(
   el: RefTyped<Window>,
   name: K,
   listener: (this: Document, ev: WindowEventMap[K]) => any,
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-export function useEvent(
+export function useMouse(
   el: Window,
   name: string,
   listener: (this: Document, ev: Event) => any,
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-export function useEvent<K extends keyof DocumentEventMap>(
+export function useMouse<K extends keyof DocumentEventMap>(
   el: Element | Ref<Element | undefined>,
   name: K,
   listener: (this: Document, ev: DocumentEventMap[K]) => any,
   options?: boolean | AddEventListenerOptions
 ): RemoveEventFunction
 
-export function useEvent(
+export function useMouse(
   el: Element | Ref<Element | undefined> | RefTyped<Window> | RefTyped<any>,
   name: string,
   listener: EventListenerOrEventListenerObject,
