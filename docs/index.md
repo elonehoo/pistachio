@@ -18,7 +18,7 @@ hero:
       link: /guide/
     - theme: alt
       text: composable
-      link: /composable/event
+      link: /composable/mouse
     - theme: alt
       text: Why vue-hooks?
       link: /guide/why

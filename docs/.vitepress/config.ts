@@ -49,7 +49,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: 'composabl', link: '/composable/event' },
+      { text: 'composabl', link: '/composable/mouse' },
       {
         text: `v${version}`,
         items: [
@@ -86,8 +86,12 @@ export default defineConfig({
           text: 'Event',
           items: [
             {
-              text: 'event',
-              link: '/composable/event',
+              text: 'mouse',
+              link: '/composable/mouse',
+            },
+            {
+              text: 'mouseMove',
+              link: '/composable/mouseMove',
             },
           ],
         },

@@ -17,7 +17,7 @@ const remove = useMouse(elref, "mousemove", (e) => {
 });
 </script>
 
-# Event
+# useMouse
 
 Base composable used in the other element composables
 
