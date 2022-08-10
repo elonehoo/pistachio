@@ -1,10 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { version } from '../../package.json'
 import {
+  description,
   discord,
   font,
   github,
-  description,
   name,
   releases,
   twitter,
@@ -13,7 +13,7 @@ import {
 export default defineConfig({
   lang: 'en-US',
   title: name,
-  description: description,
+  description,
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],

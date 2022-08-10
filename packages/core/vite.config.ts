@@ -9,7 +9,7 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  plugins:[
+  plugins: [
     types({
       tsConfigFilePath: './tsconfig.json',
       cleanVueFileName: true,

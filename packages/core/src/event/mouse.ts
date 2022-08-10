@@ -1,5 +1,7 @@
-import { Ref,watch } from 'vue'
-import { RefTyped,NO_OP, wrap } from '../utils'
+import type { Ref } from 'vue'
+import { watch } from 'vue'
+import type { RefTyped } from '../utils'
+import { NO_OP, wrap } from '../utils'
 
 export type RemoveEventFunction = () => void
 
