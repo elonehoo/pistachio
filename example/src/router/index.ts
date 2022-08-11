@@ -3,6 +3,7 @@ import Home from '~/pages/index.vue'
 import All from '~/pages/all/all.vue'
 import mouse from '~/pages/event/mouse.vue'
 import mouseMove from '~/pages/event/mouseMove.vue'
+import resize from '~/pages/event/resize.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,10 @@ const router = createRouter({
     {
       path: '/mouseMove',
       component: mouseMove,
+    },
+    {
+      path: '/resize',
+      component: resize,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

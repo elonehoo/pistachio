@@ -20,7 +20,11 @@ export const isArray = Array.isArray
 
 export const NO_OP = () => {}
 
+export const PASSIVE_EV: AddEventListenerOptions = { passive: true }
+
 export const isNumber = (val: unknown): val is number => typeof val === 'number'
+
+export const isClient = typeof window != "undefined"
 
 export function promisedTimeout(timeout: number): Promise<void> {
   return new Promise((res) => {
