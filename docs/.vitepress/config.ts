@@ -93,6 +93,10 @@ export default defineConfig({
               text: 'mouseMove',
               link: '/composable/mouseMove',
             },
+            {
+              text: 'resize',
+              link: '/composable/resize',
+            },
           ],
         },
       ],
