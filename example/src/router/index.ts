@@ -4,6 +4,7 @@ import All from '~/pages/all/all.vue'
 import mouse from '~/pages/event/mouse.vue'
 import mouseMove from '~/pages/event/mouseMove.vue'
 import resize from '~/pages/event/resize.vue'
+import scroll from '~/pages/event/scroll.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,10 @@ const router = createRouter({
     {
       path: '/resize',
       component: resize,
+    },
+    {
+      path: '/scroll',
+      component: scroll,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
