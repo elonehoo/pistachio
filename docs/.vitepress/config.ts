@@ -101,6 +101,10 @@ export default defineConfig({
               text: 'scroll',
               link: '/composable/scroll',
             },
+            {
+              text: 'outsidePress',
+              link: '/composable/outsidePress',
+            },
           ],
         },
       ],
