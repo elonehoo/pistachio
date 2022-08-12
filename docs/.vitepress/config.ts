@@ -97,6 +97,10 @@ export default defineConfig({
               text: 'resize',
               link: '/composable/resize',
             },
+            {
+              text: 'scroll',
+              link: '/composable/scroll',
+            },
           ],
         },
       ],

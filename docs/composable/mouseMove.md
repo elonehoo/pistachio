@@ -13,6 +13,8 @@ outline: deep
 
 # useMouseMove
 
+> The [mousemove event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event).
+
 ## State
 
 The `useMouseMove` function exposes the following reactive state:

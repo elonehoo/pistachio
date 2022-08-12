@@ -9,6 +9,8 @@ const { height, width, remove } = useResize(document.body);
 
 # useResize
 
+> The [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event).
+
 ## State
 
 The `useResize` function exposes the following reactive state:

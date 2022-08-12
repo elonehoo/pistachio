@@ -19,6 +19,8 @@ const remove = useMouse(elref, "mousemove", (e) => {
 
 # useMouse
 
+> The [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener).
+
 Base composable used in the other element composables
 
 ## Methods
