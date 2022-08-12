@@ -5,6 +5,7 @@ import mouse from '~/pages/event/mouse.vue'
 import mouseMove from '~/pages/event/mouseMove.vue'
 import resize from '~/pages/event/resize.vue'
 import scroll from '~/pages/event/scroll.vue'
+import outsidePress from '~/pages/event/outsidePress.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,10 @@ const router = createRouter({
     {
       path: '/scroll',
       component: scroll,
+    },
+    {
+      path: '/outsidePress',
+      component: outsidePress,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
