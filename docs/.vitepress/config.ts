@@ -105,6 +105,10 @@ export default defineConfig({
               text: 'outsidePress',
               link: '/composable/outsidePress',
             },
+            {
+              text: 'mouseInElement',
+              link: '/composable/mouseInElement',
+            }
           ],
         },
       ],
