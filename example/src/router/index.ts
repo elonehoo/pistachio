@@ -6,6 +6,7 @@ import mouseMove from '~/pages/event/mouseMove.vue'
 import resize from '~/pages/event/resize.vue'
 import scroll from '~/pages/event/scroll.vue'
 import outsidePress from '~/pages/event/outsidePress.vue'
+import mouseInElement from '~/pages/dom/mouseInElement.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,10 @@ const router = createRouter({
     {
       path: '/outsidePress',
       component: outsidePress,
+    },
+    {
+      path: '/mouseInElement',
+      component: mouseInElement,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
