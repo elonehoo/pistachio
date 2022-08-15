@@ -21,6 +21,7 @@ export const isNumber = (val: unknown): val is number => typeof val === 'number'
 export const isBoolean = (val: unknown): val is Boolean => typeof val === "boolean"
 export const isElement = (val: unknown): val is Element => isObject(val) && !! val.tagName;
 export const isObject = (val: unknown): val is Record<any, any> => val !== null && typeof val === "object"
+export const isFunction = (val: unknown): val is Function =>typeof val === "function"
 
 export const NO_OP = () => {}
 
