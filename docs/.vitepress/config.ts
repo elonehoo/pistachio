@@ -111,6 +111,15 @@ export default defineConfig({
             }
           ],
         },
+        {
+          text: 'Data',
+          items:[
+            {
+              text: 'now',
+              link: '/composable/now',
+            }
+          ]
+        }
       ],
     },
   },
