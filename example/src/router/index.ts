@@ -7,6 +7,7 @@ import resize from '~/pages/event/resize.vue'
 import scroll from '~/pages/event/scroll.vue'
 import outsidePress from '~/pages/event/outsidePress.vue'
 import mouseInElement from '~/pages/dom/mouseInElement.vue'
+import now from '~/pages/data/now.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,10 @@ const router = createRouter({
     {
       path: '/mouseInElement',
       component: mouseInElement,
+    },
+    {
+      path: '/now',
+      component: now,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
