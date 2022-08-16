@@ -117,6 +117,10 @@ export default defineConfig({
             {
               text: 'now',
               link: '/composable/now',
+            },
+            {
+              text: 'date',
+              link: '/composable/date',
             }
           ]
         }
