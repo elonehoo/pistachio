@@ -36,11 +36,11 @@ importers:
   docs:
     specifiers:
       '@elonehoo/vue-hooks': workspace:*
-      vitepress: 1.0.0-alpha.4
+      vitepress: 1.0.0-alpha.5
       vue: 3.2.37
     devDependencies:
       '@elonehoo/vue-hooks': link:../packages/core
-      vitepress: 1.0.0-alpha.4_zjzrc7rfs5jgdvevvkgm5g7e44
+      vitepress: 1.0.0-alpha.5_zjzrc7rfs5jgdvevvkgm5g7e44
       vue: 3.2.37
 
   example:
@@ -53,7 +53,7 @@ importers:
       vue-router: 4.1.3_vue@3.2.37
     devDependencies:
       '@elonehoo/vue-hooks': link:../packages/core
-      '@vitejs/plugin-vue': 3.0.3_vite@3.0.4+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.3_vite@3.0.7+vue@3.2.37
       '@vue/compiler-sfc': 3.2.37
 
   packages/core:
@@ -757,14 +757,14 @@ packages:
       vue: 3.2.37
     dev: true
 
-  /@vitejs/plugin-vue/3.0.3_vite@3.0.4+vue@3.2.37:
+  /@vitejs/plugin-vue/3.0.3_vite@3.0.7+vue@3.2.37:
     resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.0.4
+      vite: 3.0.7
       vue: 3.2.37
     dev: true
 
@@ -3636,8 +3636,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.4_zjzrc7rfs5jgdvevvkgm5g7e44:
-    resolution: {integrity: sha512-bOAA4KW6vYGlkbcrPLZLTKWTgXVroObU+o9xj9EENyEl6yg26WWvfN7DGA4BftjdM5O8nR93Z5khPQ3W/tFE7Q==}
+  /vitepress/1.0.0-alpha.5_zjzrc7rfs5jgdvevvkgm5g7e44:
+    resolution: {integrity: sha512-bhUfmTzd+i5fm2rInBR1Q/1RBhT0xTXM+vPqVWJdHmIc8XnWF/O7lT6kai38rOTNTt/KyPDk2SRRourPVhQJMA==}
     engines: {node: '>=14.6.0'}
     hasBin: true
     dependencies:
