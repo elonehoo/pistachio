@@ -1,186 +1,188 @@
 import type { IWindow } from 'happy-dom'
 import { describe, expect, it, vi } from 'vitest'
-import {Ref, ref} from 'vue'
+import type { Ref } from 'vue'
+import { ref } from 'vue'
+import type { MouseMoveResult } from '@elonehoo/vue-hooks'
+import { promisedTimeout, useMouseMove } from '@elonehoo/vue-hooks'
 import { createVue, nextTick } from '../utils'
-import {MouseMoveResult, useMouseMove,promisedTimeout} from '@elonehoo/vue-hooks'
 
 declare global {
   interface Window extends IWindow {}
 }
 
-describe('mouse move',()=>{
-  it("should add the correct event", () => {
+describe('mouse move', () => {
+  it('should add the correct event', () => {
     const element: Element = {
       addEventListener: vi.fn().mockImplementation((name, listener) => {
-        expect(name).toBe("mousemove");
-        handler = listener;
+        expect(name).toBe('mousemove')
+        handler = listener
       }),
       removeEventListener: vi.fn(),
-    } as any;
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    let use: MouseMoveResult | undefined = undefined;
+    } as any
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    let use: MouseMoveResult | undefined
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useMouseMove(element);
+        use = useMouseMove(element)
       },
-    }).mount();
+    }).mount()
 
-    expect(element.addEventListener).toHaveBeenCalled();
+    expect(element.addEventListener).toHaveBeenCalled()
 
     expect(use).toMatchObject({
       mouseX: { value: 0 },
       mouseY: { value: 0 },
       pageX: { value: 0 },
       pageY: { value: 0 },
-    });
+    })
 
     handler!({
       x: 50,
       y: 50,
       pageX: 30,
       pageY: 40,
-    });
+    })
 
     expect(use).toMatchObject({
       mouseX: { value: 50 },
       mouseY: { value: 50 },
       pageX: { value: 30 },
       pageY: { value: 40 },
-    });
-  });
+    })
+  })
 
-  it("should removeEventListener if `remove` is called", () => {
+  it('should removeEventListener if `remove` is called', () => {
     const element: Element = {
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
-    } as any;
-    let use: MouseMoveResult | undefined = undefined;
+    } as any
+    let use: MouseMoveResult | undefined
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useMouseMove(element);
+        use = useMouseMove(element)
       },
-    }).mount();
-    expect(element.removeEventListener).not.toHaveBeenCalled();
+    }).mount()
+    expect(element.removeEventListener).not.toHaveBeenCalled()
 
-    use!.remove();
+    use!.remove()
 
-    expect(element.removeEventListener).toHaveBeenCalled();
-  });
+    expect(element.removeEventListener).toHaveBeenCalled()
+  })
 
-  it("should debounce if wait is passed", async () => {
+  it('should debounce if wait is passed', async () => {
     const element: Element = {
       addEventListener: vi.fn().mockImplementation((name, listener) => {
-        expect(name).toBe("mousemove");
-        handler = listener;
+        expect(name).toBe('mousemove')
+        handler = listener
       }),
       removeEventListener: vi.fn(),
-    } as any;
-    let use: MouseMoveResult | undefined = undefined;
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    const wait = 50;
+    } as any
+    let use: MouseMoveResult | undefined
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    const wait = 50
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useMouseMove(element, wait);
+        use = useMouseMove(element, wait)
       },
-    }).mount();
-    expect(element.addEventListener).toHaveBeenCalled();
+    }).mount()
+    expect(element.addEventListener).toHaveBeenCalled()
 
     for (let i = 0; i < 10; i++) {
       handler!({
         x: 10 + i,
         y: 10 + i,
-      });
+      })
     }
 
-    await nextTick();
+    await nextTick()
 
     // still waiting to set the values
     expect(use).toMatchObject({
       mouseX: { value: 0 },
       mouseY: { value: 0 },
-    });
+    })
 
-    await promisedTimeout(wait);
+    await promisedTimeout(wait)
     expect(use).toMatchObject({
       mouseX: { value: 19 },
       mouseY: { value: 19 },
-    });
-  });
+    })
+  })
 
-  it("should pass options to the event listener", () => {
+  it('should pass options to the event listener', () => {
     const element: Ref<Element> = ref({
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
-    }) as any;
+    }) as any
     const options = {
       passive: true,
-    };
+    }
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        return useMouseMove(element, options);
+        return useMouseMove(element, options)
       },
-    }).mount();
+    }).mount()
     expect(element.value.addEventListener).toHaveBeenCalledWith(
-      "mousemove",
+      'mousemove',
       expect.any(Function),
-      options
-    );
-  });
+      options,
+    )
+  })
 
-  it("should pass options to the event listener and be debounced", async () => {
+  it('should pass options to the event listener and be debounced', async () => {
     const element: Element = {
       addEventListener: vi.fn().mockImplementation((name, listener) => {
-        expect(name).toBe("mousemove");
-        handler = listener;
+        expect(name).toBe('mousemove')
+        handler = listener
       }),
       removeEventListener: vi.fn(),
-    } as any;
-    let use: MouseMoveResult | undefined = undefined;
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    const wait = 50;
+    } as any
+    let use: MouseMoveResult | undefined
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    const wait = 50
     const options = {
       passive: true,
-    };
+    }
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useMouseMove(element, options, wait);
+        use = useMouseMove(element, options, wait)
       },
-    }).mount();
+    }).mount()
     expect(element.addEventListener).toHaveBeenCalledWith(
-      "mousemove",
+      'mousemove',
       expect.any(Function),
-      options
-    );
+      options,
+    )
 
     for (let i = 0; i < 10; i++) {
       handler!({
         x: 10 + i,
         y: 10 + i,
-      });
+      })
     }
 
-    await nextTick();
+    await nextTick()
 
     // still waiting to set the values
     expect(use).toMatchObject({
       mouseX: { value: 0 },
       mouseY: { value: 0 },
-    });
+    })
 
-    await promisedTimeout(wait);
+    await promisedTimeout(wait)
     expect(use).toMatchObject({
       mouseX: { value: 19 },
       mouseY: { value: 19 },
-    });
-  });
+    })
+  })
 })

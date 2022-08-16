@@ -51,9 +51,9 @@ const { remove } = useResize()
 
 ```vue
 <script setup lang="ts">
-import {useResize} from '@elonehoo/vue-hooks'
+import { useResize } from '@elonehoo/vue-hooks'
 
-const { height, width, remove } = useResize(document.body);
+const { height, width, remove } = useResize(document.body)
 
 </script>
 
@@ -63,7 +63,9 @@ const { height, width, remove } = useResize(document.body);
     <p>height: {{ height }}</p>
     <p>width: {{ width }}</p>
 
-    <button @click="remove">remove</button>
+    <button @click="remove">
+      remove
+    </button>
   </div>
 </template>
 ```

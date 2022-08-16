@@ -52,12 +52,12 @@ const remove = useOutsidePress()
 
 ```vue
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 import { useOutsidePress } from '@elonehoo/vue-hooks'
 
-const elref = ref(null);
+const elref = ref(null)
 
-useOutsidePress(elref, () => console.log("clicked outside"))
+useOutsidePress(elref, () => console.log('clicked outside'))
 </script>
 
 <template>

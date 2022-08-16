@@ -1,226 +1,227 @@
-import {createVue,nextTick} from '../utils'
-import {useResize,ResizeResult,promisedTimeout} from '@elonehoo/vue-hooks'
-import { describe, expect, it, vi,beforeAll,afterAll } from 'vitest'
+import type { ResizeResult } from '@elonehoo/vue-hooks'
+import { promisedTimeout, useResize } from '@elonehoo/vue-hooks'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
+import { createVue, nextTick } from '../utils'
 
-describe('resize',()=>{
-  const windowEventSpy = vi.fn();
-  const windowEvent = window.addEventListener;
-  const windowRemoveEvent = window.removeEventListener;
+describe('resize', () => {
+  const windowEventSpy = vi.fn()
+  const windowEvent = window.addEventListener
+  const windowRemoveEvent = window.removeEventListener
 
   beforeAll(() => {
-    window.addEventListener = windowEventSpy;
-  });
+    window.addEventListener = windowEventSpy
+  })
   afterAll(() => {
-    window.addEventListener = windowEvent;
-    window.removeEventListener = windowRemoveEvent;
-  });
+    window.addEventListener = windowEvent
+    window.removeEventListener = windowRemoveEvent
+  })
 
-  it("should add the correct event", async () => {
+  it('should add the correct event', async () => {
     const element: Element = {
       removeEventListener: vi.fn(),
       clientHeight: 0,
-      clientWidth: 0
-    } as any;
+      clientWidth: 0,
+    } as any
 
     windowEventSpy.mockImplementation((name, listener) => {
-      expect(name).toBe("resize");
-      handler = listener;
-    });
+      expect(name).toBe('resize')
+      handler = listener
+    })
 
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    let use: ResizeResult | undefined = undefined;
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    let use: ResizeResult | undefined
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useResize(element);
-      }
-    }).mount();
+        use = useResize(element)
+      },
+    }).mount()
 
-    expect(window.addEventListener).toHaveBeenCalled();
+    expect(window.addEventListener).toHaveBeenCalled()
 
     expect(use).toMatchObject({
       height: { value: 0 },
-      width: { value: 0 }
+      width: { value: 0 },
     });
 
     (element as any).clientHeight = 50;
-    (element as any).clientWidth = 50;
+    (element as any).clientWidth = 50
 
-    handler!({});
-    await nextTick();
+    handler!({})
+    await nextTick()
 
     expect(use).toMatchObject({
       height: { value: 50 },
-      width: { value: 50 }
-    });
-  });
+      width: { value: 50 },
+    })
+  })
 
-  it("should removeEventListener if `remove` is called", () => {
+  it('should removeEventListener if `remove` is called', () => {
     const element: Element = {
       addEventListener: vi.fn(),
       clientHeight: 0,
-      clientWidth: 0
-    } as any;
-    let use: ResizeResult | undefined = undefined;
-    window.removeEventListener = vi.fn();
+      clientWidth: 0,
+    } as any
+    let use: ResizeResult | undefined
+    window.removeEventListener = vi.fn()
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useResize(element);
-      }
-    }).mount();
-    expect(window.removeEventListener).not.toHaveBeenCalled();
+        use = useResize(element)
+      },
+    }).mount()
+    expect(window.removeEventListener).not.toHaveBeenCalled()
 
-    use!.remove();
+    use!.remove()
 
-    expect(window.removeEventListener).toHaveBeenCalled();
-  });
+    expect(window.removeEventListener).toHaveBeenCalled()
+  })
 
-  it("should debounce if wait is passed", async () => {
+  it('should debounce if wait is passed', async () => {
     const element: Element = {
       removeEventListener: vi.fn(),
       clientHeight: 0,
-      clientWidth: 0
-    } as any;
+      clientWidth: 0,
+    } as any
     windowEventSpy.mockImplementation((name, listener) => {
-      expect(name).toBe("resize");
-      handler = listener;
-    });
-    let use: ResizeResult | undefined = undefined;
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    const wait = 50;
+      expect(name).toBe('resize')
+      handler = listener
+    })
+    let use: ResizeResult | undefined
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    const wait = 50
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useResize(element, wait);
-      }
-    }).mount();
-    expect(window.addEventListener).toHaveBeenCalled();
+        use = useResize(element, wait)
+      },
+    }).mount()
+    expect(window.addEventListener).toHaveBeenCalled()
 
     for (let i = 0; i < 10; i++) {
       (element as any).clientHeight = 10 + i;
-      (element as any).clientWidth = 10 + i;
+      (element as any).clientWidth = 10 + i
 
-      handler!({});
+      handler!({})
     }
 
-    await nextTick();
+    await nextTick()
 
     // still waiting to set the values
     expect(use).toMatchObject({
       height: { value: 0 },
-      width: { value: 0 }
-    });
+      width: { value: 0 },
+    })
 
-    await promisedTimeout(wait);
+    await promisedTimeout(wait)
     expect(use).toMatchObject({
       height: { value: 19 },
-      width: { value: 19 }
-    });
-  });
+      width: { value: 19 },
+    })
+  })
 
-  it("should pass options to the event listener", () => {
+  it('should pass options to the event listener', () => {
     const element: Element = {
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
       clientHeight: 0,
-      clientWidth: 0
-    } as any;
+      clientWidth: 0,
+    } as any
     const options = {
-      passive: true
-    };
+      passive: true,
+    }
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        return useResize(element, options);
-      }
-    }).mount();
+        return useResize(element, options)
+      },
+    }).mount()
     expect(window.addEventListener).toHaveBeenCalledWith(
-      "resize",
+      'resize',
       expect.any(Function),
-      options
-    );
-  });
+      options,
+    )
+  })
 
-  it("should pass options to the event listener and be debounced", async () => {
+  it('should pass options to the event listener and be debounced', async () => {
     const element: Element = {
       removeEventListener: vi.fn(),
       clientHeight: 0,
-      clientWidth: 0
-    } as any;
+      clientWidth: 0,
+    } as any
     windowEventSpy.mockImplementation((name, listener) => {
-      expect(name).toBe("resize");
-      handler = listener;
-    });
-    let use: ResizeResult | undefined = undefined;
-    let handler: ((ev: Partial<MouseEvent>) => void) | undefined = undefined;
-    const wait = 50;
+      expect(name).toBe('resize')
+      handler = listener
+    })
+    let use: ResizeResult | undefined
+    let handler: ((ev: Partial<MouseEvent>) => void) | undefined
+    const wait = 50
     const options = {
-      passive: true
-    };
+      passive: true,
+    }
 
     createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        use = useResize(element, options, wait);
-      }
-    }).mount();
+        use = useResize(element, options, wait)
+      },
+    }).mount()
     expect(window.addEventListener).toHaveBeenCalledWith(
-      "resize",
+      'resize',
       expect.any(Function),
-      options
-    );
+      options,
+    )
 
     for (let i = 0; i < 10; i++) {
       (element as any).clientHeight = 10 + i;
-      (element as any).clientWidth = 10 + i;
+      (element as any).clientWidth = 10 + i
 
-      handler!({});
+      handler!({})
     }
 
-    await nextTick();
+    await nextTick()
 
     expect(use).toMatchObject({
       height: { value: 0 },
-      width: { value: 0 }
-    });
+      width: { value: 0 },
+    })
 
-    await promisedTimeout(wait);
+    await promisedTimeout(wait)
     expect(use).toMatchObject({
       height: { value: 19 },
-      width: { value: 19 }
-    });
-  });
+      width: { value: 19 },
+    })
+  })
 
-  it("should set value on mount", () => {
-    let resize: any;
+  it('should set value on mount', () => {
+    let resize: any
 
     const { mount } = createVue({
-      template: `<div ref="el"></div>`,
+      template: '<div ref="el"></div>',
       setup() {
-        const el = ref<HTMLElement | null>(null);
-        resize = useResize(el);
+        const el = ref<HTMLElement | null>(null)
+        resize = useResize(el)
 
         return {
-          el
-        };
-      }
-    });
+          el,
+        }
+      },
+    })
 
-    mount();
+    mount()
 
     expect(resize).toMatchObject({
       height: {
-        value: 0
+        value: 0,
       },
       width: {
-        value: 0
-      }
-    });
-  });
+        value: 0,
+      },
+    })
+  })
 })

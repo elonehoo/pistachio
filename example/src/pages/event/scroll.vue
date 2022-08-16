@@ -1,19 +1,23 @@
 <script setup lang="ts">
-import { ref} from 'vue'
-import {useScroll} from '@elonehoo/vue-hooks'
+import { ref } from 'vue'
+import { useScroll } from '@elonehoo/vue-hooks'
 const elref = ref(null)
 
-const { scrollTop, scrollLeft, remove } = useScroll(elref);
+const { scrollTop, scrollLeft, remove } = useScroll(elref)
 </script>
 
 <template>
-<div>
-  Scroll
-  <p>top: {{ scrollTop }}</p>
-  <p>left: {{ scrollLeft }}</p>
-  <div ref="elref" style="overflow:scroll;height:70px;background:gray">
-    <p v-for="x in 10" :key="x">{{ x }}</p>
+  <div>
+    Scroll
+    <p>top: {{ scrollTop }}</p>
+    <p>left: {{ scrollLeft }}</p>
+    <div ref="elref" style="overflow:scroll;height:70px;background:gray">
+      <p v-for="x in 10" :key="x">
+        {{ x }}
+      </p>
+    </div>
+    <button @click="remove">
+      remove
+    </button>
   </div>
-  <button @click="remove">remove</button>
-</div>
 </template>

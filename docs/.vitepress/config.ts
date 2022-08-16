@@ -108,12 +108,12 @@ export default defineConfig({
             {
               text: 'mouseInElement',
               link: '/composable/mouseInElement',
-            }
+            },
           ],
         },
         {
           text: 'Data',
-          items:[
+          items: [
             {
               text: 'now',
               link: '/composable/now',
@@ -125,9 +125,9 @@ export default defineConfig({
             {
               text: 'performance',
               link: '/composable/performance',
-            }
-          ]
-        }
+            },
+          ],
+        },
       ],
     },
   },

@@ -1,27 +1,28 @@
-import {useNow, UseNowOptions, NowOptions,} from '@elonehoo/vue-hooks'
-import {createVue} from '../utils'
-import { vi,it,describe,beforeEach,beforeAll,expect, afterAll } from 'vitest'
+import type { NowOptions, UseNowOptions } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/vue-hooks'
+import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import { createVue } from '../utils'
 
-describe.skip("now", () => {
-  vi.useFakeTimers();
+describe.skip('now', () => {
+  vi.useFakeTimers()
 
-  const DateNow = Date.now;
-  let warnSpy:any = undefined as any;
+  const DateNow = Date.now
+  let warnSpy: any = undefined as any
   beforeAll(() => {
-    warnSpy = vi.spyOn(console, "warn").mockImplementation(()=>{});
-  });
+    warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+  })
 
   beforeEach(() => {
-    warnSpy.mockReset();
-  });
+    warnSpy.mockReset()
+  })
 
   afterAll(() => {
-    warnSpy.mockReset();
-  });
+    warnSpy.mockReset()
+  })
 
   const nowMock = (Date.now = vi
     .fn()
-    .mockImplementation(() => 1000000000000));
+    .mockImplementation(() => 1000000000000))
 
   beforeEach(() => {
     // nowMock.mockClear();
@@ -30,70 +31,69 @@ describe.skip("now", () => {
     (setInterval as any).mockClear();
     (clearInterval as any).mockClear();
 
-    (clearTimeout as any).mockClear();
-  });
+    (clearTimeout as any).mockClear()
+  })
 
   afterAll(() => {
-    Date.now = DateNow;
-  });
+    Date.now = DateNow
+  })
 
   const buildUseNow = (options?: NowOptions & UseNowOptions) => {
-    let r:any = undefined as any;
+    let r: any = undefined as any
     const { mount, destroy } = createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        r = useNow(options);
-        return;
-      }
-    });
-    mount();
-    destroy();
-    return r;
-  };
+        r = useNow(options)
+      },
+    })
+    mount()
+    destroy()
+    return r
+  }
 
-  it("should return now", () => {
-    const { now } = buildUseNow();
+  it('should return now', () => {
+    const { now } = buildUseNow()
 
-    expect(now.value).toBe(nowMock());
-  });
+    expect(now.value).toBe(nowMock())
+  })
 
-  it("should warn if options dateFn is not a function", () => {
+  it('should warn if options dateFn is not a function', () => {
     const { now } = buildUseNow({
-      timeFn: 1234
-    } as any);
+      timeFn: 1234,
+    } as any)
 
     // check if we fallback to Date.now
-    expect(now.value).toBe(nowMock());
+    expect(now.value).toBe(nowMock())
     expect(warnSpy).toHaveBeenCalledWith(
-      "[useNow] timeFn param must be Function"
-    );
-  });
+      '[useNow] timeFn param must be Function',
+    )
+  })
 
-  it("should use the dateFn to resolve date", () => {
-    const dateNow = 9000;
-    const timeFn = vi.fn().mockImplementation(() => dateNow);
+  it('should use the dateFn to resolve date', () => {
+    const dateNow = 9000
+    const timeFn = vi.fn().mockImplementation(() => dateNow)
     const { now } = buildUseNow({
       timeFn,
-      sync: false
-    });
+      sync: false,
+    })
 
-    expect(now.value).toBe(dateNow);
-    expect(timeFn).toHaveBeenCalledTimes(1);
-    expect(setInterval).toHaveBeenCalledTimes(1);
-    expect(setInterval).toHaveBeenCalledWith(expect.any(Function), 1000);
-  });
+    expect(now.value).toBe(dateNow)
+    expect(timeFn).toHaveBeenCalledTimes(1)
+    expect(setInterval).toHaveBeenCalledTimes(1)
+    expect(setInterval).toHaveBeenCalledWith(expect.any(Function), 1000)
+  })
 
-  it("it should synchronise by the second with the clock", () => {
-    const dateNow = 10150;
-    const timeFn = vi.fn().mockImplementation(() => dateNow);
+  it('it should synchronise by the second with the clock', () => {
+    const dateNow = 10150
+    const timeFn = vi.fn().mockImplementation(() => dateNow)
 
-    const { now } = buildUseNow({ timeFn });
+    const { now } = buildUseNow({ timeFn })
 
-    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 850);
-    expect(now.value).toBe(dateNow);
-  });
+    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 850)
+    expect(now.value).toBe(dateNow)
+  })
 
-  it("it should unmount automatically", () => {
+  it('it should unmount automatically', () => {
     // const vm = new Vue({
     //   template: "<div></div>",
     //   setup() {
@@ -118,13 +118,13 @@ describe.skip("now", () => {
     // render(null, el);
 
     const { destroy, mount } = createVue({
-      template: "<div></div>",
+      template: '<div></div>',
       setup() {
-        return useNow();
-      }
-    });
-    mount();
-    destroy();
+        return useNow()
+      },
+    })
+    mount()
+    destroy()
 
     // createApp({
     //   template: "<div></div>",
@@ -133,39 +133,39 @@ describe.skip("now", () => {
     //   },
     // }).mount(document.createElement("div"));
 
-    expect(clearInterval).toHaveBeenCalled();
-  });
+    expect(clearInterval).toHaveBeenCalled()
+  })
 
-  it("should refresh at the refresh rate passed in props", () => {
-    const refreshMs = 555;
+  it('should refresh at the refresh rate passed in props', () => {
+    const refreshMs = 555
     const { now } = buildUseNow({
       sync: false,
-      refreshMs
-    });
+      refreshMs,
+    })
 
-    expect(now.value).toBe(nowMock());
-    expect(setInterval).toHaveBeenCalledWith(expect.any(Function), refreshMs);
-  });
+    expect(now.value).toBe(nowMock())
+    expect(setInterval).toHaveBeenCalledWith(expect.any(Function), refreshMs)
+  })
 
-  it("should clear timeout if remove is called", () => {
-    const { remove } = buildUseNow();
+  it('should clear timeout if remove is called', () => {
+    const { remove } = buildUseNow()
 
     expect(setTimeout).toHaveBeenCalledWith(
       expect.any(Function),
-      expect.any(Number)
-    );
-    remove();
-    expect(clearTimeout).toHaveBeenCalled();
-  });
+      expect.any(Number),
+    )
+    remove()
+    expect(clearTimeout).toHaveBeenCalled()
+  })
 
-  it("should clear interval if remove is called", () => {
-    const { remove } = buildUseNow({ sync: false });
+  it('should clear interval if remove is called', () => {
+    const { remove } = buildUseNow({ sync: false })
 
     expect(setInterval).toHaveBeenCalledWith(
       expect.any(Function),
-      expect.any(Number)
-    );
-    remove();
-    expect(clearInterval).toHaveBeenCalled();
-  });
-});
+      expect.any(Number),
+    )
+    remove()
+    expect(clearInterval).toHaveBeenCalled()
+  })
+})

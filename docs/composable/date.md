@@ -66,7 +66,7 @@ const { remove } = useDate()
 
 ```vue
 <script setup lang="ts">
-import {useDate} from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/vue-hooks'
 
 const { now } = useDate()
 </script>

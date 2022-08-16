@@ -18,19 +18,19 @@ export function wrap(o: any): any {
 
 export const isArray = Array.isArray
 export const isNumber = (val: unknown): val is number => typeof val === 'number'
-export const isBoolean = (val: unknown): val is Boolean => typeof val === "boolean"
-export const isElement = (val: unknown): val is Element => isObject(val) && !! val.tagName;
-export const isObject = (val: unknown): val is Record<any, any> => val !== null && typeof val === "object"
-export const isFunction = (val: unknown): val is Function =>typeof val === "function"
+export const isBoolean = (val: unknown): val is Boolean => typeof val === 'boolean'
+export const isElement = (val: unknown): val is Element => isObject(val) && !!val.tagName
+export const isObject = (val: unknown): val is Record<any, any> => val !== null && typeof val === 'object'
+export const isFunction = (val: unknown): val is Function => typeof val === 'function'
 
 export const NO_OP = () => {}
 
 export const PASSIVE_EV: AddEventListenerOptions = { passive: true }
 
-export const isClient = typeof window != "undefined"
+export const isClient = typeof window != 'undefined'
 
 export function promisedTimeout(timeout: number): Promise<void> {
   return new Promise((res) => {
-    setTimeout(res, timeout);
-  });
+    setTimeout(res, timeout)
+  })
 }
