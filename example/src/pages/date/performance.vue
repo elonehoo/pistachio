@@ -5,7 +5,7 @@ const { now } = usePerformance()
 </script>
 
 <template>
-<div>
+  <div>
     <p>
       Performance.now : <b>{{ now }}</b>
     </p>
