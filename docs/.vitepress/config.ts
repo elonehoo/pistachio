@@ -121,6 +121,10 @@ export default defineConfig({
             {
               text: 'date',
               link: '/composable/date',
+            },
+            {
+              text: 'performance',
+              link: '/composable/performance',
             }
           ]
         }
