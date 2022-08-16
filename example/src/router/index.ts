@@ -9,6 +9,7 @@ import outsidePress from '~/pages/event/outsidePress.vue'
 import mouseInElement from '~/pages/dom/mouseInElement.vue'
 import now from '~/pages/date/now.vue'
 import date from '~/pages/date/date.vue'
+import performance from '~/pages/date/performance.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,6 +49,10 @@ const router = createRouter({
     {
       path: '/date',
       component: date,
+    },
+    {
+      path: '/performance',
+      component: performance,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
