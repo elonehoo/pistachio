@@ -1,5 +1,7 @@
-import { RefTyped, unwrap, isObject, NO_OP } from '../utils'
-import { computed, Ref } from 'vue'
+import type { Ref } from 'vue'
+import { computed } from 'vue'
+import type { RefTyped } from '../utils'
+import { NO_OP, isObject, unwrap } from '../utils'
 
 export type UsePathNotFoundReturn<TSource> = (
   /**
@@ -18,7 +20,7 @@ export type UsePathNotFoundReturn<TSource> = (
    * Original source
    */
   originalSource: TSource
-) => any;
+) => any
 
 /**
  * Retrieve object value based on string path
@@ -30,56 +32,56 @@ export type UsePathNotFoundReturn<TSource> = (
 export function usePath<T = any, TSource = any>(
   source: RefTyped<TSource>,
   path: RefTyped<string>,
-  separator: string = ".",
-  notFoundReturn: UsePathNotFoundReturn<TSource> = NO_OP
+  separator = '.',
+  notFoundReturn: UsePathNotFoundReturn<TSource> = NO_OP,
 ): Ref<Readonly<T>> {
   return computed(() => {
-    const s = unwrap(source);
-    const p = unwrap(path);
+    const s = unwrap(source)
+    const p = unwrap(path)
 
-    if (s === undefined) return notFoundReturn(p, s, p, s);
+    if (s === undefined)
+      return notFoundReturn(p, s, p, s)
 
-    if (!p) {
-      return s;
-    }
+    if (!p)
+      return s
 
-    const fragments = p.split(separator);
-    let c: Record<string, any> = s;
+    const fragments = p.split(separator)
+    let c: Record<string, any> = s
     for (let i = 0; i < fragments.length; i++) {
-      let fragmentPath = fragments[i];
+      let fragmentPath = fragments[i]
 
-      if (fragmentPath[fragmentPath.length - 1] === "]") {
-        const r = /\[[`'"]?([^`'"\]]*)[`'"]?\]/g;
-        let path = fragmentPath;
-        let m = r.exec(path);
+      if (fragmentPath[fragmentPath.length - 1] === ']') {
+        const r = /\[[`'"]?([^`'"\]]*)[`'"]?\]/g
+        const path = fragmentPath
+        let m = r.exec(path)
 
         if (m) {
-          let lastLen = m[0].length;
-          let lastIndex = m.index - lastLen;
-          let mi = 1;
+          let lastLen = m[0].length
+          let lastIndex = m.index - lastLen
+          let mi = 1
 
           do {
             if (lastIndex + lastLen !== m.index) {
               // istanbul ignore else
-              console.warn(`[usePath] invalid path "${fragments[i]}"`);
+              console.warn(`[usePath] invalid path "${fragments[i]}"`)
             }
-            lastIndex = m.index;
-            lastLen = m[0].length;
+            lastIndex = m.index
+            lastLen = m[0].length
 
-            fragmentPath = fragmentPath.slice(0, -m[0].length);
-            fragments.splice(i + mi, 0, m[1]);
+            fragmentPath = fragmentPath.slice(0, -m[0].length)
+            fragments.splice(i + mi, 0, m[1])
 
-            ++mi;
-          } while ((m = r.exec(path)));
+            ++mi
+          } while ((m = r.exec(path)))
 
           // if the fragmentPath is empty, eg: [1][1]
           // we should continue until the next path
-          if (!fragmentPath && path[0] === "[" && path.length > 2) {
-            continue;
-          }
-        } else {
-          fragmentPath = "";
-          console.warn(`[usePath] invalid path provided "${path}"`);
+          if (!fragmentPath && path[0] === '[' && path.length > 2)
+            continue
+        }
+        else {
+          fragmentPath = ''
+          console.warn(`[usePath] invalid path provided "${path}"`)
         }
       }
 
@@ -90,31 +92,32 @@ export function usePath<T = any, TSource = any>(
             `Path "${fragments
               .slice(0, i + 1)
               .join(separator)}" doesn't exist on:`,
-            source
-          );
+            source,
+          )
           return notFoundReturn(
             fragments.slice(0, i + 1).join(separator),
             c,
             p,
-            s
-          );
+            s,
+          )
         }
 
-        c = c[fragmentPath];
-      } else {
+        c = c[fragmentPath]
+      }
+      else {
         // istanbul ignore else
         console.warn(
           `Path "${fragments
             .slice(0, i + 1)
             .join(separator)}" doesn't exist on:`,
-          source
-        );
+          source,
+        )
         return notFoundReturn(
           fragments.slice(0, i + 1).join(separator),
           c,
           p,
-          s
-        );
+          s,
+        )
       }
 
       if (!c) {
@@ -123,18 +126,18 @@ export function usePath<T = any, TSource = any>(
           `Path "${fragments
             .slice(0, i + 1)
             .join(separator)}" doesn't exist on:`,
-          source
-        );
+          source,
+        )
         return notFoundReturn(
           fragments.slice(0, i + 1).join(separator),
           c,
           p,
-          s
-        );
+          s,
+        )
       }
     }
 
-    return c;
-  });
+    return c
+  })
 }
 

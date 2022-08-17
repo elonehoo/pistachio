@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { usePath } from '@elonehoo/vue-hooks'
-  import { ref, computed } from 'vue'
+import { usePath } from '@elonehoo/vue-hooks'
+import { computed, ref } from 'vue'
 
-  const inputPath = ref("user.name");
-  const json = ref(JSON.stringify({ user: { name: "test" } }));
+const inputPath = ref('user.name')
+const json = ref(JSON.stringify({ user: { name: 'test' } }))
 
-  const inputValue = usePath(
-    computed(() => JSON.parse(json.value)),
-    inputPath,
-    ".",
-    () => "Not Found"
-  );
+const inputValue = usePath(
+  computed(() => JSON.parse(json.value)),
+  inputPath,
+  '.',
+  () => 'Not Found',
+)
 </script>
 
 <template>
@@ -19,7 +19,7 @@
       <h4>Path example</h4>
       <div>
         Path:
-        <input v-model="inputPath" />
+        <input v-model="inputPath">
       </div>
       <div>
         <p>Object</p>
@@ -28,7 +28,7 @@
 
       <div>
         <p>Value:</p>
-        <textarea v-text="inputValue" disabled />
+        <textarea disabled v-text="inputValue" />
       </div>
     </div>
   </div>

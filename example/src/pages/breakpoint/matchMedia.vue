@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useMatchMedia } from '@elonehoo/vue-hooks'
 
-const {matches} = useMatchMedia("(max-width: 600px)")
+const { matches } = useMatchMedia('(max-width: 600px)')
 </script>
 
 <template>

@@ -147,8 +147,8 @@ export default defineConfig({
               text: 'matchMedia',
               link: '/composable/matchMedia',
             },
-          ]
-        }
+          ],
+        },
       ],
     },
   },
