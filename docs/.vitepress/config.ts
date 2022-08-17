@@ -138,12 +138,17 @@ export default defineConfig({
               text: 'path',
               link: '/composable/path',
             },
+          ],
+        },
+        {
+          text: 'Breakpoint',
+          items: [
             {
               text: 'matchMedia',
               link: '/composable/matchMedia',
             },
-          ],
-        },
+          ]
+        }
       ],
     },
   },
