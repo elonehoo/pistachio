@@ -147,6 +147,10 @@ export default defineConfig({
               text: 'breakpoint',
               link: '/composable/breakpoint',
             },
+            {
+              text: 'chrome',
+              link: '/composable/chrome',
+            },
           ],
         },
         {
