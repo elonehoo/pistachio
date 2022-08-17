@@ -14,6 +14,7 @@ import format from '~/pages/format/format.vue'
 import path from '~/pages/format/path.vue'
 import matchMedia from '~/pages/misc/matchMedia.vue'
 import breakpoint from '~/pages/breakpoint/breakpoint.vue'
+import mode from '~/pages/misc/model/mode.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -73,6 +74,10 @@ const router = createRouter({
     {
       path: '/breakpoint',
       component: breakpoint,
+    },
+    {
+      path: '/mode',
+      component: mode,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
