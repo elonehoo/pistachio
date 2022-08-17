@@ -128,6 +128,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: 'Format',
+          items: [
+            {
+              text: 'format',
+              link: '/composable/format',
+            },
+          ],
+        },
       ],
     },
   },
