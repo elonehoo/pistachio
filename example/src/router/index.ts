@@ -10,6 +10,7 @@ import mouseInElement from '~/pages/dom/mouseInElement.vue'
 import now from '~/pages/date/now.vue'
 import date from '~/pages/date/date.vue'
 import performance from '~/pages/date/performance.vue'
+import format from '~/pages/format/format.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -53,6 +54,10 @@ const router = createRouter({
     {
       path: '/performance',
       component: performance,
+    },
+    {
+      path: '/format',
+      component: format,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
