@@ -8,7 +8,7 @@ on:
     branches:
       - main
 
-job:
+jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
