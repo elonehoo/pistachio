@@ -61,7 +61,6 @@ export default defineConfig({
       },
     ],
     sidebar: {
-      // TODO: bring sidebar of apis and config back
       '/guide/': [
         {
           text: 'Getting Started',
