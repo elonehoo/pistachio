@@ -144,6 +144,15 @@ export default defineConfig({
           text: 'Breakpoint',
           items: [
             {
+              text: 'breakpoint',
+              link: '/composable/breakpoint',
+            },
+          ],
+        },
+        {
+          text: 'Misc',
+          items: [
+            {
               text: 'matchMedia',
               link: '/composable/matchMedia',
             },
