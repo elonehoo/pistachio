@@ -49,7 +49,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: 'composabl', link: '/composable/mouse' },
+      { text: 'Composabl', link: '/composable/mouse' },
       {
         text: `v${version}`,
         items: [
@@ -134,6 +134,10 @@ export default defineConfig({
             {
               text: 'format',
               link: '/composable/format',
+            },
+            {
+              text: 'path',
+              link: '/composable/path',
             },
           ],
         },
