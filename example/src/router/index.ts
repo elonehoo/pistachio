@@ -12,7 +12,8 @@ import date from '~/pages/date/date.vue'
 import performance from '~/pages/date/performance.vue'
 import format from '~/pages/format/format.vue'
 import path from '~/pages/format/path.vue'
-import matchMedia from '~/pages/breakpoint/matchMedia.vue'
+import matchMedia from '~/pages/misc/matchMedia.vue'
+import breakpoint from '~/pages/breakpoint/breakpoint.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,6 +69,10 @@ const router = createRouter({
     {
       path: '/matchMedia',
       component: matchMedia,
+    },
+    {
+      path: '/breakpoint',
+      component: breakpoint,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
