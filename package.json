@@ -6,6 +6,7 @@
   "scripts": {
     "build": "pnpm -C packages/core run build",
     "test": "pnpm -C test run test",
+    "coverage": "pnpm -C test run coverage",
     "example-dev": "pnpm -C example run dev",
     "docs-dev":"pnpm -C docs run dev",
     "docs-build":"pnpm -C docs run build",

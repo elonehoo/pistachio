@@ -8,10 +8,12 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  plugins: [
-  ],
+  plugins: [],
   test: {
     globals: true,
     environment: 'happy-dom',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
   },
 })
