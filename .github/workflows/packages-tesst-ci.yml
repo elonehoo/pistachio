@@ -26,12 +26,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm run build
-      - name: Test
-        run: pnpm run test
       - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm run coverage
 
   vue:
     runs-on: ubuntu-latest
