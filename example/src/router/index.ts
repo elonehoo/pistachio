@@ -11,6 +11,7 @@ import now from '~/pages/date/now.vue'
 import date from '~/pages/date/date.vue'
 import performance from '~/pages/date/performance.vue'
 import format from '~/pages/format/format.vue'
+import path from '~/pages/format/path.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +59,10 @@ const router = createRouter({
     {
       path: '/format',
       component: format,
+    },
+    {
+      path: '/path',
+      component: path,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
