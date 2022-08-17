@@ -160,6 +160,10 @@ export default defineConfig({
               text: 'matchMedia',
               link: '/composable/matchMedia',
             },
+            {
+              text: 'model',
+              link: '/composable/model',
+            },
           ],
         },
       ],
