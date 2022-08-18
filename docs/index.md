@@ -17,10 +17,10 @@ hero:
       text: Get Started
       link: /guide/
     - theme: alt
-      text: composable
+      text: Composable
       link: /composable/mouse
     - theme: alt
-      text: Why vue-hooks?
+      text: Why Vue-hooks?
       link: /guide/why
     - theme: alt
       text: View on GitHub
