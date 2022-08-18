@@ -164,6 +164,10 @@ export default defineConfig({
               text: 'model',
               link: '/composable/model',
             },
+            {
+              text: 'interval',
+              link: '/composable/interval',
+            },
           ],
         },
       ],
