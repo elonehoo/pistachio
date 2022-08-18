@@ -15,6 +15,7 @@ import path from '~/pages/format/path.vue'
 import matchMedia from '~/pages/misc/matchMedia.vue'
 import breakpoint from '~/pages/breakpoint/breakpoint.vue'
 import mode from '~/pages/misc/model/mode.vue'
+import interval from '~/pages/misc/interval.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,6 +79,10 @@ const router = createRouter({
     {
       path: '/mode',
       component: mode,
+    },
+    {
+      path: '/interval',
+      component: interval,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
