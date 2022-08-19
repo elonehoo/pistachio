@@ -168,6 +168,10 @@ export default defineConfig({
               text: 'interval',
               link: '/composable/interval',
             },
+            {
+              text: 'injectFactory',
+              link: '/composable/inject',
+            },
           ],
         },
       ],
