@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useBreakpoint } from '@elonehoo/vue-hooks'
 
-const {current,S,L,XL} = useBreakpoint({ XL: 1280, L: 768, S: "(min-width: 320px)" });
+const { current, S, L, XL } = useBreakpoint({ XL: 1280, L: 768, S: '(min-width: 320px)' })
 </script>
 
 <template>

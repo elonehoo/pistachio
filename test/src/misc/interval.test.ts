@@ -1,154 +1,155 @@
-import { describe, expect, it,beforeEach,afterAll,vi } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import type { UseIntervalReturn, UseIntervalReturnArgs, UseIntervalReturnMs } from '@elonehoo/vue-hooks'
+import { useInterval } from '@elonehoo/vue-hooks'
 import { createVue } from '../utils'
-import { useInterval, UseIntervalReturn, UseIntervalReturnMs, UseIntervalReturnArgs } from '@elonehoo/vue-hooks'
 
-describe.skip("interval", () => {
+describe.skip('interval', () => {
   beforeEach(() => {
-    vi.useFakeTimers();
-  });
+    vi.useFakeTimers()
+  })
   afterAll(() => {
-    vi.useRealTimers();
-  });
-  it("should work", async () => {
-    const callback = vi.fn();
-    const ms = 100;
+    vi.useRealTimers()
+  })
+  it('should work', async () => {
+    const callback = vi.fn()
+    const ms = 100
 
-    let interval: UseIntervalReturn & UseIntervalReturnMs = {} as any;
+    let interval: UseIntervalReturn & UseIntervalReturnMs = {} as any
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        interval = useInterval(callback, ms);
-      }
-    });
+        interval = useInterval(callback, ms)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    expect(setInterval).toHaveBeenCalledWith(callback, ms);
+    expect(clearInterval).not.toHaveBeenCalled()
+    expect(setInterval).toHaveBeenCalledWith(callback, ms)
 
-    interval.start();
-    expect(clearInterval).toHaveBeenCalled();
-    expect(setInterval).toHaveBeenNthCalledWith(2, callback, ms);
+    interval.start()
+    expect(clearInterval).toHaveBeenCalled()
+    expect(setInterval).toHaveBeenNthCalledWith(2, callback, ms)
 
-    interval.remove();
+    interval.remove()
 
-    expect(clearInterval).toHaveBeenCalledTimes(2);
+    expect(clearInterval).toHaveBeenCalledTimes(2)
 
-    interval.start();
+    interval.start()
 
-    destroy();
+    destroy()
 
-    expect(clearInterval).toHaveBeenCalledTimes(3);
-  });
+    expect(clearInterval).toHaveBeenCalledTimes(3)
+  })
 
-  it("should remove at unmount", () => {
-    const callback = vi.fn();
-    const ms = 100;
+  it('should remove at unmount', () => {
+    const callback = vi.fn()
+    const ms = 100
 
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        useInterval(callback, ms);
-      }
-    });
+        useInterval(callback, ms)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    expect(setInterval).toHaveBeenCalledWith(callback, ms);
+    expect(clearInterval).not.toHaveBeenCalled()
+    expect(setInterval).toHaveBeenCalledWith(callback, ms)
 
-    destroy();
+    destroy()
 
-    expect(clearInterval).toHaveBeenCalled();
-  });
+    expect(clearInterval).toHaveBeenCalled()
+  })
 
-  it("should not start if ms are not passed", () => {
-    const callback = vi.fn();
-    const ms = 100;
+  it('should not start if ms are not passed', () => {
+    const callback = vi.fn()
+    const ms = 100
 
-    let interval: UseIntervalReturn = {} as any;
+    let interval: UseIntervalReturn = {} as any
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        interval = useInterval(callback);
-      }
-    });
+        interval = useInterval(callback)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    expect(setInterval).not.toHaveBeenCalled();
+    expect(clearInterval).not.toHaveBeenCalled()
+    expect(setInterval).not.toHaveBeenCalled()
 
-    interval.start(ms);
-    expect(setInterval).toHaveBeenCalledWith(callback, ms);
+    interval.start(ms)
+    expect(setInterval).toHaveBeenCalledWith(callback, ms)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  it("should override ms on start()", () => {
-    const callback = vi.fn();
-    const ms = 100;
+  it('should override ms on start()', () => {
+    const callback = vi.fn()
+    const ms = 100
 
-    let interval: UseIntervalReturn & UseIntervalReturnMs = {} as any;
+    let interval: UseIntervalReturn & UseIntervalReturnMs = {} as any
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        interval = useInterval(callback, ms);
-      }
-    });
+        interval = useInterval(callback, ms)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    expect(setInterval).toHaveBeenCalled();
+    expect(clearInterval).not.toHaveBeenCalled()
+    expect(setInterval).toHaveBeenCalled()
 
-    interval.start(20);
-    expect(setInterval).toHaveBeenLastCalledWith(callback, 20);
+    interval.start(20)
+    expect(setInterval).toHaveBeenLastCalledWith(callback, 20)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  it("should override args on start()", () => {
-    const callback = vi.fn((x: number) => x);
-    const ms = 100;
+  it('should override args on start()', () => {
+    const callback = vi.fn((x: number) => x)
+    const ms = 100
 
     let interval: UseIntervalReturn &
-      UseIntervalReturnArgs<[number]> = {} as any;
+    UseIntervalReturnArgs<[number]> = {} as any
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        interval = useInterval(callback, ms, 1);
-      }
-    });
+        interval = useInterval(callback, ms, 1)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    expect(setInterval).toHaveBeenLastCalledWith(callback, ms, 1);
+    expect(clearInterval).not.toHaveBeenCalled()
+    expect(setInterval).toHaveBeenLastCalledWith(callback, ms, 1)
 
-    interval.start(undefined, 2);
-    expect(setInterval).toHaveBeenLastCalledWith(callback, ms, 2);
+    interval.start(undefined, 2)
+    expect(setInterval).toHaveBeenLastCalledWith(callback, ms, 2)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  it("should not start if no ms passed", () => {
-    const callback = vi.fn((x: number) => x);
-    let interval: UseIntervalReturnMs = {} as any;
+  it('should not start if no ms passed', () => {
+    const callback = vi.fn((x: number) => x)
+    let interval: UseIntervalReturnMs = {} as any
     const { mount, destroy } = createVue({
-      template: `<div></div>`,
+      template: '<div></div>',
       setup() {
-        // @ts-ignore
-        interval = useInterval(callback);
-      }
-    });
+        // @ts-expect-error
+        interval = useInterval(callback)
+      },
+    })
 
-    mount();
+    mount()
 
-    expect(clearInterval).not.toHaveBeenCalled();
-    interval.start();
-    expect(setInterval).not.toHaveBeenCalled();
+    expect(clearInterval).not.toHaveBeenCalled()
+    interval.start()
+    expect(setInterval).not.toHaveBeenCalled()
 
-    destroy();
-  });
-});
+    destroy()
+  })
+})

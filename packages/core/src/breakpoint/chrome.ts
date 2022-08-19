@@ -1,14 +1,15 @@
-import { useBreakpoint, BreakpointReturn } from './breakpoint'
+import type { BreakpointReturn } from './breakpoint'
+import { useBreakpoint } from './breakpoint'
 
-type ChromeBreakpoint = {
-  mobileS: 320;
-  mobileM: 375;
-  mobileL: 425;
-  tablet: 768;
-  laptop: 1024;
-  laptopL: 1440;
-  desktop4K: 2560;
-};
+interface ChromeBreakpoint {
+  mobileS: 320
+  mobileM: 375
+  mobileL: 425
+  tablet: 768
+  laptop: 1024
+  laptopL: 1440
+  desktop4K: 2560
+}
 
 export function useBreakpointChrome(): BreakpointReturn<ChromeBreakpoint> {
   return useBreakpoint({
@@ -18,6 +19,6 @@ export function useBreakpointChrome(): BreakpointReturn<ChromeBreakpoint> {
     tablet: 768,
     laptop: 1024,
     laptopL: 1440,
-    desktop4K: 2560
-  }) as BreakpointReturn<ChromeBreakpoint>;
+    desktop4K: 2560,
+  }) as BreakpointReturn<ChromeBreakpoint>
 }

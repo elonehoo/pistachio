@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import child from './child.vue'
 
-const myValue = ref("MyValue");
+const myValue = ref('MyValue')
 
 </script>
 
@@ -10,6 +10,6 @@ const myValue = ref("MyValue");
   <div>
     <p>myValue: {{ myValue }}</p>
 
-    <child v-model:value="myValue"/>
+    <child v-model:value="myValue" />
   </div>
 </template>
