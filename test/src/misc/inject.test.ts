@@ -1,8 +1,8 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import {injectFactory} from '@elonehoo/vue-hooks'
+import {useInjectFactory} from '@elonehoo/vue-hooks'
 import {createVue} from '../utils'
 
-describe("injectFactory", () => {
+describe("useInjectFactory", () => {
   it("should work", () => {
     const key = "hello";
 
@@ -11,7 +11,7 @@ describe("injectFactory", () => {
     const comp = {
       template: `<div/>`,
       setup() {
-        injectFactory(key, fn);
+        useInjectFactory(key, fn);
       },
     };
 
@@ -25,7 +25,7 @@ describe("injectFactory", () => {
     // expect(fn).toHaveBeenCalledTimes(1);
   });
 
-  it("should not call injectFactory", () => {
+  it("should not call useInjectFactory", () => {
     const key = "hello";
 
     const fn = vi.fn();
@@ -33,7 +33,7 @@ describe("injectFactory", () => {
     const comp = {
       template: `<div/>`,
       setup() {
-        injectFactory(key, fn);
+        useInjectFactory(key, fn);
       },
     };
 
@@ -44,7 +44,7 @@ describe("injectFactory", () => {
       template: `<comp/>`,
 
       setup() {
-        injectFactory(key, fn);
+        useInjectFactory(key, fn);
       },
     });
 
