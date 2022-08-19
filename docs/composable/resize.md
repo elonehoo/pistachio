@@ -2,22 +2,20 @@
 outline: deep
 ---
 
-<script setup lang="ts">
+<script setup lang='ts'>
 import {useResize} from '@elonehoo/vue-hooks'
-const { height, width, remove } = useResize(document.body);
+const { height, width, remove } = useResize(document.body)
 </script>
 
 # useResize
 
 > The [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event).
-
 ## State
 
 The `useResize` function exposes the following reactive state:
 
 ```typescript
-import { useResize } from "@elonehoo/vue-hooks"
-
+import { useResize } from '@elonehoo/vue-hooks'
 const { height, width } = useResize()
 ```
 
@@ -31,8 +29,7 @@ const { height, width } = useResize()
 The `useResize` function exposes the following methods:
 
 ```typescript
-import { useResize } from "@elonehoo/vue-hooks"
-
+import { useResize } from '@elonehoo/vue-hooks'
 const { remove } = useResize()
 ```
 
@@ -46,24 +43,20 @@ const { remove } = useResize()
   Window Resize
   <p>height: {{ height }}</p>
   <p>width: {{ width }}</p>
-  <button @click="remove">remove</button>
+  <button @click='remove'>remove</button>
 </div>
 
 ```vue
-<script setup lang="ts">
+<script setup lang='ts'>
 import { useResize } from '@elonehoo/vue-hooks'
-
 const { height, width, remove } = useResize(document.body)
-
 </script>
-
 <template>
   <div>
     Window Resize
     <p>height: {{ height }}</p>
     <p>width: {{ width }}</p>
-
-    <button @click="remove">
+    <button @click='remove'>
       remove
     </button>
   </div>

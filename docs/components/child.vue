@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { ref, computed, getCurrentInstance } from 'vue'
+import { computed, getCurrentInstance, ref } from 'vue'
 
 const props = defineProps(['value'])
 
-function useModel(props:any, name:any) {
-  const instance = getCurrentInstance();
-  if (!instance) {
-    return ref();
-  }
+function useModel(props: any, name: any) {
+  const instance = getCurrentInstance()
+  if (!instance)
+    return ref()
+
   return computed({
     get() {
-      return props[name];
+      return props[name]
     },
     set(v) {
-      instance.emit(`update:${name}`, v);
-    }
-  });
+      instance.emit(`update:${name}`, v)
+    },
+  })
 }
 
-const value = useModel(props,"value")
+const value = useModel(props, 'value')
 
 </script>
 
 <template>
   <div>
     <label>Update value:</label>
-    <input name="child-input" v-model="value">
+    <input v-model="value" name="child-input">
   </div>
 </template>

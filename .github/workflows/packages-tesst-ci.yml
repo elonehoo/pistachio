@@ -23,7 +23,7 @@ jobs:
         with:
           version: latest
       - name: pnpm Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm run build
       - name: Coveralls
@@ -43,7 +43,7 @@ jobs:
         with:
           version: latest
       - name: Install
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm run build
       - name: Test

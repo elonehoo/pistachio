@@ -2,7 +2,6 @@
   "name": "@elonehoo/vue-hooks-docs",
   "version": "0.0.0",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "dev": "vitepress --port 3344 --open",
     "build": "vitepress build",
@@ -10,7 +9,6 @@
   },
   "devDependencies": {
     "@elonehoo/vue-hooks":"workspace:*",
-    "vitepress": "1.0.0-alpha.8",
-    "vue": "3.2.37"
+    "vitepress": "1.0.0-alpha.8"
   }
 }
