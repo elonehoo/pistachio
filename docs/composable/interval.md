@@ -2,15 +2,6 @@
 outline: deep
 ---
 
-<script setup lang="ts">
-import {ref} from 'vue'
-import { useInterval } from '@elonehoo/vue-hooks'
-
-const date = ref()
-
-useInterval(()=>date.value = new Date(),1000)
-</script>
-
 # useInterval
 
 > `setInterval` with `start`/`remove` and `clearInterval` on unmounted.
@@ -45,10 +36,6 @@ const { start, remove } = useInterval()
 | remove | Manually clearInterval |
 
 ## Example
-
-<div>
-  {{date}}
-</div>
 
 ```vue
 <script setup lang="ts">
