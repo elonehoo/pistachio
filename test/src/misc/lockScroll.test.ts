@@ -1,293 +1,294 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import {ref, Ref} from 'vue'
-import { useLockScroll, SCROLL_LOCK_CLASS, NO_OP, wrap } from '@elonehoo/vue-hooks'
-import { createVue,nextTick } from '../utils'
+import type { Ref } from 'vue'
+import { ref } from 'vue'
+import { NO_OP, SCROLL_LOCK_CLASS, useLockScroll, wrap } from '@elonehoo/vue-hooks'
+import { createVue, nextTick } from '../utils'
 
-describe("lockscroll", () => {
-  it("should work", async () => {
-    let element: Ref<Element | undefined> = {} as any;
-    let locked: Ref<Boolean> = {} as any;
+describe('lockscroll', () => {
+  it('should work', async () => {
+    let element: Ref<Element | undefined> = {} as any
+    let locked: Ref<Boolean> = {} as any
     const { mount, destroy } = createVue({
-      template: `<div ref="element"></div>`,
+      template: '<div ref="element"></div>',
       setup() {
-        element = ref<Element>();
+        element = ref<Element>()
 
-        locked = useLockScroll(element, { auto: true }).locked;
+        locked = useLockScroll(element, { auto: true }).locked
 
         return {
-          element
-        };
-      }
-    });
+          element,
+        }
+      },
+    })
 
-    expect(element.value).toBeUndefined();
-    mount();
+    expect(element.value).toBeUndefined()
+    mount()
 
-    expect(locked.value).toBe(true);
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true);
+    expect(locked.value).toBe(true)
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true)
 
-    locked.value = false;
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false);
+    locked.value = false
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  it("should warn if no valid element is passed", () => {
-    const warn = vi.spyOn(console, "warn");
+  it('should warn if no valid element is passed', () => {
+    const warn = vi.spyOn(console, 'warn')
 
     const { mount } = createVue({
       setup() {
-        const element = ref<Element>();
-        useLockScroll(element);
+        const element = ref<Element>()
+        useLockScroll(element)
 
         return {
-          element
-        };
-      }
-    });
-    mount();
+          element,
+        }
+      },
+    })
+    mount()
 
-    expect(warn).toBeCalledTimes(1);
-    expect(warn).toBeCalledWith("[useLockScroll] element is undefined");
-  });
+    expect(warn).toBeCalledTimes(1)
+    expect(warn).toBeCalledWith('[useLockScroll] element is undefined')
+  })
 
-  it("should stop toggling if removed", () => {
-    let element: Ref<Element | undefined> = {} as any;
-    let locked: Ref<Boolean> = {} as any;
-    let remove: () => void = NO_OP;
+  it('should stop toggling if removed', () => {
+    let element: Ref<Element | undefined> = {} as any
+    let locked: Ref<Boolean> = {} as any
+    let remove: () => void = NO_OP
     const { mount, destroy } = createVue({
-      template: `<div ref="element"></div>`,
+      template: '<div ref="element"></div>',
       setup() {
-        element = ref<Element>();
+        element = ref<Element>()
 
-        const sl = useLockScroll(element);
-        locked = sl.locked;
-        remove = sl.remove;
+        const sl = useLockScroll(element)
+        locked = sl.locked
+        remove = sl.remove
 
         return {
-          element
-        };
-      }
-    });
+          element,
+        }
+      },
+    })
 
-    expect(element.value).toBeUndefined();
-    mount();
+    expect(element.value).toBeUndefined()
+    mount()
 
-    expect(locked.value).toBe(true);
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true);
+    expect(locked.value).toBe(true)
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true)
 
-    remove();
+    remove()
 
-    locked.value = false; // should not affect
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true);
+    locked.value = false // should not affect
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  it("should call onChange", () => {
-    let element: Ref<Element | undefined> = {} as any;
-    let locked: Ref<Boolean> = {} as any;
-    const onChange = vi.fn();
+  it('should call onChange', () => {
+    let element: Ref<Element | undefined> = {} as any
+    let locked: Ref<Boolean> = {} as any
+    const onChange = vi.fn()
     const { mount, destroy } = createVue({
-      template: `<div ref="element"></div>`,
+      template: '<div ref="element"></div>',
       setup() {
-        element = ref<Element>();
+        element = ref<Element>()
 
-        const sl = useLockScroll(element, { onChange });
-        locked = sl.locked;
+        const sl = useLockScroll(element, { onChange })
+        locked = sl.locked
 
         return {
-          element
-        };
-      }
-    });
+          element,
+        }
+      },
+    })
 
-    expect(element.value).toBeUndefined();
-    expect(onChange).not.toHaveBeenCalled();
-    mount();
+    expect(element.value).toBeUndefined()
+    expect(onChange).not.toHaveBeenCalled()
+    mount()
 
-    expect(locked.value).toBe(true);
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true);
-    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(locked.value).toBe(true)
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(true)
+    expect(onChange).toHaveBeenCalledTimes(1)
 
-    locked.value = false;
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false);
-    expect(onChange).toHaveBeenCalledTimes(2);
+    locked.value = false
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false)
+    expect(onChange).toHaveBeenCalledTimes(2)
 
-    destroy();
+    destroy()
 
     // should not call after destroy
-    expect(onChange).toHaveBeenCalledTimes(2);
-  });
+    expect(onChange).toHaveBeenCalledTimes(2)
+  })
 
-  it("should allow passing custom lockedClass", () => {
-    const lockedClass = "my-lock";
-    let element: Ref<Element | undefined> = {} as any;
-    let locked: Ref<Boolean> = {} as any;
+  it('should allow passing custom lockedClass', () => {
+    const lockedClass = 'my-lock'
+    let element: Ref<Element | undefined> = {} as any
+    let locked: Ref<Boolean> = {} as any
     const { mount, destroy } = createVue({
-      template: `<div ref="element"></div>`,
+      template: '<div ref="element"></div>',
       setup() {
-        element = ref<Element>();
+        element = ref<Element>()
 
-        locked = useLockScroll(element, lockedClass).locked;
+        locked = useLockScroll(element, lockedClass).locked
 
         return {
-          element
-        };
-      }
-    });
+          element,
+        }
+      },
+    })
 
-    expect(element.value).toBeUndefined();
-    mount();
+    expect(element.value).toBeUndefined()
+    mount()
 
-    expect(locked.value).toBe(true);
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false);
-    expect(element.value!.classList.contains(lockedClass)).toBe(true);
+    expect(locked.value).toBe(true)
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false)
+    expect(element.value!.classList.contains(lockedClass)).toBe(true)
 
-    locked.value = false;
-    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false);
-    expect(element.value!.classList.contains(lockedClass)).toBe(false);
+    locked.value = false
+    expect(element.value!.classList.contains(SCROLL_LOCK_CLASS)).toBe(false)
+    expect(element.value!.classList.contains(lockedClass)).toBe(false)
 
-    destroy();
-  });
+    destroy()
+  })
 
-  describe("array", () => {
-    it("should allow passing an array", () => {
+  describe('array', () => {
+    it('should allow passing an array', () => {
       const array = ref([
-        document.createElement("div"),
-        ref<Element | undefined>(document.createElement("div"))
-      ]);
+        document.createElement('div'),
+        ref<Element | undefined>(document.createElement('div')),
+      ])
 
-      let lock: () => void = NO_OP;
-      let unlock: () => void = NO_OP;
+      let lock: () => void = NO_OP
+      let unlock: () => void = NO_OP
 
       const { mount, destroy } = createVue({
-        template: `<div ref="element"></div>`,
+        template: '<div ref="element"></div>',
         setup() {
-          const element = ref<Element>();
+          const element = ref<Element>()
 
-          array.value.push(element);
+          array.value.push(element)
 
-          const sl = useLockScroll(array);
+          const sl = useLockScroll(array)
 
-          lock = sl.lock;
-          unlock = sl.unlock;
+          lock = sl.lock
+          unlock = sl.unlock
 
           return {
-            element
-          };
-        }
-      });
+            element,
+          }
+        },
+      })
 
-      mount();
-      expect(array.value).toHaveLength(3);
-
-      expect(
-        array.value.every(x =>
-          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS)
-        )
-      ).toBe(true);
-
-      unlock();
-      expect(
-        array.value.every(x =>
-          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS)
-        )
-      ).toBe(false);
-
-      lock();
+      mount()
+      expect(array.value).toHaveLength(3)
 
       expect(
         array.value.every(x =>
-          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS)
-        )
-      ).toBe(true);
+          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS),
+        ),
+      ).toBe(true)
 
-      destroy();
-    });
+      unlock()
+      expect(
+        array.value.every(x =>
+          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS),
+        ),
+      ).toBe(false)
 
-    it("should only raised onChanged when locked changes or new item added", async () => {
-      const array = ref([document.createElement("div")]);
-      const onChange = vi.fn();
+      lock()
 
-      const sl = useLockScroll(array, { onChange, auto: false });
+      expect(
+        array.value.every(x =>
+          wrap(x).value.classList.contains(SCROLL_LOCK_CLASS),
+        ),
+      ).toBe(true)
 
-      expect(onChange).not.toHaveBeenCalled();
-      sl.lock();
-      expect(onChange).toHaveBeenCalledTimes(1);
+      destroy()
+    })
 
-      array.value.push(document.createElement("div"));
-      expect(onChange).toHaveBeenCalledTimes(2);
+    it('should only raised onChanged when locked changes or new item added', async () => {
+      const array = ref([document.createElement('div')])
+      const onChange = vi.fn()
 
-      sl.unlock();
+      const sl = useLockScroll(array, { onChange, auto: false })
 
-      expect(onChange).toHaveBeenCalledTimes(4);
+      expect(onChange).not.toHaveBeenCalled()
+      sl.lock()
+      expect(onChange).toHaveBeenCalledTimes(1)
+
+      array.value.push(document.createElement('div'))
+      expect(onChange).toHaveBeenCalledTimes(2)
+
+      sl.unlock()
+
+      expect(onChange).toHaveBeenCalledTimes(4)
 
       // when removing it should call on change
-      array.value.splice(1, 1);
-      expect(onChange).toHaveBeenCalledTimes(4);
-    });
-  });
-  describe("selector", () => {
-    it("should get elements after mounting", async () => {
+      array.value.splice(1, 1)
+      expect(onChange).toHaveBeenCalledTimes(4)
+    })
+  })
+  describe('selector', () => {
+    it('should get elements after mounting', async () => {
       const elements = [
-        document.createElement("div"),
-        document.createElement("button")
-      ];
+        document.createElement('div'),
+        document.createElement('button'),
+      ]
 
-      elements.forEach(x => {
-        x.classList.add("to-lock");
-        document.body.appendChild(x);
-      });
+      elements.forEach((x) => {
+        x.classList.add('to-lock')
+        document.body.appendChild(x)
+      })
 
-      let lock: () => void = NO_OP;
-      let unlock: () => void = NO_OP;
-      const onChange = vi.fn();
+      let lock: () => void = NO_OP
+      let unlock: () => void = NO_OP
+      const onChange = vi.fn()
       const { mount, destroy } = createVue({
-        template: `<div class="to-lock"></div>`,
+        template: '<div class="to-lock"></div>',
         setup() {
-          const sl = useLockScroll(".to-lock", { onChange });
+          const sl = useLockScroll('.to-lock', { onChange })
 
-          lock = sl.lock;
-          unlock = sl.unlock;
+          lock = sl.lock
+          unlock = sl.unlock
 
-          return {};
-        }
-      });
+          return {}
+        },
+      })
 
-      mount();
-      const targetElements = Array.from(document.querySelectorAll(".to-lock"));
+      mount()
+      const targetElements = Array.from(document.querySelectorAll('.to-lock'))
 
-      expect(onChange).toHaveBeenCalledTimes(6);
+      expect(onChange).toHaveBeenCalledTimes(6)
       expect(
         targetElements.every(
-          x => x.classList.contains(SCROLL_LOCK_CLASS) === true
-        )
-      ).toBe(true);
+          x => x.classList.contains(SCROLL_LOCK_CLASS) === true,
+        ),
+      ).toBe(true)
 
-      unlock();
-      expect(onChange).toHaveBeenCalledTimes(9);
-
-      expect(
-        targetElements.every(
-          x => x.classList.contains(SCROLL_LOCK_CLASS) === false
-        )
-      ).toBe(true);
-
-      lock();
-      expect(onChange).toHaveBeenCalledTimes(12);
+      unlock()
+      expect(onChange).toHaveBeenCalledTimes(9)
 
       expect(
         targetElements.every(
-          x => x.classList.contains(SCROLL_LOCK_CLASS) === true
-        )
-      ).toBe(true);
+          x => x.classList.contains(SCROLL_LOCK_CLASS) === false,
+        ),
+      ).toBe(true)
 
-      destroy();
+      lock()
+      expect(onChange).toHaveBeenCalledTimes(12)
 
       expect(
-        elements.every(x => x.classList.contains(SCROLL_LOCK_CLASS) === false)
-      ).toBe(true);
-    });
-  });
-});
+        targetElements.every(
+          x => x.classList.contains(SCROLL_LOCK_CLASS) === true,
+        ),
+      ).toBe(true)
+
+      destroy()
+
+      expect(
+        elements.every(x => x.classList.contains(SCROLL_LOCK_CLASS) === false),
+      ).toBe(true)
+    })
+  })
+})

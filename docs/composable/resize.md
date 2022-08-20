@@ -56,7 +56,7 @@ const { height, width, remove } = useResize(document.body)
     Window Resize
     <p>height: {{ height }}</p>
     <p>width: {{ width }}</p>
-    <button @click='remove'>
+    <button @click="remove">
       remove
     </button>
   </div>
