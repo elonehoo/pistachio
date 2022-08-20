@@ -172,6 +172,10 @@ export default defineConfig({
               text: 'injectFactory',
               link: '/composable/inject',
             },
+            {
+              text: 'lockScroll',
+              link: '/composable/lockScroll',
+            },
           ],
         },
       ],
