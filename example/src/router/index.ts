@@ -16,6 +16,7 @@ import matchMedia from '~/pages/misc/matchMedia.vue'
 import breakpoint from '~/pages/breakpoint/breakpoint.vue'
 import mode from '~/pages/misc/model/mode.vue'
 import interval from '~/pages/misc/interval.vue'
+import lockScroll from '~/pages/misc/lockScroll.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -83,6 +84,10 @@ const router = createRouter({
     {
       path: '/interval',
       component: interval,
+    },
+    {
+      path: '/lockScroll',
+      component: lockScroll,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
