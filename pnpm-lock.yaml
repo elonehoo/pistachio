@@ -36,10 +36,10 @@ importers:
   docs:
     specifiers:
       '@elonehoo/vue-hooks': workspace:*
-      vitepress: 1.0.0-alpha.8
+      vitepress: 1.0.0-alpha.10
     devDependencies:
       '@elonehoo/vue-hooks': link:../packages/core
-      vitepress: 1.0.0-alpha.8_tbpndr44ulefs3hehwpi2mkf2y
+      vitepress: 1.0.0-alpha.10_tbpndr44ulefs3hehwpi2mkf2y
 
   example:
     specifiers:
@@ -51,7 +51,7 @@ importers:
       vue-router: 4.1.3_vue@3.2.37
     devDependencies:
       '@elonehoo/vue-hooks': link:../packages/core
-      '@vitejs/plugin-vue': 3.0.3_vite@3.0.8+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.3_vite@3.0.9+vue@3.2.37
       '@vue/compiler-sfc': 3.2.37
 
   packages/core:
@@ -763,14 +763,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/3.0.3_vite@3.0.8+vue@3.2.37:
+  /@vitejs/plugin-vue/3.0.3_vite@3.0.9+vue@3.2.37:
     resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.0.8
+      vite: 3.0.9
       vue: 3.2.37
     dev: true
 
@@ -3672,18 +3672,18 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.8_tbpndr44ulefs3hehwpi2mkf2y:
-    resolution: {integrity: sha512-kTRN5DCagvMqr9OjylSV9/waGg0IHrxL0hBVuJoz7ykleZq2qR02n5CaiFq5QrSB/VRBGqiVsFQzet9vJsXS8g==}
+  /vitepress/1.0.0-alpha.10_tbpndr44ulefs3hehwpi2mkf2y:
+    resolution: {integrity: sha512-RGPU+YApj2jaYplAIJUe+2qlDks9FzPX1QGK+7NdGByeCCVZg6z9eYWjjvfvA/sgCtG3yeJE/4/jCwlv4Y8bVw==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.2.1
       '@docsearch/js': 3.2.1_tbpndr44ulefs3hehwpi2mkf2y
-      '@vitejs/plugin-vue': 3.0.3_vite@3.0.8+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.3_vite@3.0.9+vue@3.2.37
       '@vue/devtools-api': 6.2.1
       '@vueuse/core': 9.1.0_vue@3.2.37
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.11.1
-      vite: 3.0.8
+      vite: 3.0.9
       vue: 3.2.37
     transitivePeerDependencies:
       - '@algolia/client-search'
