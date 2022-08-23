@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import {ref} from 'vue'
-  import {useLockScroll} from '@elonehoo/vue-hooks'
+import { ref } from 'vue'
+import { useLockScroll } from '@elonehoo/vue-hooks'
 
-  const elref = ref<any>(null);
+const elref = ref<any>(null)
 
-  const { locked, remove } = useLockScroll(elref);
+const { locked, remove } = useLockScroll(elref)
 </script>
 
 <template>
@@ -13,12 +13,16 @@
     <b>locked</b> to enable or disable
     <b>scroll</b>
     <div ref="elref" class="scroll-component">
-      <p v-for="x in 10" :key="x">{{ x }}</p>
+      <p v-for="x in 10" :key="x">
+        {{ x }}
+      </p>
     </div>
 
-    <button @click="remove">remove</button>
+    <button @click="remove">
+      remove
+    </button>
     <span>
-      <input type="checkbox" v-model="locked" />
+      <input v-model="locked" type="checkbox">
       Locked
     </span>
   </div>
