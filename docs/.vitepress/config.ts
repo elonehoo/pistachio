@@ -176,6 +176,10 @@ export default defineConfig({
               text: 'lockScroll',
               link: '/composable/lockScroll',
             },
+            {
+              text: 'refDebounced',
+              link: '/composable/refDebounced',
+            },
           ],
         },
       ],
