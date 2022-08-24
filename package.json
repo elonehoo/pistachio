@@ -24,7 +24,7 @@
   "devDependencies": {
     "@elonehoo/eslint-config": "2.0.0",
     "@elonehoo/rimraf": "0.0.1",
-    "@types/node": "18.7.6",
+    "@types/node": "18.7.12",
     "bumpp": "8.2.1",
     "eslint": "8.22.0",
     "happy-dom": "6.0.4",
