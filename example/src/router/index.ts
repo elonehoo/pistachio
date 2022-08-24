@@ -17,6 +17,7 @@ import breakpoint from '~/pages/breakpoint/breakpoint.vue'
 import mode from '~/pages/misc/model/mode.vue'
 import interval from '~/pages/misc/interval.vue'
 import lockScroll from '~/pages/misc/lockScroll.vue'
+import broadcastChannel from '~/pages/web/broadcastChannel.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -88,6 +89,10 @@ const router = createRouter({
     {
       path: '/lockScroll',
       component: lockScroll,
+    },
+    {
+      path:'/broadcastChannel',
+      component: broadcastChannel
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
