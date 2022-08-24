@@ -91,8 +91,8 @@ const router = createRouter({
       component: lockScroll,
     },
     {
-      path:'/broadcastChannel',
-      component: broadcastChannel
+      path: '/broadcastChannel',
+      component: broadcastChannel,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

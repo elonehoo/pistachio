@@ -183,13 +183,13 @@ export default defineConfig({
           ],
         },
         {
-          text:'web',
+          text: 'web',
           items: [
             {
               text: 'broadcastChannel',
               link: '/composable/broadcastChannel',
             },
-          ]
+          ],
         },
       ],
     },
