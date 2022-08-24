@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { BroadcastMessageEvent, RefSharedMessage } from '@elonehoo/vue-hooks'
-import { RefSharedMessageType, SharedRefMind, refShared, useSharedRef } from '@elonehoo/vue-hooks'
+import { RefSharedMessageType, SharedRefMind, useRefShared, useSharedRef } from '@elonehoo/vue-hooks'
 import { getCurrentInstance } from 'vue'
 import { createVue, nextTick } from '../utils'
 
@@ -68,7 +68,7 @@ describe('sharedRef', () => {
 
         expect(postMessageFn).toBeCalledWith(
           expect.objectContaining({
-            type: RefSharedMessageType.PING,
+            type: 5,
           } as RefSharedMessage<any>),
         )
         expect(addEventListenerFn).toHaveBeenCalledTimes(3)
@@ -183,7 +183,7 @@ describe('sharedRef', () => {
           // expect(postMessageFn).toHaveBeenCalledTimes(2);
           expect(postMessageFn).lastCalledWith(
             expect.objectContaining({
-              type: RefSharedMessageType.UPDATE,
+              type: 2,
               value: data.value,
             } as RefSharedMessage),
           )
@@ -199,7 +199,7 @@ describe('sharedRef', () => {
 
           expect(postMessageFn).lastCalledWith(
             expect.objectContaining({
-              type: RefSharedMessageType.UPDATE,
+              type: 2,
               value: n,
             } as RefSharedMessage),
           )
@@ -210,7 +210,7 @@ describe('sharedRef', () => {
 
           expect(postMessageFn).lastCalledWith(
             expect.objectContaining({
-              type: RefSharedMessageType.UPDATE,
+              type: 2,
               value: 1,
             } as RefSharedMessage),
           )
@@ -240,13 +240,13 @@ describe('sharedRef', () => {
         // If init is received it should reply with UPDATE
         listenerFn({
           data: {
-            type: RefSharedMessageType.INIT,
+            type: 0,
           } as RefSharedMessage,
         } as any)
 
         expect(postMessageFn).lastCalledWith(
           expect.objectContaining({
-            type: RefSharedMessageType.UPDATE,
+            type: 2,
             value: data.value,
             mind: mind.value,
           } as RefSharedMessage),
@@ -312,7 +312,7 @@ describe('sharedRef', () => {
 
         listenerFn({
           data: {
-            type: RefSharedMessageType.UPDATE,
+            type: 2,
             mind: 1,
             value: 1,
           } as RefSharedMessage,
@@ -339,7 +339,7 @@ describe('sharedRef', () => {
 
         listenerFn({
           data: {
-            type: RefSharedMessageType.PING,
+            type: 5,
             id,
           } as RefSharedMessage,
         } as any)
@@ -349,7 +349,7 @@ describe('sharedRef', () => {
 
         expect(postMessageFn).lastCalledWith(
           expect.objectContaining({
-            type: RefSharedMessageType.PONG,
+            type: 6,
             id,
           } as RefSharedMessage),
         )
@@ -363,7 +363,7 @@ describe('sharedRef', () => {
 
         listenerFn({
           data: {
-            type: RefSharedMessageType.PONG,
+            type: 6,
             id,
           } as RefSharedMessage,
         } as any)
@@ -484,7 +484,7 @@ describe('sharedRef', () => {
 
           // istanbul ignore if
           (vm as any).vnode.scopeId = 'vue-test-vm'
-          const r = refShared()
+          const r = useRefShared()
           expect(r.value).toBeUndefined()
 
           expect(constructorFn).toHaveBeenCalled()
@@ -505,7 +505,7 @@ describe('sharedRef', () => {
       const { mount, destroy } = createVue({
         template: '<div ref=\'el\'></div>',
         setup() {
-          const r = refShared(11, '11')
+          const r = useRefShared(11, '11')
           expect(r.value).toBe(11)
 
           expect(constructorFn).toHaveBeenCalled()
@@ -530,11 +530,11 @@ describe('sharedRef', () => {
           // istanbul ignore if
           (vm as any).vnode.scopeId = 'vue-test-vm'
 
-          const r = refShared()
-          const r2 = refShared()
+          const r = useRefShared()
+          const r2 = useRefShared()
 
           expect(warnSpy).toHaveBeenCalledWith(
-            '[refShared] You can only have one refShared per component, if you need more please assign pass an id refShared(defaultValue, id)',
+            '[useRefShared] You can only have one useRefShared per component, if you need more please assign pass an id useRefShared(defaultValue, id)',
           )
 
           return { r, r2 }

@@ -259,7 +259,7 @@ export function useSharedRef<T = any>(
 
 let shared: Set<string> | undefined
 
-export function refShared<T = any>(
+export function useRefShared<T = any>(
   defaultValue?: RefTyped<T>,
   id?: string,
 ): Ref<RefTyped<T>> {
