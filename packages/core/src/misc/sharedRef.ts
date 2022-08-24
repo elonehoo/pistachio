@@ -267,7 +267,7 @@ export function useRefShared<T = any>(
   const name = id || (vm as any).vnode.scopeId
 
   if (!name) {
-    console.warn('[refShared] please assign an id, returning `ref`')
+    console.warn('[useRefShared] please assign an id, returning `ref`')
     return ref(defaultValue) as Ref<T>
   }
 
@@ -277,7 +277,7 @@ export function useRefShared<T = any>(
 
   if (shared.has(name)) {
     console.warn(
-      '[refShared] You can only have one refShared per component, if you need more please assign pass an id refShared(defaultValue, id)',
+      '[useRefShared] You can only have one refShared per component, if you need more please assign pass an id refShared(defaultValue, id)',
     )
   }
   shared.add(name)
@@ -286,7 +286,7 @@ export function useRefShared<T = any>(
 
   /* istanbul ignore next  */
   if (!supported)
-    console.warn('[refShared] is dependent of BroadcastChannel')
+    console.warn('[useRefShared] is dependent of BroadcastChannel')
 
   return data
 }
