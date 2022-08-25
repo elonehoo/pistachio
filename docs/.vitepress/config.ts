@@ -157,6 +157,10 @@ export default defineConfig({
           text: 'Misc',
           items: [
             {
+              text: 'sharedRef',
+              link: '/composable/sharedRef',
+            },
+            {
               text: 'matchMedia',
               link: '/composable/matchMedia',
             },
