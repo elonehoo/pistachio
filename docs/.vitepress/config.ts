@@ -191,6 +191,15 @@ export default defineConfig({
           ],
         },
         {
+          text:'storage',
+          items: [
+            {
+              text:'webStorage',
+              link:'/composable/webStorage'
+            }
+          ]
+        },
+        {
           text: 'web',
           items: [
             {
