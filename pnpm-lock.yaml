@@ -56,8 +56,10 @@ importers:
 
   packages/core:
     specifiers:
+      '@elonehoo/vite-plugin-record-time': 0.0.1-beta.0
       '@elonehoo/vite-plugin-type-ts': 0.0.1
     devDependencies:
+      '@elonehoo/vite-plugin-record-time': 0.0.1-beta.0_vite@3.0.9
       '@elonehoo/vite-plugin-type-ts': 0.0.1
 
   test:
@@ -370,6 +372,14 @@ packages:
     hasBin: true
     dependencies:
       glob: 8.0.3
+    dev: true
+
+  /@elonehoo/vite-plugin-record-time/0.0.1-beta.0_vite@3.0.9:
+    resolution: {integrity: sha512-44TD5iQnUkcpuJa0k3X9PIJFj21aredA4tmF8cXe4icXcS3KczY9jmJzZ+k2YRjegr1rBVN0H+jex4gpBhMRxA==}
+    peerDependencies:
+      vite: 3.0.9
+    dependencies:
+      vite: 3.0.9
     dev: true
 
   /@elonehoo/vite-plugin-type-ts/0.0.1:

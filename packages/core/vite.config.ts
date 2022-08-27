@@ -1,6 +1,7 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import types from '@elonehoo/vite-plugin-type-ts'
+import recordTime from '@elonehoo/vite-plugin-record-time'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
       cleanVueFileName: true,
       insertTypesEntry: true,
     }),
+    recordTime()
   ],
   build: {
     outDir: 'dist',
