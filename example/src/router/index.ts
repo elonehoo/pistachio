@@ -21,6 +21,7 @@ import broadcastChannel from '~/pages/web/broadcastChannel.vue'
 import sharedRef from '~/pages/misc/sharedRef.vue'
 import refShared from '~/pages/misc/refShared.vue'
 import localStorage from '~/pages/storage/localStorage.vue'
+import sessionStorage from '~/pages/storage/sessionStorage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -108,6 +109,10 @@ const router = createRouter({
     {
       path: '/localStorage',
       component: localStorage,
+    },
+    {
+      path:'/sessionStorage',
+      component: sessionStorage
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

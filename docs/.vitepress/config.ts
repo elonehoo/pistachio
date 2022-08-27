@@ -201,6 +201,10 @@ export default defineConfig({
               text: 'localStorage',
               link: '/composable/localStorage',
             },
+            {
+              text: 'sessionStorage',
+              link: '/composable/sessionStorage',
+            },
           ],
         },
         {
