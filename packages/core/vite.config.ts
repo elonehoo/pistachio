@@ -16,7 +16,7 @@ export default defineConfig({
       cleanVueFileName: true,
       insertTypesEntry: true,
     }),
-    recordTime()
+    recordTime(),
   ],
   build: {
     outDir: 'dist',

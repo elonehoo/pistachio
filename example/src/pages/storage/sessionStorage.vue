@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {useSessionStorage} from '@elonehoo/vue-hooks'
+import { useSessionStorage } from '@elonehoo/vue-hooks'
 
-const key = "__vue_sessionStorage_example";
-const { supported, storage, remove } = useSessionStorage(key, 1);
+const key = '__vue_sessionStorage_example'
+const { supported, storage, remove } = useSessionStorage(key, 1)
 </script>
 
 <template>
@@ -16,11 +16,13 @@ const { supported, storage, remove } = useSessionStorage(key, 1);
       <b>Check the value in the dev tools: `{{ key }}`</b>
     </p>
     <label for="storage">
-      <input name="storage" v-model="storage" />
+      <input v-model="storage" name="storage">
     </label>
 
     <div>
-      <button @click="remove">Remove</button>
+      <button @click="remove">
+        Remove
+      </button>
     </div>
   </div>
 </template>

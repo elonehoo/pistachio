@@ -22,6 +22,7 @@ import sharedRef from '~/pages/misc/sharedRef.vue'
 import refShared from '~/pages/misc/refShared.vue'
 import localStorage from '~/pages/storage/localStorage.vue'
 import sessionStorage from '~/pages/storage/sessionStorage.vue'
+import storage from '~/pages/storage/storage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -111,8 +112,12 @@ const router = createRouter({
       component: localStorage,
     },
     {
-      path:'/sessionStorage',
-      component: sessionStorage
+      path: '/sessionStorage',
+      component: sessionStorage,
+    },
+    {
+      path: '/storage',
+      component: storage,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

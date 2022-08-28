@@ -1,55 +1,58 @@
-import {RefTyped, NO_OP, unwrap} from '../utils'
-import {ref, Ref} from 'vue'
+import type { Ref } from 'vue'
+import { ref } from 'vue'
+import type { RefTyped } from '../utils'
+import { NO_OP, unwrap } from '../utils'
 import { useWebStorage } from './webStorage'
 
 export interface sessionStorageReturn<T> {
   /**
    * returns true is `sessionStorage` is available
    */
-  supported: boolean;
+  supported: boolean
 
   /**
    * handler with `sessionStorage` value
    */
 
-  storage: Ref<T | undefined>;
+  storage: Ref<T | undefined>
 
   /**
    * Removes current item from the store
    */
-  remove: () => void;
+  remove: () => void
 
   /**
    * Clears all tracked `sessionStorage` items
    */
-  clear: () => void;
+  clear: () => void
 }
 
 export function useSessionStorage<T = string>(
   key: RefTyped<string>,
   defaultValue?: RefTyped<T>,
-  useDebounce = true
+  useDebounce = true,
 ): sessionStorageReturn<T> {
-  const { supported, store } = useWebStorage("sessionStorage");
+  const { supported, store } = useWebStorage('sessionStorage')
 
-  let remove = NO_OP;
-  let clear = NO_OP;
-  let storage = ref<T>();
+  let remove = NO_OP
+  let clear = NO_OP
+  let storage = ref<T>()
 
   if (supported && store) {
-    remove = () => store.removeItem(unwrap(key));
-    clear = () => store.clear();
+    remove = () => store.removeItem(unwrap(key))
+    clear = () => store.clear()
 
-    storage = store.getRef<T>(key, useDebounce);
+    storage = store.getRef<T>(key, useDebounce)
     if (storage.value === undefined) {
-      store.save(unwrap(key), defaultValue);
-      storage.value = unwrap(defaultValue);
+      store.save(unwrap(key), defaultValue)
+      storage.value = unwrap(defaultValue)
     }
-  } else {
+  }
+  else {
     /* istanbul ignore else */
-    console.warn("[sessionStorage] is not available");
+    console.warn('[sessionStorage] is not available')
 
-    storage.value = unwrap(defaultValue);
+    storage.value = unwrap(defaultValue)
   }
 
   return {
@@ -58,6 +61,6 @@ export function useSessionStorage<T = string>(
     storage,
     clear,
     remove,
-  };
+  }
 }
 
