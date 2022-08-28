@@ -198,6 +198,10 @@ export default defineConfig({
               link: '/composable/webStorage',
             },
             {
+              text: 'storage',
+              link: '/composable/storage',
+            },
+            {
               text: 'localStorage',
               link: '/composable/localStorage',
             },
