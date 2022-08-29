@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <h1>Vue Hooks</h1>
+  <h1>Pistachio</h1>
 </div>
 
 out-of-the-box ready to use composables
