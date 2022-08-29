@@ -1,5 +1,5 @@
 {
-  "name": "@elonehoo/vue-hooks",
+  "name": "@elonehoo/pistachio",
   "type": "module",
   "version": "0.0.0",
   "main": "./dist/index.umd.js",

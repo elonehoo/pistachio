@@ -5,7 +5,7 @@
 ## Parameters
 
 ```typescript
-import { useInjectFactory } from '@elonehoo/vue-hooks'
+import { useInjectFactory } from '@elonehoo/pistachio'
 
 const value = useInjectFactory(key, factory)
 ```
@@ -18,7 +18,7 @@ const value = useInjectFactory(key, factory)
 ## Example
 
 ```typescript
-import { useInjectFactory } from '@elonehoo/vue-hooks'
+import { useInjectFactory } from '@elonehoo/pistachio'
 
 const users = useInjectFactory("myValue", () => {
   if (new Date().getDate() === 2) {

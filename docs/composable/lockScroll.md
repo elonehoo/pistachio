@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
   import {ref} from 'vue'
-  import {useLockScroll} from '@elonehoo/vue-hooks'
+  import {useLockScroll} from '@elonehoo/pistachio'
 
   const elref = ref<any>(null);
 
@@ -18,7 +18,7 @@ outline: deep
 ## Parameters
 
 ```typescript
-import { useLockScroll } from '@elonehoo/vue-hooks'
+import { useLockScroll } from '@elonehoo/pistachio'
 
 const options = {
     lockedClass: String,
@@ -56,7 +56,7 @@ useLockScroll(elements, lockClass?)
 The `useLockScroll` function exposes the following reactive state:
 
 ```typescript
-import { useLockScroll } from '@elonehoo/vue-hooks'
+import { useLockScroll } from '@elonehoo/pistachio'
 
 const { locked } = useLockScroll()
 ```
@@ -96,7 +96,7 @@ const { locked } = useLockScroll()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useLockScroll } from '@elonehoo/vue-hooks'
+import { useLockScroll } from '@elonehoo/pistachio'
 
 const elref = ref<any>(null)
 

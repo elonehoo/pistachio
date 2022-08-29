@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNow } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/pistachio'
 let i = 0
 const now = useNow({
   timeFn: () => ++i,

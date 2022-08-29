@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import { useRefShared } from '@elonehoo/vue-hooks'
+import { useRefShared } from '@elonehoo/pistachio'
 
 const myRefVar = useRefShared('Hello world')
 </script>
@@ -16,7 +16,7 @@ const myRefVar = useRefShared('Hello world')
 ## Parameters
 
 ```typescript
-import { useRefShared } from '@elonehoo/vue-hooks'
+import { useRefShared } from '@elonehoo/pistachio'
 
 const refShared = useRefShared(defaultValue?, id?)
 ```
@@ -31,7 +31,7 @@ const refShared = useRefShared(defaultValue?, id?)
 The `useRefShared` function returns a reactive `ref` variable:
 
 ```typescript
-import { useRefShared } from '@elonehoo/vue-hooks'
+import { useRefShared } from '@elonehoo/pistachio'
 
 const myShared = useRefShared()
 ```
@@ -47,7 +47,7 @@ const myShared = useRefShared()
 
 ```vue
 <script setup lang="ts">
-import { useRefShared } from '@elonehoo/vue-hooks'
+import { useRefShared } from '@elonehoo/pistachio'
 
 const myRefVar = useRefShared('Hello world')
 </script>

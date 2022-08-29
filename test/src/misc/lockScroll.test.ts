@@ -1,7 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import { NO_OP, SCROLL_LOCK_CLASS, useLockScroll, wrap } from '@elonehoo/vue-hooks'
+import { NO_OP, SCROLL_LOCK_CLASS, useLockScroll, wrap } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
 describe('lockscroll', () => {

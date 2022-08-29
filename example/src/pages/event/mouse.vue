@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import { useMouse } from '@elonehoo/vue-hooks'
+import { useMouse } from '@elonehoo/pistachio'
 
 const elref = ref<any>(null)
 const state = reactive({

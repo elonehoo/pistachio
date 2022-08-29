@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRefShared } from '@elonehoo/vue-hooks'
+import { useRefShared } from '@elonehoo/pistachio'
 
 const myRefVar = useRefShared('Hello world')
 </script>

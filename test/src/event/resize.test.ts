@@ -1,5 +1,5 @@
-import type { ResizeResult } from '@elonehoo/vue-hooks'
-import { promisedTimeout, useResize } from '@elonehoo/vue-hooks'
+import type { ResizeResult } from '@elonehoo/pistachio'
+import { promisedTimeout, useResize } from '@elonehoo/pistachio'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 import { createVue, nextTick } from '../utils'

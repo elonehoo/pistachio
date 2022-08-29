@@ -2,8 +2,8 @@ import type { IWindow } from 'happy-dom'
 import { describe, expect, it, vi } from 'vitest'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import type { MouseMoveResult } from '@elonehoo/vue-hooks'
-import { promisedTimeout, useMouseMove } from '@elonehoo/vue-hooks'
+import type { MouseMoveResult } from '@elonehoo/pistachio'
+import { promisedTimeout, useMouseMove } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
 declare global {

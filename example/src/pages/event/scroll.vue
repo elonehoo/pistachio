@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useScroll } from '@elonehoo/vue-hooks'
+import { useScroll } from '@elonehoo/pistachio'
 const elref = ref(null)
 
 const { scrollTop, scrollLeft, remove } = useScroll(elref)

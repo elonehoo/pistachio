@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const {matches} = useMatchMedia("(max-width: 600px)")
 </script>
@@ -15,7 +15,7 @@ const {matches} = useMatchMedia("(max-width: 600px)")
 ## Parameters
 
 ```typescript
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const matchMedia = useMatchMedia(mediaQueryString)
 ```
@@ -29,7 +29,7 @@ const matchMedia = useMatchMedia(mediaQueryString)
 The `useMatchMedia` function exposes the following reactive state:
 
 ```typescript
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const { supported, mediaQueryList, matches } = useMatchMedia()
 ```
@@ -45,7 +45,7 @@ const { supported, mediaQueryList, matches } = useMatchMedia()
 The `useMatchMedia` function exposes the following methods:
 
 ```typescript
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const { remove } = useMatchMedia()
 ```
@@ -64,7 +64,7 @@ const { remove } = useMatchMedia()
 
 ```vue
 <script setup lang="ts">
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const { matches } = useMatchMedia('(max-width: 600px)')
 </script>

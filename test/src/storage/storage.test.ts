@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { useStorage } from '@elonehoo/vue-hooks'
+import { useStorage } from '@elonehoo/pistachio'
 
 describe('storage', () => {
   it('should get localStorage if supported', () => {

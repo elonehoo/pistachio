@@ -5,7 +5,7 @@ debounces the update value of a ref
 ## Parameters
 
 ```typescript
-import { refDebounced } from '@elonehoo/vue-hooks'
+import { refDebounced } from '@elonehoo/pistachio'
 
 refDebounced(delay)
 refDebounced(value, delay)
@@ -21,7 +21,7 @@ refDebounced(value, delay)
 The refDebounced function retuns a ref:
 
 ```typescript
-import { refDebounced } from '@elonehoo/vue-hooks'
+import { refDebounced } from '@elonehoo/pistachio'
 
 const debouncedValue = refDebounced()
 ```

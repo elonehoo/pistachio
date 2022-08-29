@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang='ts'>
-import {useResize} from '@elonehoo/vue-hooks'
+import {useResize} from '@elonehoo/pistachio'
 const { height, width, remove } = useResize(document.body)
 </script>
 
@@ -15,7 +15,7 @@ const { height, width, remove } = useResize(document.body)
 The `useResize` function exposes the following reactive state:
 
 ```typescript
-import { useResize } from '@elonehoo/vue-hooks'
+import { useResize } from '@elonehoo/pistachio'
 const { height, width } = useResize()
 ```
 
@@ -29,7 +29,7 @@ const { height, width } = useResize()
 The `useResize` function exposes the following methods:
 
 ```typescript
-import { useResize } from '@elonehoo/vue-hooks'
+import { useResize } from '@elonehoo/pistachio'
 const { remove } = useResize()
 ```
 
@@ -48,7 +48,7 @@ const { remove } = useResize()
 
 ```vue
 <script setup lang='ts'>
-import { useResize } from '@elonehoo/vue-hooks'
+import { useResize } from '@elonehoo/pistachio'
 const { height, width, remove } = useResize(document.body)
 </script>
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDate } from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/pistachio'
 
 const { now } = useDate()
 </script>

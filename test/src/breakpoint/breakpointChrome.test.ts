@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { useBreakpoint, useBreakpointChrome } from '@elonehoo/vue-hooks'
+import { useBreakpoint, useBreakpointChrome } from '@elonehoo/pistachio'
 
 describe.skip('breakpointChrome', () => {
   it('should call breakpoint with chrome breakpoints', () => {

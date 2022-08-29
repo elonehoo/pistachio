@@ -1,4 +1,4 @@
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from '../utils'
 

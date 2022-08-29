@@ -2,7 +2,7 @@ import type { IWindow } from 'happy-dom'
 import { describe, expect, it, vi } from 'vitest'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import { NO_OP, useMouse } from '@elonehoo/vue-hooks'
+import { NO_OP, useMouse } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
 declare global {

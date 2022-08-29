@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 
 const arrayRef = ref(new Array(100).fill(1).map((_, i) => i));
     // paginate array
@@ -37,7 +37,7 @@ const arrayRef = ref(new Array(100).fill(1).map((_, i) => i));
 The `usePagination` function exposes the following reactive state:
 
 ```typescript
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 
 const { pageSize, total, currentPage, offset, lastPage } = usePagination()
 ```
@@ -55,7 +55,7 @@ const { pageSize, total, currentPage, offset, lastPage } = usePagination()
 The `usePagination` function exposes the following methods:
 
 ```typescript
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 
 const { next, prev, first, last } = usePagination()
 ```
@@ -85,7 +85,7 @@ const { next, prev, first, last } = usePagination()
 ```vue
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 
 const arrayRef = ref(new Array(100).fill(1).map((_, i) => i))
 // paginate array

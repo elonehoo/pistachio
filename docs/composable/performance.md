@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const { now } = usePerformance()
 </script>
@@ -15,7 +15,7 @@ const { now } = usePerformance()
 ## Parameters
 
 ```typescript
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const now = usePerformance({
   refreshMs?: Number,
@@ -33,7 +33,7 @@ const now = usePerformance({
 The `usePerformance` function exposes the following reactive state:
 
 ```typescript
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const { now } = usePerformance()
 ```
@@ -47,7 +47,7 @@ const { now } = usePerformance()
 The `usePerformance` function exposes the following methods:
 
 ```typescript
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const { remove } = usePerformance()
 ```
@@ -69,7 +69,7 @@ const { remove } = usePerformance()
 
 ```vue
 <script setup lang="ts">
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const { now } = usePerformance()
 </script>

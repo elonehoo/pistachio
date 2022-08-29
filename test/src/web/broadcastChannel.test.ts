@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { PASSIVE_EV, useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { PASSIVE_EV, useBroadcastChannel } from '@elonehoo/pistachio'
 import { createVue } from '../utils'
 
 describe('broadcastChannel', () => {

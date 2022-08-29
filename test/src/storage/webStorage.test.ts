@@ -1,6 +1,6 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { WebStorage } from '@elonehoo/vue-hooks'
-import { promisedTimeout, useWebStorage } from '@elonehoo/vue-hooks'
+import type { WebStorage } from '@elonehoo/pistachio'
+import { promisedTimeout, useWebStorage } from '@elonehoo/pistachio'
 import { nextTick } from '../utils'
 
 describe('localStorage', () => {

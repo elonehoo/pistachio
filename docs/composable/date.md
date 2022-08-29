@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import {useDate} from '@elonehoo/vue-hooks'
+import {useDate} from '@elonehoo/pistachio'
 
 const { now } = useDate()
 </script>
@@ -15,7 +15,7 @@ const { now } = useDate()
 ## Parameters
 
 ```typescript
-import { useDate } from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/pistachio'
 
 const now = useDate({
   refreshMs?: Number,
@@ -33,7 +33,7 @@ const now = useDate({
 The `useDate` function exposes the following reactive state:
 
 ```typescript
-import { useDate } from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/pistachio'
 
 const { now } = useDate()
 ```
@@ -47,7 +47,7 @@ const { now } = useDate()
 The `useDate` function exposes the following methods:
 
 ```typescript
-import { useDate } from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/pistachio'
 
 const { remove } = useDate()
 ```
@@ -66,7 +66,7 @@ const { remove } = useDate()
 
 ```vue
 <script setup lang="ts">
-import { useDate } from '@elonehoo/vue-hooks'
+import { useDate } from '@elonehoo/pistachio'
 
 const { now } = useDate()
 </script>

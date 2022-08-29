@@ -1,4 +1,4 @@
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createVue } from '../utils'
 

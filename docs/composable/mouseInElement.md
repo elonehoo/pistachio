@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 const el = ref(null)
 const { distance } = useMouseInElement(el)
@@ -17,7 +17,7 @@ const { distance } = useMouseInElement(el)
 ## Parameters
 
 ```typescript
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 useMouseInElement(element, options?, wait?)
 ```
@@ -33,7 +33,7 @@ useMouseInElement(element, options?, wait?)
 The `useMouseInElement` function exposes the following reactive state:
 
 ```typescript
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 const { distance } = useMouseInElement()
 ```
@@ -48,7 +48,7 @@ The `useMouseInElement` function exposes the following methods:
 
 
 ```typescript
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 const { remove } = useMouseInElement()
 ```
@@ -67,7 +67,7 @@ const { remove } = useMouseInElement()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 const el = ref(null)
 const { distance } = useMouseInElement(el)

@@ -1,4 +1,4 @@
-import { promisedTimeout, useBreakpoint } from '@elonehoo/vue-hooks'
+import { promisedTimeout, useBreakpoint } from '@elonehoo/pistachio'
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createVue, nextTick } from '../utils'
 

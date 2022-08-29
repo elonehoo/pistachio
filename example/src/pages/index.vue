@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <div>welcome vue hooks</div>
+  <div>welcome pistachio</div>
 </template>

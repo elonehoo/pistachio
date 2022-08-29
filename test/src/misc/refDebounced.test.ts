@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
-import { useRefDebounced } from '@elonehoo/vue-hooks'
+import { useRefDebounced } from '@elonehoo/pistachio'
 
 describe('useRefDebounced', () => {
   beforeAll(() => {

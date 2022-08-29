@@ -9,7 +9,7 @@ outline: deep
 ## Parameters
 
 ```typescript
-import { useInterval } from '@elonehoo/vue-hooks'
+import { useInterval } from '@elonehoo/pistachio'
 
 useInterval(callback, ms?, ...args)
 ```
@@ -25,7 +25,7 @@ useInterval(callback, ms?, ...args)
 The `useInterval` function exposes the following methods:
 
 ```typescript
-import { useInterval } from '@elonehoo/vue-hooks'
+import { useInterval } from '@elonehoo/pistachio'
 
 const { start, remove } = useInterval()
 ```
@@ -40,7 +40,7 @@ const { start, remove } = useInterval()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useInterval } from '@elonehoo/vue-hooks'
+import { useInterval } from '@elonehoo/pistachio'
 
 const date = ref()
 

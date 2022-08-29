@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useLockScroll } from '@elonehoo/vue-hooks'
+import { useLockScroll } from '@elonehoo/pistachio'
 
 const elref = ref<any>(null)
 

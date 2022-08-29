@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useFormat } from '@elonehoo/vue-hooks'
+import { useFormat } from '@elonehoo/pistachio'
 
 const inputFormat = ref('{0} {1}')
 const args = ref([ref('hello'), ref('world')])

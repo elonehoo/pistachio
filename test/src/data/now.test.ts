@@ -1,5 +1,5 @@
-import type { NowOptions, UseNowOptions } from '@elonehoo/vue-hooks'
-import { useNow } from '@elonehoo/vue-hooks'
+import type { NowOptions, UseNowOptions } from '@elonehoo/pistachio'
+import { useNow } from '@elonehoo/pistachio'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createVue } from '../utils'
 

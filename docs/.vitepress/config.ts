@@ -35,7 +35,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     editLink: {
-      pattern: 'https://github.com/elonehoo/vue-hooks/tree/main/docs/:path',
+      pattern: 'https://github.com/elonehoo/pistachio/tree/main/docs/:path',
       text: 'Suggest changes to this page',
     },
     socialLinks: [
@@ -66,7 +66,7 @@ export default defineConfig({
           text: 'Getting Started',
           items: [
             {
-              text: 'Why vue-hooks',
+              text: 'Why pistachio',
               link: '/guide/why',
             },
             {

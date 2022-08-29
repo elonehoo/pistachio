@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref} from 'vue'
-import {useScroll} from '@elonehoo/vue-hooks'
+import {useScroll} from '@elonehoo/pistachio'
 const elref = ref(null)
 
 const { scrollTop, scrollLeft, remove } = useScroll(elref);
@@ -17,7 +17,7 @@ const { scrollTop, scrollLeft, remove } = useScroll(elref);
 ## Parameters
 
 ```typescript
-import { useScroll } from "@elonehoo/vue-hooks"
+import { useScroll } from "@elonehoo/pistachio"
 
 const scroll = useScroll()
 const scroll = useScroll(wait)
@@ -38,7 +38,7 @@ If no **element** is passed it will use **window** to get the scroll of the page
 ## State
 
 ```typescript
-import { useScroll } from "@elonehoo/vue-hooks"
+import { useScroll } from "@elonehoo/pistachio"
 
 const { scrollTop, scrollLeft } = useScroll()
 ```
@@ -51,7 +51,7 @@ const { scrollTop, scrollLeft } = useScroll()
 ## Methods
 
 ```typescript
-import { useScroll } from "@elonehoo/vue-hooks"
+import { useScroll } from "@elonehoo/pistachio"
 
 const { remove, scrollTo, scrollLeftTo, scrollTopTo } = useScroll()
 ```
@@ -80,7 +80,7 @@ const { remove, scrollTo, scrollLeftTo, scrollTopTo } = useScroll()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useScroll } from '@elonehoo/vue-hooks'
+import { useScroll } from '@elonehoo/pistachio'
 const elref = ref(null)
 
 const { scrollTop, scrollLeft, remove } = useScroll(elref)

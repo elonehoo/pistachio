@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const { supported, data, send } = useBroadcastChannel("composable-example");
 const message = ref("");
@@ -21,7 +21,7 @@ const submitMessage = () => {
 ## Parameters
 
 ```typescript
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const scroll = useBroadcastChannel(name, onBeforeClose?)
 ```
@@ -36,7 +36,7 @@ const scroll = useBroadcastChannel(name, onBeforeClose?)
 The `useBroadcastChannel` function exposes the following reactive state:
 
 ```typescript
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const {
   supported,
@@ -62,7 +62,7 @@ const {
 The `useBroadcastChannel` function exposes the following methods:
 
 ```typescript
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const { send, close, addListener } = useBroadcastChannel()
 ```
@@ -97,7 +97,7 @@ const { send, close, addListener } = useBroadcastChannel()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const { supported, data, send } = useBroadcastChannel('composable-example')
 const message = ref('')

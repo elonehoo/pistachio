@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { onMounted, ref } from 'vue'
-import { useModel } from '@elonehoo/vue-hooks'
+import { useModel } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
 describe('model', () => {

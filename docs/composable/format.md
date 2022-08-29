@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useFormat } from '@elonehoo/vue-hooks'
+import { useFormat } from '@elonehoo/pistachio'
 
 const inputFormat = ref("{0} {1}")
 
@@ -28,7 +28,7 @@ const onChange = (ev:any, index:number) => {
 ## Parameters
 
 ```typescript
-import { useFormat } from '@elonehoo/vue-hooks'
+import { useFormat } from '@elonehoo/pistachio'
 
 useFormat(format, obj)
 useFormat(format, arg1, arg2)
@@ -43,7 +43,7 @@ useFormat(format, arg1, arg2)
 ## State
 
 ```typescript
-import { useFormat } from '@elonehoo/vue-hooks'
+import { useFormat } from '@elonehoo/pistachio'
 
 const result = useFormat()
 ```
@@ -79,7 +79,7 @@ const result = useFormat()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useFormat } from '@elonehoo/vue-hooks'
+import { useFormat } from '@elonehoo/pistachio'
 
 const inputFormat = ref('{0} {1}')
 const args = ref([ref('hello'), ref('world')])

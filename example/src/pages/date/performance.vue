@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePerformance } from '@elonehoo/vue-hooks'
+import { usePerformance } from '@elonehoo/pistachio'
 
 const { now } = usePerformance()
 </script>

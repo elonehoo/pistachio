@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMatchMedia } from '@elonehoo/vue-hooks'
+import { useMatchMedia } from '@elonehoo/pistachio'
 
 const { matches } = useMatchMedia('(max-width: 600px)')
 </script>

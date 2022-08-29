@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import { useMouse } from "@elonehoo/vue-hooks"
+import { useMouse } from "@elonehoo/pistachio"
 
 const elref = ref<any>(null);
 const state = reactive({
@@ -28,7 +28,7 @@ Base composable used in the other element composables
 The useMouse function returns a remove function
 
 ```typescript
-import { useMouse } from '@elonehoo/vue-hooks'
+import { useMouse } from '@elonehoo/pistachio'
 
 const remove = useMouse(element, name, listener)
 ```
@@ -45,7 +45,7 @@ const remove = useMouse(element, name, listener)
 ```vue
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import { useMouse } from '@elonehoo/vue-hooks'
+import { useMouse } from '@elonehoo/pistachio'
 
 const elref = ref<any>(null)
 const state = reactive({

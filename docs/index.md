@@ -2,16 +2,16 @@
 layout: home
 sidebar: false
 
-title: vue-hooks
+title: pistachio
 titleTemplate: out-of-the-box ready to use composables
 
 hero:
-  name: vue-hooks
+  name: pistachio
   text: Collection of Vue Composition Utilities
   tagline: out-of-the-box ready to use composables
   image:
     src: /logo.svg
-    alt: vue-hooks
+    alt: pistachio
   actions:
     - theme: brand
       text: Get Started
@@ -20,11 +20,11 @@ hero:
       text: Composable
       link: /composable/mouse
     - theme: alt
-      text: Why Vue-hooks?
+      text: Why Pistachio?
       link: /guide/why
     - theme: alt
       text: View on GitHub
-      link: https://github.com/elonehoo/vue-hooks
+      link: https://github.com/elonehoo/pistachio
 
 features:
   - title: Composition

@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import { useBreakpoint } from '@elonehoo/vue-hooks'
+import { useBreakpoint } from '@elonehoo/pistachio'
 
 const {current,S,L,XL} = useBreakpoint({ XL: 1280, L: 768, S: "(min-width: 320px)" });
 </script>
@@ -21,7 +21,7 @@ If `number` or `{number}px` it checks the defined breakpoint against `window.inn
 The `useBreakpoint` function exposes the following reactive state:
 
 ```typescript
-import { useBreakpoint } from '@elonehoo/vue-hooks'
+import { useBreakpoint } from '@elonehoo/pistachio'
 
 const { current, /* properties from the arguments */ L, XL } = useBreakpoint({
   L: 720,
@@ -40,7 +40,7 @@ const { current, /* properties from the arguments */ L, XL } = useBreakpoint({
 The `useBreakpoint` function exposes the following methods:
 
 ```typescript
-import { useBreakpoint } from '@elonehoo/vue-hooks'
+import { useBreakpoint } from '@elonehoo/pistachio'
 
 const { remove } = useBreakpoint()
 ```
@@ -61,7 +61,7 @@ const { remove } = useBreakpoint()
 
 ```vue
 <script setup lang="ts">
-import { useBreakpoint } from '@elonehoo/vue-hooks'
+import { useBreakpoint } from '@elonehoo/pistachio'
 
 const { current, S, L, XL } = useBreakpoint({ XL: 1280, L: 768, S: '(min-width: 320px)' })
 </script>

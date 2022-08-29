@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouseMove } from '@elonehoo/vue-hooks'
+import { useMouseMove } from '@elonehoo/pistachio'
 
 const elref = ref(null)
 

@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-  import {useNow} from '@elonehoo/vue-hooks'
+  import {useNow} from '@elonehoo/pistachio'
   let i = 0;
   const now = useNow({
     timeFn: () => ++i
@@ -17,7 +17,7 @@ outline: deep
 ## Parameters
 
 ```typescript
-import { useNow } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/pistachio'
 
 const now = useNow({
   refreshMs?: Number,
@@ -37,7 +37,7 @@ const now = useNow({
 The `useNow` function exposes the following reactive state:
 
 ```typescript
-import { useNow } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/pistachio'
 
 const { now } = useNow()
 ```
@@ -51,7 +51,7 @@ const { now } = useNow()
 The `useNow` function exposes the following methods:
 
 ```typescript
-import { useNow } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/pistachio'
 
 const { remove } = useNow()
 ```
@@ -70,7 +70,7 @@ const { remove } = useNow()
 
 ```vue
 <script setup lang="ts">
-import { useNow } from '@elonehoo/vue-hooks'
+import { useNow } from '@elonehoo/pistachio'
 let i = 0
 const now = useNow({
   timeFn: () => ++i

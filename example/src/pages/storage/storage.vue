@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useLocalStorage, useStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage, useStorage } from '@elonehoo/pistachio'
 import { ref, watch } from 'vue'
 
 const key = '__vue_storage_example'

@@ -1,6 +1,6 @@
 import type { IWindow } from 'happy-dom'
-import type { ScrollResult } from '@elonehoo/vue-hooks'
-import { promisedTimeout, useScroll } from '@elonehoo/vue-hooks'
+import type { ScrollResult } from '@elonehoo/pistachio'
+import { promisedTimeout, useScroll } from '@elonehoo/pistachio'
 import { afterAll, afterEach, beforeEach, describe, expect, it, test, vi } from 'vitest'
 import { createVue, nextTick } from '../utils'
 

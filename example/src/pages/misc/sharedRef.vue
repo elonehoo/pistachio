@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 import { computed } from 'vue'
 
 const sharedRef = useSharedRef('test-shared-ref', 0)

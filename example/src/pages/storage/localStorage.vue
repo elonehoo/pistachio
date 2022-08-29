@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const key = '__vue_localStorage_example'
 const tabSync = ref(false)

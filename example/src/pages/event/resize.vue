@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useResize } from '@elonehoo/vue-hooks'
+import { useResize } from '@elonehoo/pistachio'
 
 const { height, width, remove } = useResize(document.body)
 

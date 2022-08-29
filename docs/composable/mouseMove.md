@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
   import {ref} from 'vue'
-  import {useMouseMove} from '@elonehoo/vue-hooks'
+  import {useMouseMove} from '@elonehoo/pistachio'
 
   const elref = ref(null);
 
@@ -20,7 +20,7 @@ outline: deep
 The `useMouseMove` function exposes the following reactive state:
 
 ```typescript
-import { useMouseMove } from '@elonehoo/vue-hooks'
+import { useMouseMove } from '@elonehoo/pistachio'
 
 const { mouseX, mouseY } = useMouseMove()
 ```
@@ -37,7 +37,7 @@ const { mouseX, mouseY } = useMouseMove()
 The useOnMouseMove function exposes the following methods:
 
 ```typescript
-import { useMouseMove } from '@elonehoo/vue-hooks'
+import { useMouseMove } from '@elonehoo/pistachio'
 
 const { remove } = useMouseMove()
 ```
@@ -60,7 +60,7 @@ const { remove } = useMouseMove()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouseMove } from '@elonehoo/vue-hooks'
+import { useMouseMove } from '@elonehoo/pistachio'
 
 const elref = ref(null)
 

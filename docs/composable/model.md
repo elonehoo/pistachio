@@ -17,7 +17,7 @@ const myValue = ref("MyValue");
 ## Parameters
 
 ```typescript
-import { useModel } from '@elonehoo/vue-hooks'
+import { useModel } from '@elonehoo/pistachio'
 
 useModel(props, propName)
 ```
@@ -32,7 +32,7 @@ useModel(props, propName)
 The `useModel` function exposes the following reactive state:
 
 ```typescript
-import { useModel } from '@elonehoo/vue-hooks'
+import { useModel } from '@elonehoo/pistachio'
 
 const myValue = useModel(props, "myValue")
 ```

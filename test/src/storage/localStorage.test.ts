@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { promisedTimeout, useLocalStorage, useWebStorage } from '@elonehoo/vue-hooks'
+import { promisedTimeout, useLocalStorage, useWebStorage } from '@elonehoo/pistachio'
 import { ref } from 'vue'
 import { nextTick } from '../utils'
 

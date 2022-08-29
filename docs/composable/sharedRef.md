@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 import { computed } from 'vue'
 
 const sharedRef = useSharedRef('test-shared-ref', 0)
@@ -36,7 +36,7 @@ You can use short version [refShared](./refShared)
 ## Parameters
 
 ```typescript
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 
 const sharedRef = useSharedRef(name, defaultValue?)
 ```
@@ -51,7 +51,7 @@ const sharedRef = useSharedRef(name, defaultValue?)
 The `useSharedRef` function exposes the following reactive state:
 
 ```typescript
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 
 const { supported, id, data, master, mind, editable, targets } = useSharedRef()
 ```
@@ -61,7 +61,7 @@ const { supported, id, data, master, mind, editable, targets } = useSharedRef()
 The `useSharedRef` function exposes the following methods:
 
 ```typescript
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 
 const { ping, setMind, addListener } = useSharedRef()
 ```
@@ -120,7 +120,7 @@ If the master instance gets destroyed (the component unmounted or tab closed) a 
 
 ```vue
 <script setup lang="ts">
-import { useSharedRef } from '@elonehoo/vue-hooks'
+import { useSharedRef } from '@elonehoo/pistachio'
 import { computed } from 'vue'
 
 const sharedRef = useSharedRef('test-shared-ref', 0)

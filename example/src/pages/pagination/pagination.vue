@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { usePagination } from '@elonehoo/vue-hooks'
+import { usePagination } from '@elonehoo/pistachio'
 
 const arrayRef = ref(new Array(100).fill(1).map((_, i) => i))
 // paginate array

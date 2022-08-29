@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const key = '__vue_localStorage_example'
 const tabSync = ref(false)
@@ -19,7 +19,7 @@ watch(tabSync, setSync)
 ## Parameters
 
 ```typescript
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const localStorage = useLocalStorage(key, defaultValue?, sync?)
 ```
@@ -35,7 +35,7 @@ const localStorage = useLocalStorage(key, defaultValue?, sync?)
 The `useLocalStorage` function exposes the following reactive state:
 
 ```typescript
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const { supported, storage } = useLocalStorage(key)
 ```
@@ -50,7 +50,7 @@ const { supported, storage } = useLocalStorage(key)
 The `useLocalStorage` function exposes the following methods:
 
 ```typescript
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const { remove, clear, setSync } = useLocalStorage(key)
 ```
@@ -98,7 +98,7 @@ When using `sync: true`, only the last ref per key will be able to update
 ```vue
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useLocalStorage } from '@elonehoo/vue-hooks'
+import { useLocalStorage } from '@elonehoo/pistachio'
 
 const key = '__vue_localStorage_example'
 const tabSync = ref(false)

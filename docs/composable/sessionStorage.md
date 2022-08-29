@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import {useSessionStorage} from '@elonehoo/vue-hooks'
+import {useSessionStorage} from '@elonehoo/pistachio'
 
 const key = "__vue_sessionStorage_example";
 const { supported, storage, remove } = useSessionStorage(key, 1);
@@ -16,7 +16,7 @@ const { supported, storage, remove } = useSessionStorage(key, 1);
 ## Parameters
 
  ```typescript
-import { useSessionStorage } from '@elonehoo/vue-hooks'
+import { useSessionStorage } from '@elonehoo/pistachio'
 
 const SessionStorage = useSessionStorage(key, defaultValue?, sync?)
  ```
@@ -31,7 +31,7 @@ const SessionStorage = useSessionStorage(key, defaultValue?, sync?)
 The `useSessionStorage` function exposes the following methods:
 
 ```typescript
-import { useSessionStorage } from '@elonehoo/vue-hooks'
+import { useSessionStorage } from '@elonehoo/pistachio'
 
 const { remove, clear, setSync } = useSessionStorage(key)
 ```
@@ -72,7 +72,7 @@ const { remove, clear, setSync } = useSessionStorage(key)
 
 ```vue
 <script setup lang="ts">
-import { useSessionStorage } from '@elonehoo/vue-hooks'
+import { useSessionStorage } from '@elonehoo/pistachio'
 
 const key = '__vue_sessionStorage_example'
 const { supported, storage, remove } = useSessionStorage(key, 1)

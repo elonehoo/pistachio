@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { usePath } from '@elonehoo/vue-hooks'
+import { usePath } from '@elonehoo/pistachio'
 import { beforeEach, describe, expect, it, test, vi } from 'vitest'
 
 describe('path', () => {

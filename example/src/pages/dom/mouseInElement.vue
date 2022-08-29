@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouseInElement } from '@elonehoo/vue-hooks'
+import { useMouseInElement } from '@elonehoo/pistachio'
 
 const el = ref(null)
 const { distance } = useMouseInElement(el)

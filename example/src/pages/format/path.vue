@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePath } from '@elonehoo/vue-hooks'
+import { usePath } from '@elonehoo/pistachio'
 import { computed, ref } from 'vue'
 
 const inputPath = ref('user.name')

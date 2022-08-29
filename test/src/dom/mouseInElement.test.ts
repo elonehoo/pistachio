@@ -1,6 +1,6 @@
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import { useMouseInElement, useMouseMove } from '@elonehoo/vue-hooks'
+import { useMouseInElement, useMouseMove } from '@elonehoo/pistachio'
 import type { Mock } from 'vitest'
 import { beforeEach, describe, expect, it, test, vi } from 'vitest'
 import { nextTick } from '../utils'

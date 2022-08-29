@@ -7,7 +7,7 @@
 Check [useBreakpoint](./breakpoint.md) for more detailed usage
 
 ```typescript
-import { useBreakpointChrome } from '@elonehoo/vue-hooks'
+import { useBreakpointChrome } from '@elonehoo/pistachio'
 
 useBreakpointChrome();
 /* Equivalent of:

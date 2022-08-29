@@ -1,5 +1,5 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { useInjectFactory } from '@elonehoo/vue-hooks'
+import { useInjectFactory } from '@elonehoo/pistachio'
 import { createVue } from '../utils'
 
 describe('useInjectFactory', () => {

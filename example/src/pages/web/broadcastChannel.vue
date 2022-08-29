@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useBroadcastChannel } from '@elonehoo/vue-hooks'
+import { useBroadcastChannel } from '@elonehoo/pistachio'
 
 const { supported, data, send } = useBroadcastChannel('composable-example')
 const message = ref('')

@@ -1,6 +1,6 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { UseIntervalReturn, UseIntervalReturnArgs, UseIntervalReturnMs } from '@elonehoo/vue-hooks'
-import { useInterval } from '@elonehoo/vue-hooks'
+import type { UseIntervalReturn, UseIntervalReturnArgs, UseIntervalReturnMs } from '@elonehoo/pistachio'
+import { useInterval } from '@elonehoo/pistachio'
 import { createVue } from '../utils'
 
 describe.skip('interval', () => {

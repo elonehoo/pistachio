@@ -5,7 +5,7 @@
 ## Parameters
 
 ```typescript
-import { useWebStorage } from '@elonehoo/vue-hooks'
+import { useWebStorage } from '@elonehoo/pistachio'
 
 const webStorage = useWebStorage(type, serializer?, delayMs?)
 ```
@@ -21,7 +21,7 @@ const webStorage = useWebStorage(type, serializer?, delayMs?)
 The `useWebStorage` function exposes the following reactive state:
 
 ```typescript
-import { useWebStorage } from '@elonehoo/vue-hooks'
+import { useWebStorage } from '@elonehoo/pistachio'
 
 const { supported, quotaError, store } = useWebStorage()
 ```
@@ -37,7 +37,7 @@ const { supported, quotaError, store } = useWebStorage()
 The `useWebStorage` function exposes the following methods:
 
 ```typescript
-import { useWebStorage } from '@elonehoo/vue-hooks'
+import { useWebStorage } from '@elonehoo/pistachio'
 
 const { remove } = useWebStorage()
 ```

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 
 const elref = ref(null)
 

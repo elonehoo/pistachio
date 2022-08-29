@@ -1,5 +1,5 @@
 {
-  "name": "@elonehoo/vue-hooks-docs",
+  "name": "@elonehoo/pistachio-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@elonehoo/vue-hooks":"workspace:*",
+    "@elonehoo/pistachio":"workspace:*",
     "vitepress": "1.0.0-alpha.12"
   }
 }

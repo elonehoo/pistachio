@@ -35,22 +35,22 @@ importers:
 
   docs:
     specifiers:
-      '@elonehoo/vue-hooks': workspace:*
+      '@elonehoo/pistachio': workspace:*
       vitepress: 1.0.0-alpha.12
     devDependencies:
-      '@elonehoo/vue-hooks': link:../packages/core
+      '@elonehoo/pistachio': link:../packages/core
       vitepress: 1.0.0-alpha.12_tbpndr44ulefs3hehwpi2mkf2y
 
   example:
     specifiers:
-      '@elonehoo/vue-hooks': workspace:*
+      '@elonehoo/pistachio': workspace:*
       '@vitejs/plugin-vue': 3.0.3
       '@vue/compiler-sfc': 3.2.37
       vue-router: 4.1.5
     dependencies:
       vue-router: 4.1.5_vue@3.2.37
     devDependencies:
-      '@elonehoo/vue-hooks': link:../packages/core
+      '@elonehoo/pistachio': link:../packages/core
       '@vitejs/plugin-vue': 3.0.3_vite@3.0.9+vue@3.2.37
       '@vue/compiler-sfc': 3.2.37
 
@@ -64,11 +64,11 @@ importers:
 
   test:
     specifiers:
-      '@elonehoo/vue-hooks': workspace:*
+      '@elonehoo/pistachio': workspace:*
       c8: ^7.12.0
       vitest: ^0.21.0
     devDependencies:
-      '@elonehoo/vue-hooks': link:../packages/core
+      '@elonehoo/pistachio': link:../packages/core
       c8: 7.12.0
       vitest: 0.21.1_c8@7.12.0
 

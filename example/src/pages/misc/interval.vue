@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useInterval } from '@elonehoo/vue-hooks'
+import { useInterval } from '@elonehoo/pistachio'
 
 const date = ref()
 

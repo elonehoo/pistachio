@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 
 const elref = ref(null);
 
@@ -18,7 +18,7 @@ useOutsidePress(elref, () => console.log("clicked outside"))
 ## Parameters
 
 ```typescript
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 
 useOutsidePress(element, callback)
 ```
@@ -33,7 +33,7 @@ useOutsidePress(element, callback)
 The `useOutsidePress` function exposes the following methods:
 
 ```typescript
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 
 const remove = useOutsidePress()
 ```
@@ -53,7 +53,7 @@ const remove = useOutsidePress()
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useOutsidePress } from '@elonehoo/vue-hooks'
+import { useOutsidePress } from '@elonehoo/pistachio'
 
 const elref = ref(null)
 

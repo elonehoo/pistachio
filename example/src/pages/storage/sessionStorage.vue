@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSessionStorage } from '@elonehoo/vue-hooks'
+import { useSessionStorage } from '@elonehoo/pistachio'
 
 const key = '__vue_sessionStorage_example'
 const { supported, storage, remove } = useSessionStorage(key, 1)

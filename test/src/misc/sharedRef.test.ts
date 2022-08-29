@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { BroadcastMessageEvent, RefSharedMessage } from '@elonehoo/vue-hooks'
-import { RefSharedMessageType, SharedRefMind, useRefShared, useSharedRef } from '@elonehoo/vue-hooks'
+import type { BroadcastMessageEvent, RefSharedMessage } from '@elonehoo/pistachio'
+import { RefSharedMessageType, SharedRefMind, useRefShared, useSharedRef } from '@elonehoo/pistachio'
 import { getCurrentInstance } from 'vue'
 import { createVue, nextTick } from '../utils'
 

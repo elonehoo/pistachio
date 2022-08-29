@@ -1,4 +1,4 @@
-import { unwrap, useFormat } from '@elonehoo/vue-hooks'
+import { unwrap, useFormat } from '@elonehoo/pistachio'
 import { ref } from 'vue'
 import { describe, expect, it } from 'vitest'
 import { nextTick } from '../utils'
