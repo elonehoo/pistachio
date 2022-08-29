@@ -212,6 +212,15 @@ export default defineConfig({
           ],
         },
         {
+          text: 'pagination',
+          items: [
+            {
+              text: 'pagination',
+              link: '/composable/pagination',
+            },
+          ],
+        },
+        {
           text: 'web',
           items: [
             {

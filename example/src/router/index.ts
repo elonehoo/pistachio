@@ -23,6 +23,7 @@ import refShared from '~/pages/misc/refShared.vue'
 import localStorage from '~/pages/storage/localStorage.vue'
 import sessionStorage from '~/pages/storage/sessionStorage.vue'
 import storage from '~/pages/storage/storage.vue'
+import pagination from '~/pages/pagination/pagination.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -118,6 +119,10 @@ const router = createRouter({
     {
       path: '/storage',
       component: storage,
+    },
+    {
+      path: '/pagination',
+      component: pagination,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
