@@ -1,27 +1,28 @@
-import { ref, Ref, toRaw } from 'vue'
+import type { Ref } from 'vue'
+import { ref, toRaw } from 'vue'
 import { isBoolean, isObject } from '../utils'
 
 type PromiseType<T extends Promise<any>> = T extends Promise<infer R>
   ? R
-  : never;
+  : never
 
 interface PromiseResult<
   T extends Promise<any>,
   TR = PromiseType<T>,
-  TError = any
+  TError = any,
 > {
-  promise: Ref<T | undefined>;
-  result: Ref<TR | null>;
+  promise: Ref<T | undefined>
+  result: Ref<TR | null>
 
-  loading: Ref<boolean>;
-  error: Ref<TError>;
+  loading: Ref<boolean>
+  error: Ref<TError>
 }
 
 export interface PromiseResultFactory<
   T extends Promise<any>,
-  TArgs extends Array<any> = Array<any>
+  TArgs extends Array<any> = Array<any>,
 > extends PromiseResult<T> {
-  exec: (...args: TArgs) => Promise<PromiseType<T> | undefined>;
+  exec: (...args: TArgs) => Promise<PromiseType<T> | undefined>
 }
 
 export interface PromiseOptions {
@@ -29,13 +30,13 @@ export interface PromiseOptions {
    * @description if `true` allows to catch exception when `exec()`
    * @default false
    */
-  throwException?: boolean;
+  throwException?: boolean
 
   /**
    * @description Only executes on `exec`
    * @default false
    */
-  lazy?: boolean;
+  lazy?: boolean
 }
 
 /**
@@ -46,129 +47,129 @@ export interface PromiseOptions {
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => Promise<T>,
   lazy?: boolean
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => Promise<T>,
   options: PromiseOptions
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => Promise<T>
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => T,
   lazy: boolean
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => T,
   options: PromiseOptions
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any, TArgs extends Array<any> = Array<any>>(
   fn: (...args: TArgs) => T
-): PromiseResultFactory<Promise<T>, TArgs>;
+): PromiseResultFactory<Promise<T>, TArgs>
 
 export function usePromise<T = any>(
   fn: () => Promise<T>,
   lazy: boolean
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T = any>(
   fn: () => Promise<T>,
   options: PromiseOptions
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T = any>(
   fn: () => Promise<T>
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T = any>(
   fn: () => T,
   lazy: boolean
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T = any>(
   fn: () => T,
   options: PromiseOptions
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T = any>(
   fn: () => T
-): PromiseResultFactory<Promise<T>>;
+): PromiseResultFactory<Promise<T>>
 
 export function usePromise<T extends Promise<any>, TArgs extends Array<any>>(
   fn: (...args: TArgs) => T,
-  lazyOptions?: PromiseOptions | boolean
+  lazyOptions?: PromiseOptions | boolean,
 ): PromiseResultFactory<T, TArgs> {
-  if (!fn) {
-    throw new Error(`[usePromise] argument can't be '${fn}'`);
-  }
-  if (typeof fn !== "function") {
-    throw new Error(`[usePromise] expects function, but received ${typeof fn}`);
-  }
+  if (!fn)
+    throw new Error(`[usePromise] argument can't be '${fn}'`)
+
+  if (typeof fn !== 'function')
+    throw new Error(`[usePromise] expects function, but received ${typeof fn}`)
 
   const [lazy, throwException] = isBoolean(lazyOptions)
     ? [lazyOptions, false]
     : isObject(lazyOptions)
-    ? [lazyOptions.lazy, lazyOptions.throwException]
-    : [false, false];
+      ? [lazyOptions.lazy, lazyOptions.throwException]
+      : [false, false]
 
-  const loading = ref(false);
-  const error = ref<any>(null);
-  const result: Ref<PromiseType<T> | null> = ref(null);
-  const promise = ref<T>();
+  const loading = ref(false)
+  const error = ref<any>(null)
+  const result: Ref<PromiseType<T> | null> = ref(null)
+  const promise = ref<T>()
 
   const exec = async (...args: TArgs): Promise<PromiseType<T> | undefined> => {
-    loading.value = true;
-    error.value = null;
+    loading.value = true
+    error.value = null
 
-    const throwExp =
-      args &&
-      fn.length !== args.length &&
-      args.length > 0 &&
-      isBoolean(args[args.length - 1])
+    const throwExp
+      = args
+      && fn.length !== args.length
+      && args.length > 0
+      && isBoolean(args[args.length - 1])
         ? args[args.length - 1]
-        : throwException;
+        : throwException
 
-    const currentPromise = (promise.value = fn(...args));
+    const currentPromise = (promise.value = fn(...args))
     try {
-      const r = await currentPromise;
-      if (promise.value === currentPromise) {
-        result.value = r;
-      }
-      return r;
-    } catch (er) {
+      const r = await currentPromise
+      if (promise.value === currentPromise)
+        result.value = r
+
+      return r
+    }
+    catch (er) {
       if (toRaw(promise.value) === toRaw(currentPromise)) {
-        error.value = er;
-        result.value = null;
+        error.value = er
+        result.value = null
       }
-      if(throwExp){
+      if (throwExp)
         throw er
-      }
+
       return undefined
       // return throwExp ? currentPromise : undefined;
-    } finally {
-      if (promise.value === currentPromise) {
-        loading.value = false;
-      }
     }
-  };
+    finally {
+      if (promise.value === currentPromise)
+        loading.value = false
+    }
+  }
 
   if (!lazy) {
     /* istanbul ignore else */
-      if (
-        fn.length > 0 &&
-        !isBoolean(isObject(lazyOptions) ? lazyOptions.lazy : lazyOptions)
-      ) {
-        console.warn(
-          "[usePromise] parameters detected on `fn` factory. Executing promise without arguments."
-        );
-      }
-    // @ts-ignore
-    exec();
+    if (
+      fn.length > 0
+        && !isBoolean(isObject(lazyOptions) ? lazyOptions.lazy : lazyOptions)
+    ) {
+      console.warn(
+        '[usePromise] parameters detected on `fn` factory. Executing promise without arguments.',
+      )
+    }
+    // @ts-expect-error
+    exec()
   }
 
   return {
@@ -177,5 +178,5 @@ export function usePromise<T extends Promise<any>, TArgs extends Array<any>>(
     promise,
     loading,
     error,
-  };
+  }
 }

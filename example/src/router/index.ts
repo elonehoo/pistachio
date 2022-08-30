@@ -128,11 +128,11 @@ const router = createRouter({
     },
     {
       path: '/arrayPagination',
-      component: arrayPagination
+      component: arrayPagination,
     },
     {
       path: '/promise',
-      component: promise
+      component: promise,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

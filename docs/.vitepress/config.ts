@@ -220,8 +220,8 @@ export default defineConfig({
             },
             {
               text: 'arrayPagination',
-              link: '/composable/arrayPagination'
-            }
+              link: '/composable/arrayPagination',
+            },
           ],
         },
         {
@@ -229,9 +229,9 @@ export default defineConfig({
           items: [
             {
               text: 'promise',
-              link: '/composable/promise'
-            }
-          ]
+              link: '/composable/promise',
+            },
+          ],
         },
         {
           text: 'web',

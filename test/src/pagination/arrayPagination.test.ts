@@ -1,47 +1,47 @@
-import { useArrayPagination } from "@elonehoo/pistachio";
-import { nextTick } from '../utils'
+import { useArrayPagination } from '@elonehoo/pistachio'
 import { ref } from 'vue'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import { nextTick } from '../utils'
 
-describe("arrayPagination", () => {
-  it("should get correct array slice", async () => {
-    const array = new Array(100).map((x, i) => i);
+describe('arrayPagination', () => {
+  it('should get correct array slice', async () => {
+    const array = new Array(100).map((x, i) => i)
     const use = useArrayPagination(array, {
       currentPage: 1,
-      pageSize: 10
-    });
+      pageSize: 10,
+    })
 
-    expect(use.result.value).toMatchObject(array.slice(0, 10));
+    expect(use.result.value).toMatchObject(array.slice(0, 10))
 
-    use.currentPage.value++;
-    await nextTick();
+    use.currentPage.value++
+    await nextTick()
 
-    expect(use.result.value).toMatchObject(array.slice(10, 20));
-  });
+    expect(use.result.value).toMatchObject(array.slice(10, 20))
+  })
 
-  it("should update result if array changes", async () => {
-    const arr = ref(new Array(10).map((x, i) => i));
+  it('should update result if array changes', async () => {
+    const arr = ref(new Array(10).map((x, i) => i))
     const use = useArrayPagination(arr, {
       currentPage: 1,
-      pageSize: 10
-    });
+      pageSize: 10,
+    })
 
-    expect(use.result.value).toMatchObject(arr.value.slice(0, 10));
+    expect(use.result.value).toMatchObject(arr.value.slice(0, 10))
 
-    arr.value.push(-1);
-    expect(use.result.value).toMatchObject(arr.value.slice(0, 10));
-  });
+    arr.value.push(-1)
+    expect(use.result.value).toMatchObject(arr.value.slice(0, 10))
+  })
 
-  it("should set empty array if the array becomes invalid array", async () => {
-    const arr = ref(new Array(10).map((x, i) => i));
+  it('should set empty array if the array becomes invalid array', async () => {
+    const arr = ref(new Array(10).map((x, i) => i))
     const use = useArrayPagination(arr, {
       currentPage: 1,
-      pageSize: 10
-    });
+      pageSize: 10,
+    })
 
-    expect(use.result.value).toMatchObject(arr.value.slice(0, 10));
+    expect(use.result.value).toMatchObject(arr.value.slice(0, 10))
 
-    arr.value = 1 as any;
-    expect(use.result.value).toHaveLength(0);
-  });
-});
+    arr.value = 1 as any
+    expect(use.result.value).toHaveLength(0)
+  })
+})
