@@ -225,6 +225,15 @@ export default defineConfig({
           ],
         },
         {
+          text: 'promise',
+          items: [
+            {
+              text: 'promise',
+              link: '/composable/promise'
+            }
+          ]
+        },
+        {
           text: 'web',
           items: [
             {

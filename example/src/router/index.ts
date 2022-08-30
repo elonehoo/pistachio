@@ -25,6 +25,7 @@ import sessionStorage from '~/pages/storage/sessionStorage.vue'
 import storage from '~/pages/storage/storage.vue'
 import pagination from '~/pages/pagination/pagination.vue'
 import arrayPagination from '~/pages/pagination/arrayPagination.vue'
+import promise from '~/pages/promisel/promise.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -128,6 +129,10 @@ const router = createRouter({
     {
       path: '/arrayPagination',
       component: arrayPagination
+    },
+    {
+      path: '/promise',
+      component: promise
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],
