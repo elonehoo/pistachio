@@ -1,41 +1,38 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-vi.mock('usePromise',()=>{
+import { usePromise, usePromiseLazy } from '@elonehoo/pistachio'
+
+vi.mock('usePromise', () => {
   return {
-    default: {default:vi.fn()},
-    usePromise: vi.fn()
+    default: { default: vi.fn() },
+    usePromise: vi.fn(),
   }
 })
 
-import { usePromiseLazy,usePromise } from '@elonehoo/pistachio'
-
-
-
-
-describe.skip("lazyPromise", () => {
-  it("should usePromise with lazy: true", () => {
-    const factory = () => {};
-    usePromiseLazy(factory);
+describe.skip('lazyPromise', () => {
+  it('should usePromise with lazy: true', () => {
+    const factory = () => {}
+    usePromiseLazy(factory)
 
     expect(usePromise).toHaveBeenCalledWith(
       factory,
       expect.objectContaining({
         lazy: true,
-        throwException: false
-      })
-    );
-  });
+        throwException: false,
+      }),
+    )
+  })
 
-  it("should usePromise with throwException: true", () => {
-    const factory = () => {};
-    usePromiseLazy(factory, true);
+  it('should usePromise with throwException: true', () => {
+    const factory = () => {}
+    usePromiseLazy(factory, true)
 
     expect(usePromise).toHaveBeenCalledWith(
       factory,
       expect.objectContaining({
         lazy: true,
-        throwException: true
-      })
-    );
-  });
-});
+        throwException: true,
+      }),
+    )
+  })
+})

@@ -231,6 +231,10 @@ export default defineConfig({
               text: 'promise',
               link: '/composable/promise',
             },
+            {
+              text: 'lazyPromise',
+              link: '/composable/lazyPromise',
+            },
           ],
         },
         {
