@@ -218,6 +218,10 @@ export default defineConfig({
               text: 'pagination',
               link: '/composable/pagination',
             },
+            {
+              text: 'arrayPagination',
+              link: '/composable/arrayPagination'
+            }
           ],
         },
         {
