@@ -235,6 +235,10 @@ export default defineConfig({
               text: 'lazyPromise',
               link: '/composable/lazyPromise',
             },
+            {
+              text: 'cancellablePromise',
+              link: '/composable/CancellablePromise',
+            },
           ],
         },
         {
