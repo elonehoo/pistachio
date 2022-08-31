@@ -1,4 +1,4 @@
-## useLazyPromise
+# useLazyPromise
 
 > Sugar for [usePromise](./promise)
 >
