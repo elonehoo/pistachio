@@ -15,11 +15,11 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@vue/compiler-dom": "3.2.37",
+    "@vue/compiler-dom": "3.2.38",
     "@vue/devtools-api": "6.2.1",
-    "@vue/runtime-dom": "3.2.37",
-    "@vue/shared": "3.2.37",
-    "vue": "3.2.37"
+    "@vue/runtime-dom": "3.2.38",
+    "@vue/shared": "3.2.38",
+    "vue": "3.2.38"
   },
   "devDependencies": {
     "@elonehoo/eslint-config": "2.0.0",
