@@ -237,7 +237,7 @@ export default defineConfig({
             },
             {
               text: 'cancellablePromise',
-              link: '/composable/CancellablePromise',
+              link: '/composable/cancellablePromise',
             },
           ],
         },
