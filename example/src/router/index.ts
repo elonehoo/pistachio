@@ -137,7 +137,7 @@ const router = createRouter({
     },
     {
       path: '/cancellablePromise',
-      component: cancellablePromise
+      component: cancellablePromise,
     },
     { path: '/:pathMatch(.*)*', component: All },
   ],

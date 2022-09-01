@@ -24,9 +24,9 @@ export const isObject = (val: unknown): val is Record<any, any> => val !== null 
 export const isString = (val: unknown): val is string => typeof val === 'string'
 export const isFunction = (val: unknown): val is Function => typeof val === 'function'
 export function isPromise<T = any>(val: unknown): val is Promise<T> {
-  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch)
 }
-export const isDate = (val: unknown): val is Date =>isObject(val) && isFunction(val.getTime);
+export const isDate = (val: unknown): val is Date => isObject(val) && isFunction(val.getTime)
 
 export const NO_OP = () => {}
 

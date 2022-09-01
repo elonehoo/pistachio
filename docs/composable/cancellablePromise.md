@@ -134,23 +134,29 @@ const {
   result
 } = useCancellablePromise(delay =>
   fetch(`https://reqres.in/api/users?delay=${delay}`).then(x => x.json())
-);
+)
 
-const delay = ref(1);
+const delay = ref(1)
 </script>
 
 <template>
   <div>
     <div>
       <label for="delayPromise">Delay seconds</label>
-      <input name="delayPromise" v-model="delay" />
+      <input v-model="delay" name="delayPromise">
     </div>
     <div>
-      <button @click="exec(delay)" :disabled="loading">Execute</button>
-      <button @click="cancel()" :disabled="!loading">Cancel</button>
+      <button :disabled="loading" @click="exec(delay)">
+        Execute
+      </button>
+      <button :disabled="!loading" @click="cancel()">
+        Cancel
+      </button>
     </div>
 
-    <div v-if="loading">loading...</div>
+    <div v-if="loading">
+      loading...
+    </div>
     <div v-else-if="cancelled">
       <p>Request cancelled</p>
       <p>Result: {{ result }}</p>
