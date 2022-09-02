@@ -248,6 +248,10 @@ export default defineConfig({
               text: 'broadcastChannel',
               link: '/composable/broadcastChannel',
             },
+            {
+              text: 'fetch',
+              link: '/composable/fetch',
+            },
           ],
         },
       ],

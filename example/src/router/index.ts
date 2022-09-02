@@ -27,6 +27,7 @@ import pagination from '~/pages/pagination/pagination.vue'
 import arrayPagination from '~/pages/pagination/arrayPagination.vue'
 import promise from '~/pages/promise/promise.vue'
 import cancellablePromise from '~/pages/promise/cancellablePromise.vue'
+import fetch from '~/pages/web/fetch.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/fetch',
+      component: fetch
     },
     {
       path: '/mouse',
