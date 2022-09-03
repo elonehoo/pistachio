@@ -39,11 +39,11 @@ const router = createRouter({
     },
     {
       path: '/fetch',
-      component: fetch
+      component: fetch,
     },
     {
-      path:'/webSocket',
-      component: webSocket
+      path: '/webSocket',
+      component: webSocket,
     },
     {
       path: '/mouse',

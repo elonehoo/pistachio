@@ -254,8 +254,8 @@ export default defineConfig({
             },
             {
               text: 'webSocket',
-              link: '/composable/web/webSocket'
-            }
+              link: '/composable/web/webSocket',
+            },
           ],
         },
       ],

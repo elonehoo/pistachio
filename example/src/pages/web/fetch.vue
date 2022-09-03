@@ -2,12 +2,12 @@
 import { ref, watch } from 'vue'
 import { useFetch } from '@elonehoo/pistachio'
 
-const id = ref(1);
-    const { json, loading, exec, status } = useFetch();
+const id = ref(1)
+const { json, loading, exec, status } = useFetch()
 
-    watch(id, id => {
-      exec("https://reqres.in/api/user/" + id);
-    });
+watch(id, (id) => {
+  exec(`https://reqres.in/api/user/${id}`)
+})
 </script>
 
 <template>
@@ -15,9 +15,13 @@ const id = ref(1);
     <h3>Using <b>reqres.in</b> API</h3>
     <p>current Id {{ id }}</p>
     <p>
-      <button @click="id--">prev</button>
+      <button @click="id--">
+        prev
+      </button>
       &nbsp;
-      <button @click="id++">next</button>
+      <button @click="id++">
+        next
+      </button>
     </p>
     <p v-if="loading">
       loading...
