@@ -29,6 +29,7 @@ import promise from '~/pages/promise/promise.vue'
 import cancellablePromise from '~/pages/promise/cancellablePromise.vue'
 import fetch from '~/pages/web/fetch.vue'
 import webSocket from '~/pages/web/webSocket.vue'
+import intersectionObserver from '~/pages/web/intersectionObserver.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/intersectionObserver',
+      component: intersectionObserver
     },
     {
       path: '/fetch',

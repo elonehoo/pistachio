@@ -256,6 +256,10 @@ export default defineConfig({
               text: 'webSocket',
               link: '/composable/web/webSocket',
             },
+            {
+              text: 'intersectionObserver',
+              link:'/composable/web/intersectionObserver'
+            },
           ],
         },
       ],
