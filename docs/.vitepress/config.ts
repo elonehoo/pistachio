@@ -252,6 +252,10 @@ export default defineConfig({
               text: 'fetch',
               link: '/composable/web/fetch',
             },
+            {
+              text: 'webSocket',
+              link: '/composable/web/webSocket'
+            }
           ],
         },
       ],

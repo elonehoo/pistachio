@@ -28,6 +28,7 @@ import arrayPagination from '~/pages/pagination/arrayPagination.vue'
 import promise from '~/pages/promise/promise.vue'
 import cancellablePromise from '~/pages/promise/cancellablePromise.vue'
 import fetch from '~/pages/web/fetch.vue'
+import webSocket from '~/pages/web/webSocket.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,10 @@ const router = createRouter({
     {
       path: '/fetch',
       component: fetch
+    },
+    {
+      path:'/webSocket',
+      component: webSocket
     },
     {
       path: '/mouse',
