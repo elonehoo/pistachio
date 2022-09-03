@@ -49,7 +49,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: 'Composabl', link: '/composable/mouse' },
+      { text: 'Composabl', link: '/composable/event/mouse' },
       {
         text: `v${version}`,
         items: [
@@ -86,27 +86,27 @@ export default defineConfig({
           items: [
             {
               text: 'mouse',
-              link: '/composable/mouse',
+              link: '/composable/event/mouse',
             },
             {
               text: 'mouseMove',
-              link: '/composable/mouseMove',
+              link: '/composable/event/mouseMove',
             },
             {
               text: 'resize',
-              link: '/composable/resize',
+              link: '/composable/event/resize',
             },
             {
               text: 'scroll',
-              link: '/composable/scroll',
+              link: '/composable/event/scroll',
             },
             {
               text: 'outsidePress',
-              link: '/composable/outsidePress',
+              link: '/composable/event/outsidePress',
             },
             {
               text: 'mouseInElement',
-              link: '/composable/mouseInElement',
+              link: '/composable/event/mouseInElement',
             },
           ],
         },
@@ -115,15 +115,15 @@ export default defineConfig({
           items: [
             {
               text: 'now',
-              link: '/composable/now',
+              link: '/composable/data/now',
             },
             {
               text: 'date',
-              link: '/composable/date',
+              link: '/composable/data/date',
             },
             {
               text: 'performance',
-              link: '/composable/performance',
+              link: '/composable/data/performance',
             },
           ],
         },
@@ -132,11 +132,11 @@ export default defineConfig({
           items: [
             {
               text: 'format',
-              link: '/composable/format',
+              link: '/composable/format/format',
             },
             {
               text: 'path',
-              link: '/composable/path',
+              link: '/composable/format/path',
             },
           ],
         },
@@ -145,11 +145,11 @@ export default defineConfig({
           items: [
             {
               text: 'breakpoint',
-              link: '/composable/breakpoint',
+              link: '/composable/breakpoint/breakpoint',
             },
             {
               text: 'chrome',
-              link: '/composable/chrome',
+              link: '/composable/breakpoint/chrome',
             },
           ],
         },
@@ -158,99 +158,99 @@ export default defineConfig({
           items: [
             {
               text: 'sharedRef',
-              link: '/composable/sharedRef',
+              link: '/composable/misc/sharedRef',
             },
             {
               text: 'refShared',
-              link: '/composable/refShared',
+              link: '/composable/misc/refShared',
             },
             {
               text: 'matchMedia',
-              link: '/composable/matchMedia',
+              link: '/composable/misc/matchMedia',
             },
             {
               text: 'model',
-              link: '/composable/model',
+              link: '/composable/misc/model',
             },
             {
               text: 'interval',
-              link: '/composable/interval',
+              link: '/composable/misc/interval',
             },
             {
               text: 'injectFactory',
-              link: '/composable/inject',
+              link: '/composable/misc/inject',
             },
             {
               text: 'lockScroll',
-              link: '/composable/lockScroll',
+              link: '/composable/misc/lockScroll',
             },
             {
               text: 'refDebounced',
-              link: '/composable/refDebounced',
+              link: '/composable/misc/refDebounced',
             },
           ],
         },
         {
-          text: 'storage',
+          text: 'Storage',
           items: [
             {
               text: 'webStorage',
-              link: '/composable/webStorage',
+              link: '/composable/storage/webStorage',
             },
             {
               text: 'storage',
-              link: '/composable/storage',
+              link: '/composable/storage/storage',
             },
             {
               text: 'localStorage',
-              link: '/composable/localStorage',
+              link: '/composable/storage/localStorage',
             },
             {
               text: 'sessionStorage',
-              link: '/composable/sessionStorage',
+              link: '/composable/storage/sessionStorage',
             },
           ],
         },
         {
-          text: 'pagination',
+          text: 'Pagination',
           items: [
             {
               text: 'pagination',
-              link: '/composable/pagination',
+              link: '/composable/pagination/pagination',
             },
             {
               text: 'arrayPagination',
-              link: '/composable/arrayPagination',
+              link: '/composable/pagination/arrayPagination',
             },
           ],
         },
         {
-          text: 'promise',
+          text: 'Promise',
           items: [
             {
               text: 'promise',
-              link: '/composable/promise',
+              link: '/composable/promise/promise',
             },
             {
               text: 'lazyPromise',
-              link: '/composable/lazyPromise',
+              link: '/composable/promise/lazyPromise',
             },
             {
               text: 'cancellablePromise',
-              link: '/composable/cancellablePromise',
+              link: '/composable/promise/cancellablePromise',
             },
           ],
         },
         {
-          text: 'web',
+          text: 'Web',
           items: [
             {
               text: 'broadcastChannel',
-              link: '/composable/broadcastChannel',
+              link: '/composable/web/broadcastChannel',
             },
             {
               text: 'fetch',
-              link: '/composable/fetch',
+              link: '/composable/web/fetch',
             },
           ],
         },

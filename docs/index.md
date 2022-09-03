@@ -18,7 +18,7 @@ hero:
       link: /guide/
     - theme: alt
       text: Composable
-      link: /composable/mouse
+      link: /composable/event/mouse
     - theme: alt
       text: Why Pistachio?
       link: /guide/why
