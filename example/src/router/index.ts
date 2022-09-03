@@ -31,6 +31,7 @@ import fetch from '~/pages/web/fetch.vue'
 import webSocket from '~/pages/web/webSocket.vue'
 import intersectionObserver from '~/pages/web/intersectionObserver.vue'
 import networkInformation from '~/pages/web/networkInformation.vue'
+import retry from '~/pages/promise/retry.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,6 +43,10 @@ const router = createRouter({
     {
       path: '/intersectionObserver',
       component: intersectionObserver,
+    },
+    {
+      path: '/retry',
+      component: retry,
     },
     {
       path: '/networkInformation',

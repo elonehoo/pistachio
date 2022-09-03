@@ -239,6 +239,10 @@ export default defineConfig({
               text: 'cancellablePromise',
               link: '/composable/promise/cancellablePromise',
             },
+            {
+              text: 'retry',
+              link: '/composable/promise/retry',
+            },
           ],
         },
         {
@@ -262,7 +266,7 @@ export default defineConfig({
             },
             {
               text: 'networkInformation',
-              link: '/composable/web/networkInformation'
+              link: '/composable/web/networkInformation',
             },
           ],
         },

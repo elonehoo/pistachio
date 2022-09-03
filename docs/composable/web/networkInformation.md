@@ -83,9 +83,9 @@ const { remove } = useNetworkInformation()
 
 ```vue
 <script setup lang="ts">
-  import { useNetworkInformation } from '@elonehoo/pistachio'
+import { useNetworkInformation } from '@elonehoo/pistachio'
 
-  const networkInformation = useNetworkInformation()
+const networkInformation = useNetworkInformation()
 </script>
 
 <template>
