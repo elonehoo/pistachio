@@ -268,6 +268,10 @@ export default defineConfig({
               text: 'networkInformation',
               link: '/composable/web/networkInformation',
             },
+            {
+              text: 'online',
+              link: '/composable/web/online',
+            },
           ],
         },
       ],
