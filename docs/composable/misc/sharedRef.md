@@ -26,7 +26,7 @@ const changeMind = () => {
 > Share the same value across multiple tabs (within the same origin) in the same browser.
 
 :::warning
-This relies on [BroadcastChannel API](./broadcastChannel). Safari doesn't support it.
+This relies on [BroadcastChannel API](../web/broadcastChannel.md). Safari doesn't support it.
 :::
 
 :::tip

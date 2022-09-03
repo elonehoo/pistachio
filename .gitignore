@@ -12,7 +12,7 @@ coverage
 dist
 dist-ssr
 *.local
-
+.temp
 # Editor directories and files
 .idea
 .DS_Store

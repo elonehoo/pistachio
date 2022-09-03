@@ -4,7 +4,7 @@ outline: deep
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import child from '../components/child.vue'
+import child from '../../components/child.vue'
 
 const myValue = ref("MyValue");
 
