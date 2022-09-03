@@ -64,11 +64,11 @@ const { observe, unobserve, disconnect, debug } = useIntersectionObserver()
 
 ```vue
 <script setup lang="ts">
-import { ref, watch, reactive } from 'vue'
+import { reactive, ref, watch } from 'vue'
 import { useIntersectionObserver } from '@elonehoo/pistachio'
 
-const el = ref(null);
-const {isIntersecting} = useIntersectionObserver(el)
+const el = ref(null)
+const { isIntersecting } = useIntersectionObserver(el)
 </script>
 
 <template>

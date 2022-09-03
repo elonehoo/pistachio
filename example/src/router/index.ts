@@ -40,7 +40,7 @@ const router = createRouter({
     },
     {
       path: '/intersectionObserver',
-      component: intersectionObserver
+      component: intersectionObserver,
     },
     {
       path: '/fetch',

@@ -258,7 +258,7 @@ export default defineConfig({
             },
             {
               text: 'intersectionObserver',
-              link:'/composable/web/intersectionObserver'
+              link: '/composable/web/intersectionObserver',
             },
           ],
         },
