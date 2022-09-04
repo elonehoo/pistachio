@@ -280,6 +280,10 @@ export default defineConfig({
               text: 'pageVisibility',
               link: '/composable/web/pageVisibility',
             },
+            {
+              text: 'language',
+              link: '/composable/web/language',
+            },
           ],
         },
       ],

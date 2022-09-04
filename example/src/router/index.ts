@@ -35,6 +35,7 @@ import retry from '~/pages/promise/retry.vue'
 import online from '~/pages/web/online.vue'
 import clipboard from '~/pages/web/clipboard.vue'
 import pageVisibility from '~/pages/web/pageVisibility.vue'
+import language from '~/pages/web/language.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,6 +43,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/language',
+      component: language,
     },
     {
       path: '/pageVisibility',
