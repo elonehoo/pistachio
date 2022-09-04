@@ -284,6 +284,10 @@ export default defineConfig({
               text: 'broadcastChannel',
               link: '/composable/web/broadcastChannel',
             },
+            {
+              text: 'geolocation',
+              link: '/composable/web/geolocation',
+            },
           ],
         },
       ],
