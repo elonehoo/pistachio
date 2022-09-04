@@ -86,7 +86,7 @@ const { refresh } = useGeolocation()
 <script setup lang="ts">
 import { useGeolocation } from '@elonehoo/pistachio'
 
-const {supported, refresh, coords, error} = useGeolocation({ immediate: true })
+const { supported, refresh, coords, error } = useGeolocation({ immediate: true })
 </script>
 
 <template>
@@ -94,7 +94,9 @@ const {supported, refresh, coords, error} = useGeolocation({ immediate: true })
     <h6>
       Supported: <b>{{ supported }}</b>
     </h6>
-    <button @click="refresh">Request location</button>
+    <button @click="refresh">
+      Request location
+    </button>
     <div>
       coords:
       <ul v-if="coords">

@@ -2,194 +2,194 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vites
 import { useGeolocation } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
-describe("geolocation", () => {
-  const __geolocation = navigator.geolocation;
+describe('geolocation', () => {
+  const __geolocation = navigator.geolocation
 
-  const clearWatchFn = vi.fn();
-  const getCurrentPositionFn = vi.fn();
-  const watchPositionFn = vi.fn().mockImplementation(() => 1);
+  const clearWatchFn = vi.fn()
+  const getCurrentPositionFn = vi.fn()
+  const watchPositionFn = vi.fn().mockImplementation(() => 1)
 
   const geolocation: Geolocation = {
     clearWatch: clearWatchFn,
     getCurrentPosition: getCurrentPositionFn,
     watchPosition: watchPositionFn,
-  };
+  }
 
   beforeEach(() => {
-    (navigator as any).geolocation = geolocation;
-    clearWatchFn.mockClear();
-    getCurrentPositionFn.mockClear();
-    watchPositionFn.mockClear();
-  });
+    (navigator as any).geolocation = geolocation
+    clearWatchFn.mockClear()
+    getCurrentPositionFn.mockClear()
+    watchPositionFn.mockClear()
+  })
 
   afterAll(() => {
-    (navigator as any).geolocation = __geolocation;
-  });
+    (navigator as any).geolocation = __geolocation
+  })
 
-  it("should not be supported", () => {
-    (navigator as any).geolocation = false;
-    const { supported } = useGeolocation();
+  it('should not be supported', () => {
+    (navigator as any).geolocation = false
+    const { supported } = useGeolocation()
 
-    expect(supported).toBe(false);
-  });
+    expect(supported).toBe(false)
+  })
 
-  it("should pass the arguments to the watch", () => {
-    let promise: Promise<void> = Promise.resolve();
+  it('should pass the arguments to the watch', () => {
+    let promise: Promise<void> = Promise.resolve()
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
         const opts: PositionOptions = {
           maximumAge: 10,
           timeout: 10,
           enableHighAccuracy: false,
-        };
-        const geo = useGeolocation(opts);
+        }
+        const geo = useGeolocation(opts)
 
-        expect(geo.supported).toBe(true);
+        expect(geo.supported).toBe(true)
 
         promise = nextTick().then(async (x) => {
-          expect(clearWatchFn).not.toHaveBeenCalled();
+          expect(clearWatchFn).not.toHaveBeenCalled()
           expect(watchPositionFn).toHaveBeenCalledWith(
             expect.anything(),
             expect.anything(),
-            expect.objectContaining(opts)
-          );
-        });
+            expect.objectContaining(opts),
+          )
+        })
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-    return promise;
-  });
+    })
+    vm.mount()
+    return promise
+  })
 
-  it("refresh should call getCurrentPosition", () => {
+  it('refresh should call getCurrentPosition', () => {
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
-        const geo = useGeolocation();
+        const geo = useGeolocation()
 
-        expect(getCurrentPositionFn).not.toHaveBeenCalled();
-        geo.refresh();
-        expect(getCurrentPositionFn).toHaveBeenCalled();
+        expect(getCurrentPositionFn).not.toHaveBeenCalled()
+        geo.refresh()
+        expect(getCurrentPositionFn).toHaveBeenCalled()
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-  });
+    })
+    vm.mount()
+  })
 
-  it("should be lazy `immediate` = false", () => {
-    let promise: Promise<void> = Promise.resolve();
+  it('should be lazy `immediate` = false', () => {
+    let promise: Promise<void> = Promise.resolve()
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
-        const geo = useGeolocation({ immediate: false });
+        const geo = useGeolocation({ immediate: false })
 
-        expect(getCurrentPositionFn).not.toHaveBeenCalled();
-        geo.refresh();
+        expect(getCurrentPositionFn).not.toHaveBeenCalled()
+        geo.refresh()
 
         promise = nextTick().then(async () => {
-          expect(clearWatchFn).not.toHaveBeenCalled();
-          expect(watchPositionFn).toHaveBeenCalledTimes(1);
-          expect(getCurrentPositionFn).not.toHaveBeenCalled();
+          expect(clearWatchFn).not.toHaveBeenCalled()
+          expect(watchPositionFn).toHaveBeenCalledTimes(1)
+          expect(getCurrentPositionFn).not.toHaveBeenCalled()
 
-          geo.refresh();
-          expect(getCurrentPositionFn).toHaveBeenCalled();
-        });
+          geo.refresh()
+          expect(getCurrentPositionFn).toHaveBeenCalled()
+        })
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-    return promise;
-  });
+    })
+    vm.mount()
+    return promise
+  })
 
-  it("should watchPosition", async () => {
-    let promise: Promise<void> = Promise.resolve();
+  it('should watchPosition', async () => {
+    let promise: Promise<void> = Promise.resolve()
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
-        const geo = useGeolocation();
+        const geo = useGeolocation()
 
         promise = nextTick().then(async (x) => {
-          expect(clearWatchFn).not.toHaveBeenCalled();
-          expect(watchPositionFn).toHaveBeenCalledTimes(1);
-        });
+          expect(clearWatchFn).not.toHaveBeenCalled()
+          expect(watchPositionFn).toHaveBeenCalledTimes(1)
+        })
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-    await promise;
-    vm.destroy();
-    expect(clearWatchFn).toHaveBeenCalled();
-    expect(watchPositionFn).toHaveBeenCalledTimes(1);
-  });
+    })
+    vm.mount()
+    await promise
+    vm.destroy()
+    expect(clearWatchFn).toHaveBeenCalled()
+    expect(watchPositionFn).toHaveBeenCalledTimes(1)
+  })
 
-  it("should update the watchPosition if highAccuracy changes", async () => {
-    let promise: Promise<void> = Promise.resolve();
+  it('should update the watchPosition if highAccuracy changes', async () => {
+    let promise: Promise<void> = Promise.resolve()
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
-        const geo = useGeolocation();
+        const geo = useGeolocation()
 
         promise = nextTick().then(async () => {
-          expect(clearWatchFn).not.toHaveBeenCalled();
-          expect(watchPositionFn).toHaveBeenCalledTimes(1);
+          expect(clearWatchFn).not.toHaveBeenCalled()
+          expect(watchPositionFn).toHaveBeenCalledTimes(1)
 
-          geo.highAccuracy.value = true;
-          await nextTick();
+          geo.highAccuracy.value = true
+          await nextTick()
 
-          expect(clearWatchFn).toHaveBeenCalledTimes(1);
-          expect(watchPositionFn).toHaveBeenCalledTimes(2);
+          expect(clearWatchFn).toHaveBeenCalledTimes(1)
+          expect(watchPositionFn).toHaveBeenCalledTimes(2)
 
-          geo.highAccuracy.value = false;
-          await nextTick();
+          geo.highAccuracy.value = false
+          await nextTick()
 
-          expect(clearWatchFn).toHaveBeenCalledTimes(2);
-          expect(watchPositionFn).toHaveBeenCalledTimes(3);
-        });
+          expect(clearWatchFn).toHaveBeenCalledTimes(2)
+          expect(watchPositionFn).toHaveBeenCalledTimes(3)
+        })
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-    await promise;
-    vm.destroy();
-    expect(clearWatchFn).toHaveBeenCalled();
-  });
+    })
+    vm.mount()
+    await promise
+    vm.destroy()
+    expect(clearWatchFn).toHaveBeenCalled()
+  })
 
-  it("should set the correct values", async () => {
-    let promise: Promise<void> = Promise.resolve();
+  it('should set the correct values', async () => {
+    let promise: Promise<void> = Promise.resolve()
     const vm = createVue({
-      template: "<div ref='el'></div>",
+      template: '<div ref=\'el\'></div>',
       setup() {
-        const geo = useGeolocation();
+        const geo = useGeolocation()
 
         promise = nextTick().then(async (x) => {
-          expect(clearWatchFn).not.toHaveBeenCalled();
-          expect(watchPositionFn).toHaveBeenCalledTimes(1);
+          expect(clearWatchFn).not.toHaveBeenCalled()
+          expect(watchPositionFn).toHaveBeenCalledTimes(1)
 
-          const [setPosition, setError] = watchPositionFn.mock.calls[0];
+          const [setPosition, setError] = watchPositionFn.mock.calls[0]
 
-          expect(setPosition).toBeInstanceOf(Function);
-          expect(setError).toBeInstanceOf(Function);
+          expect(setPosition).toBeInstanceOf(Function)
+          expect(setError).toBeInstanceOf(Function)
 
-          expect(geo.coords.value).toBeNull();
-          expect(geo.timestamp.value).toBeNull();
-          expect(geo.highAccuracy.value).toBeNull();
-          expect(geo.error.value).toBeNull();
+          expect(geo.coords.value).toBeNull()
+          expect(geo.timestamp.value).toBeNull()
+          expect(geo.highAccuracy.value).toBeNull()
+          expect(geo.error.value).toBeNull()
 
           const pos: GeolocationPosition = {
             coords: {
@@ -202,25 +202,25 @@ describe("geolocation", () => {
               speed: 70,
             },
             timestamp: 11111111,
-          };
+          }
 
-          setPosition(pos);
+          setPosition(pos)
 
-          await nextTick();
+          await nextTick()
 
-          expect(geo.coords.value).toStrictEqual(pos.coords);
-          expect(geo.timestamp.value).toBe(pos.timestamp);
-          expect(geo.error.value).toBeNull();
+          expect(geo.coords.value).toStrictEqual(pos.coords)
+          expect(geo.timestamp.value).toBe(pos.timestamp)
+          expect(geo.error.value).toBeNull()
 
           const error = {
             err: 1,
-          };
-          setError(error);
-          await nextTick();
+          }
+          setError(error)
+          await nextTick()
 
-          expect(geo.coords.value).toBeNull();
-          expect(geo.timestamp.value).not.toBe(pos.timestamp);
-          expect(geo.error.value).toStrictEqual(error);
+          expect(geo.coords.value).toBeNull()
+          expect(geo.timestamp.value).not.toBe(pos.timestamp)
+          expect(geo.error.value).toStrictEqual(error)
 
           const pos2: GeolocationPosition = {
             coords: {
@@ -233,26 +233,26 @@ describe("geolocation", () => {
               speed: 7,
             },
             timestamp: 22222,
-          };
+          }
 
-          setPosition(pos2);
+          setPosition(pos2)
 
-          await nextTick();
+          await nextTick()
 
-          expect(geo.coords.value).toStrictEqual(pos2.coords);
-          expect(geo.timestamp.value).toBe(pos2.timestamp);
-          expect(geo.error.value).toBeNull();
-        });
+          expect(geo.coords.value).toStrictEqual(pos2.coords)
+          expect(geo.timestamp.value).toBe(pos2.timestamp)
+          expect(geo.error.value).toBeNull()
+        })
 
         return {
           geo,
-        };
+        }
       },
-    });
-    vm.mount();
-    await promise;
-    vm.destroy();
-    expect(clearWatchFn).toHaveBeenCalled();
-    expect(watchPositionFn).toHaveBeenCalledTimes(1);
-  });
-});
+    })
+    vm.mount()
+    await promise
+    vm.destroy()
+    expect(clearWatchFn).toHaveBeenCalled()
+    expect(watchPositionFn).toHaveBeenCalledTimes(1)
+  })
+})
