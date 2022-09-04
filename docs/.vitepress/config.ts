@@ -288,6 +288,10 @@ export default defineConfig({
               text: 'geolocation',
               link: '/composable/web/geolocation',
             },
+            {
+              text: 'css variables',
+              link: '/composable/web/cssVariables',
+            },
           ],
         },
       ],

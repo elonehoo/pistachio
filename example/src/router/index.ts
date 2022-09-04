@@ -37,6 +37,7 @@ import clipboard from '~/pages/web/clipboard.vue'
 import pageVisibility from '~/pages/web/pageVisibility.vue'
 import language from '~/pages/web/language.vue'
 import geolocation from '~/pages/web/geolocation.vue'
+import cssVariables from '~/pages/web/cssVariables.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/cssVariables',
+      component: cssVariables,
     },
     {
       path: '/geolocation',
