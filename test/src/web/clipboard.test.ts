@@ -1,19 +1,20 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import type { UseClipboard } from '@elonehoo/pistachio'
+import { useClipboard } from '@elonehoo/pistachio'
 import { createVue } from '../utils'
-import { UseClipboard, useClipboard } from '@elonehoo/pistachio'
 
-describe("clipboard tets", () => {
-  it("not supported on node vitest", () => {
+describe('clipboard tets', () => {
+  it('not supported on node vitest', () => {
     // TODO write mocks
 
-    // @ts-ignore
-    let clipboard: UseClipboard = undefined;
+    // @ts-expect-error
+    let clipboard: UseClipboard
 
     createVue({
       setup() {
-        clipboard = useClipboard();
+        clipboard = useClipboard()
       },
-    }).mount();
-    expect(clipboard.supported).toBe(false);
-  });
-});
+    }).mount()
+    expect(clipboard.supported).toBe(false)
+  })
+})
