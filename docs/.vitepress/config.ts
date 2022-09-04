@@ -249,10 +249,6 @@ export default defineConfig({
           text: 'Web',
           items: [
             {
-              text: 'broadcastChannel',
-              link: '/composable/web/broadcastChannel',
-            },
-            {
               text: 'fetch',
               link: '/composable/web/fetch',
             },
@@ -283,6 +279,10 @@ export default defineConfig({
             {
               text: 'language',
               link: '/composable/web/language',
+            },
+            {
+              text: 'broadcastChannel',
+              link: '/composable/web/broadcastChannel',
             },
           ],
         },
