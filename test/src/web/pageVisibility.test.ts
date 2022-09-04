@@ -1,6 +1,10 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { usePageVisibility } from '@elonehoo/pistachio'
 
+/**
+ * @vitest-environment happy-dom
+ */
+
 describe.skip('pageVisibility', () => {
   const documentEventSpy = vi.fn()
   const documentEvent = document.addEventListener
