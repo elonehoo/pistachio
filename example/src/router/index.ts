@@ -33,6 +33,7 @@ import intersectionObserver from '~/pages/web/intersectionObserver.vue'
 import networkInformation from '~/pages/web/networkInformation.vue'
 import retry from '~/pages/promise/retry.vue'
 import online from '~/pages/web/online.vue'
+import clipboard from '~/pages/web/clipboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/clipboard',
+      component: clipboard,
     },
     {
       path: '/online',

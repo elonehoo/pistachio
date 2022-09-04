@@ -272,6 +272,10 @@ export default defineConfig({
               text: 'online',
               link: '/composable/web/online',
             },
+            {
+              text: 'clipboard',
+              link: '/composable/web/clipboard',
+            },
           ],
         },
       ],
