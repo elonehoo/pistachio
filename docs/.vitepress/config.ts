@@ -276,6 +276,10 @@ export default defineConfig({
               text: 'clipboard',
               link: '/composable/web/clipboard',
             },
+            {
+              text: 'pageVisibility',
+              link: '/composable/web/pageVisibility',
+            },
           ],
         },
       ],
