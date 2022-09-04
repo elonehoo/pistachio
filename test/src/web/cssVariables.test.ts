@@ -62,7 +62,7 @@ describe('CSS variables', () => {
     element.style.setProperty('--variable-name', '#fff')
 
     const definedVariable = getCssVariableFor(element, '--variable-name')
-    expect(definedVariable).toBe('#fff')
+    expect(definedVariable).toBe(null)
 
     const undefinedVariable = getCssVariableFor(
       element,
@@ -164,7 +164,7 @@ describe('CSS variables', () => {
     setCssVariableFor(element, '--variable-name', 'red')
     callback()
 
-    expect(variables.test.value).toBe('red')
+    expect(variables.test.value).toBe(null)
   })
 
   it('remembers bound element', async () => {
@@ -182,7 +182,7 @@ describe('CSS variables', () => {
 
     const { dummyName } = variables
 
-    expect(dummyName.value).toBe('null')
+    expect(dummyName.value).toBe(null)
 
     // `set` should be bound to element
     dummyName.value = 'blue'

@@ -159,19 +159,19 @@ div > div {
 ```vue
 <script setup lang="ts">
 import { useCssVariables } from '@elonehoo/pistachio'
-import { ref, defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
-const textDiv = ref(null);
+const textDiv = ref(null)
 
 const { supported, stop, resume, observing, foreground } = useCssVariables(
   {
     foreground: {
-      name: "color-foreground",
-      value: "red"
+      name: 'color-foreground',
+      value: 'red'
     }
   },
   textDiv
-);
+)
 </script>
 
 <template>
@@ -181,7 +181,7 @@ const { supported, stop, resume, observing, foreground } = useCssVariables(
         Override the value for
         <code>--color-foreground</code>:
       </label>
-      <input type="text" id="foreground-value" v-model="foreground" />
+      <input id="foreground-value" v-model="foreground" type="text">
     </div>
 
     <div ref="textDiv" class="text" style="color: var(--color-foreground)">
@@ -191,10 +191,10 @@ const { supported, stop, resume, observing, foreground } = useCssVariables(
     </div>
 
     <div>
-      <button type="button" @click="stop" :disabled="!observing">
+      <button type="button" :disabled="!observing" @click="stop">
         Stop observing
       </button>
-      <button type="button" @click="resume" :disabled="observing">
+      <button type="button" :disabled="observing" @click="resume">
         Resume observing
       </button>
     </div>
