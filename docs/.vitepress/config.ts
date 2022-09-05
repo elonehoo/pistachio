@@ -54,7 +54,7 @@ export default defineConfig({
         text: `v${version}`,
         items: [
           {
-            text: 'Release Notes ',
+            text: 'Release Notes',
             link: releases,
           },
         ],
