@@ -38,6 +38,7 @@ import pageVisibility from '~/pages/web/pageVisibility.vue'
 import language from '~/pages/web/language.vue'
 import geolocation from '~/pages/web/geolocation.vue'
 import cssVariables from '~/pages/web/cssVariables.vue'
+import worker from '~/pages/web/worker.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/worker',
+      component: worker,
     },
     {
       path: '/cssVariables',

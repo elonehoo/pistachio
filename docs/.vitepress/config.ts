@@ -292,6 +292,10 @@ export default defineConfig({
               text: 'css variables',
               link: '/composable/web/cssVariables',
             },
+            {
+              text: 'worker',
+              link: '/composable/web/worker',
+            },
           ],
         },
       ],
