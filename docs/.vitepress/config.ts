@@ -310,6 +310,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: 'Validation',
+          items: [
+            {
+              text: 'validation',
+              link: '/composable/validation/validation',
+            },
+          ],
+        },
       ],
     },
   },
