@@ -29,6 +29,7 @@ export function isPromise<T = any>(val: unknown): val is Promise<T> {
 export const isDate = (val: unknown): val is Date => isObject(val) && isFunction(val.getTime)
 
 export const NO_OP = () => {}
+export const FALSE_OP = () => false
 
 export const PASSIVE_EV: AddEventListenerOptions = { passive: true }
 
