@@ -3,9 +3,9 @@ import { reactive } from 'vue'
 import { useShare } from '@elonehoo/pistachio'
 
 const data = reactive({
-  url: "https://pistachio.elonehoo.xyz/",
-  text: "Built with ❤️",
-  title: "You need to use this, just amazing"
+  url: 'https://pistachio.elonehoo.xyz/',
+  text: 'Built with ❤️',
+  title: 'You need to use this, just amazing',
 })
 const { supported, share, canShare, shared, cancelled } = useShare()
 </script>
@@ -27,7 +27,7 @@ const { supported, share, canShare, shared, cancelled } = useShare()
             <label for="title">Title</label>
           </td>
           <td>
-            <input name="title" v-model="data.title" />
+            <input v-model="data.title" name="title">
           </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@ const { supported, share, canShare, shared, cancelled } = useShare()
             <label for="text">Text</label>
           </td>
           <td>
-            <input name="text" v-model="data.text" />
+            <input v-model="data.text" name="text">
           </td>
         </tr>
         <tr>
@@ -43,16 +43,22 @@ const { supported, share, canShare, shared, cancelled } = useShare()
             <label for="url">URL</label>
           </td>
           <td>
-            <input name="url" v-model="data.url" />
+            <input v-model="data.url" name="url">
           </td>
         </tr>
         <tr>
           <td>
-            <p v-if="canShare(data)">You can share</p>
-            <p v-else>Can't share</p>
+            <p v-if="canShare(data)">
+              You can share
+            </p>
+            <p v-else>
+              Can't share
+            </p>
           </td>
           <td>
-            <button @click="share(data)">Share</button>
+            <button @click="share(data)">
+              Share
+            </button>
           </td>
         </tr>
         <tr>
