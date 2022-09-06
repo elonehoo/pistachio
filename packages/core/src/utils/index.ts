@@ -30,6 +30,7 @@ export const isDate = (val: unknown): val is Date => isObject(val) && isFunction
 
 export const NO_OP = () => {}
 export const FALSE_OP = () => false
+export const MAX_ARRAY_SIZE = 2 ** 32 - 2
 
 export const PASSIVE_EV: AddEventListenerOptions = { passive: true }
 
