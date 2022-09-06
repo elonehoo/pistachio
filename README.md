@@ -8,7 +8,6 @@
 
 out-of-the-box ready to use composables
 
-
 ## Introduction
 
 Many friends will say that [VueUse](https://vueuse.org/) and Pistachio are very similar. What should I choose? Of course, we will use [VueUse](https://vueuse.org/) first, unless you need to use some specific APIs in Pistachio to consider Pistachio.
@@ -30,3 +29,6 @@ pnpm install @elonehoo/pistachio
 
 Check our [documentation](https://pistachio.elonehoo.xyz)
 
+## License
+
+[MIT License](https://github.com/elonehoo/pistachio/blob/main/LICENSE) © 2022-PRESENT [Elone Hoo](https://github.com/elonehoo)
