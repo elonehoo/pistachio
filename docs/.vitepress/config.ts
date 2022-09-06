@@ -326,6 +326,10 @@ export default defineConfig({
               text: 'timeline',
               link: '/composable/state/timeline',
             },
+            {
+              text: 'undo',
+              link: '/composable/state/undo',
+            },
           ],
         },
       ],

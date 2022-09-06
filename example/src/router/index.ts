@@ -44,6 +44,7 @@ import share from '~/pages/web/share.vue'
 import timeout from '~/pages/web/timeout.vue'
 import validation from '~/pages/validation/validation.vue'
 import timeline from '~/pages/state/timeline.vue'
+import undo from '~/pages/state/undo.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/undo',
+      component: undo,
     },
     {
       path: '/timeline',
