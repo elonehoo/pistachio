@@ -1,11 +1,7 @@
-<div align="center">
-  <img src="./public/logo.svg" wigth='100px' height='100px' />
-</div>
+# Pistachio
 
-<div align="center">
-  <h1>Vue Hooks</h1>
-</div>
+[![NPM version](https://img.shields.io/npm/v/@elonehoo/pistachio?color=a1b858&label=)](https://www.npmjs.com/package/vitest)
 
 out-of-the-box ready to use composables
 
-
+[GitHub](https://github.com/elonehoo/pistachio) | [Documentation](https://pistachio.elonehoo.xyz/)
