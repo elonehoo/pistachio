@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import { defineComponent, ref, computed, watchEffect, watch } from 'vue'
-import { useWorker, useDate,exposeWorker } from '@elonehoo/pistachio'
+import { computed, defineComponent, ref, watch, watchEffect } from 'vue'
+import { exposeWorker, useDate, useWorker } from '@elonehoo/pistachio'
 
-const timeout = ref(1500);
-  const { now } = useDate({ refreshMs: 10 });
-  const numbers = [...Array(50000)].map(() =>
-    Math.floor(Math.random() * 1000000)
-  );
-  const sortedNumbers = ref([]);
-  const firstSegment = computed(() => sortedNumbers.value.slice(0, 10));
-  const lastSegment = computed(() => sortedNumbers.value.slice(-10));
-  const { postMessage, data, errored, errorEvent } = useWorker(
-    "/worker.example.js"
-  );
-  watch(
-    data,
-    d => {
-      sortedNumbers.value = d;
-    },
-    { lazy: true }
-  );
-  watch(
-    errorEvent,
-    e => {
-      sortedNumbers.value = ["error", e.returnValue];
-    },
-    { lazy: true }
-  );
-  const sortWorker = () => {
-    postMessage(numbers);
-  };
+const timeout = ref(1500)
+const { now } = useDate({ refreshMs: 10 })
+const numbers = [...Array(50000)].map(() =>
+  Math.floor(Math.random() * 1000000),
+)
+const sortedNumbers = ref([])
+const firstSegment = computed(() => sortedNumbers.value.slice(0, 10))
+const lastSegment = computed(() => sortedNumbers.value.slice(-10))
+const { postMessage, data, errored, errorEvent } = useWorker(
+  '/worker.example.js',
+)
+watch(
+  data,
+  (d) => {
+    sortedNumbers.value = d
+  },
+  { lazy: true },
+)
+watch(
+  errorEvent,
+  (e) => {
+    sortedNumbers.value = ['error', e.returnValue]
+  },
+  { lazy: true },
+)
+const sortWorker = () => {
+  postMessage(numbers)
+}
 </script>
 
 <template>
@@ -43,15 +43,18 @@ const timeout = ref(1500);
 
     <p>
       Numbers:
-      <b>{{ firstSegment }}</b
-      >...
+      <b>{{ firstSegment }}</b>...
       <b>{{ lastSegment }}</b>
     </p>
 
     <ul>
       <li>
-        <button @click="sortWorker">Worker</button>
-        <p v-if="errored" :style="{ color: 'red' }">{{ errorEvent }}</p>
+        <button @click="sortWorker">
+          Worker
+        </button>
+        <p v-if="errored" :style="{ color: 'red' }">
+          {{ errorEvent }}
+        </p>
       </li>
     </ul>
   </div>
