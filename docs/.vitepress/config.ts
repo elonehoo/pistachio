@@ -325,8 +325,8 @@ export default defineConfig({
             {
               text: 'timeline',
               link: '/composable/state/timeline',
-            }
-          ]
+            },
+          ],
         },
       ],
     },

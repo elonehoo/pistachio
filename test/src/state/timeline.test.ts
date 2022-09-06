@@ -2,62 +2,62 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 import { useTimeline } from '@elonehoo/pistachio'
 
-describe("timeline", () => {
-  it("should work", () => {
-    const value = ref("");
-    const timeline = useTimeline(value);
+describe('timeline', () => {
+  it('should work', () => {
+    const value = ref('')
+    const timeline = useTimeline(value)
 
-    expect(timeline.value).toMatchObject([]);
+    expect(timeline.value).toMatchObject([])
 
-    value.value = "1";
-    expect(timeline.value).toMatchObject([{ item: "" }]);
+    value.value = '1'
+    expect(timeline.value).toMatchObject([{ item: '' }])
 
-    value.value = "2";
-    expect(timeline.value).toMatchObject([{ item: "1" }, { item: "" }]);
-  });
+    value.value = '2'
+    expect(timeline.value).toMatchObject([{ item: '1' }, { item: '' }])
+  })
 
-  it("should not store more than the maxLength", () => {
-    const value = ref("");
-    const timeline = useTimeline(value, { maxLength: 1 });
+  it('should not store more than the maxLength', () => {
+    const value = ref('')
+    const timeline = useTimeline(value, { maxLength: 1 })
 
-    expect(timeline.value).toMatchObject([]);
+    expect(timeline.value).toMatchObject([])
 
-    value.value = "1";
-    expect(timeline.value).toMatchObject([{ item: "" }]);
+    value.value = '1'
+    expect(timeline.value).toMatchObject([{ item: '' }])
 
-    value.value = "2";
-    expect(timeline.value).toMatchObject([{ item: "1" }]);
-  });
+    value.value = '2'
+    expect(timeline.value).toMatchObject([{ item: '1' }])
+  })
 
-  it("should use the clone option", () => {
-    const value = ref("");
-    const clone = vi.fn().mockImplementation(x => `x${x}`);
-    const timeline = useTimeline(value, { clone });
+  it('should use the clone option', () => {
+    const value = ref('')
+    const clone = vi.fn().mockImplementation(x => `x${x}`)
+    const timeline = useTimeline(value, { clone })
 
-    expect(timeline.value).toMatchObject([]);
+    expect(timeline.value).toMatchObject([])
 
-    value.value = "1";
-    expect(clone).toHaveBeenCalledTimes(1);
-    expect(timeline.value).toMatchObject([{ item: "x" }]);
+    value.value = '1'
+    expect(clone).toHaveBeenCalledTimes(1)
+    expect(timeline.value).toMatchObject([{ item: 'x' }])
 
-    value.value = "2";
-    expect(clone).toHaveBeenCalledTimes(2);
-    expect(timeline.value).toMatchObject([{ item: "x1" }, { item: "x" }]);
-  });
+    value.value = '2'
+    expect(clone).toHaveBeenCalledTimes(2)
+    expect(timeline.value).toMatchObject([{ item: 'x1' }, { item: 'x' }])
+  })
 
-  it("should watch deep changes", () => {
-    const value = ref({ a: 1 });
-    const timeline = useTimeline(value, { deep: true });
+  it('should watch deep changes', () => {
+    const value = ref({ a: 1 })
+    const timeline = useTimeline(value, { deep: true })
 
-    expect(timeline.value).toMatchObject([]);
+    expect(timeline.value).toMatchObject([])
 
-    value.value.a++;
-    expect(timeline.value).toMatchObject([{ item: value.value }]);
+    value.value.a++
+    expect(timeline.value).toMatchObject([{ item: value.value }])
 
-    value.value.a++;
+    value.value.a++
     expect(timeline.value).toMatchObject([
       { item: value.value },
-      { item: value.value }
-    ]);
-  });
-});
+      { item: value.value },
+    ])
+  })
+})
