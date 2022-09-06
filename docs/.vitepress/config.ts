@@ -304,6 +304,10 @@ export default defineConfig({
               text: 'share',
               link: '/composable/web/share',
             },
+            {
+              text: 'timeout',
+              link: '/composable/web/timeout',
+            },
           ],
         },
       ],
