@@ -2,6 +2,22 @@
   "name": "@elonehoo/pistachio",
   "type": "module",
   "version": "0.0.0",
+  "license": "MIT",
+  "description": "out-of-the-box ready to use composables",
+  "author": "Elone Hoo <huchengyea@163.com>",
+  "homepage": "https://github.com/elonehoo/pistachio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elonehoo/pistachio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elonehoo/pistachio/issues"
+  },
+  "keywords": [
+    "vue",
+    "composables-api",
+    "utils"
+  ],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
