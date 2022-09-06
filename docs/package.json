@@ -1,6 +1,7 @@
 {
   "name": "@elonehoo/pistachio-docs",
   "version": "0.0.0",
+  "author": "Elone Hoo <huchengyea@163.com>",
   "private": true,
   "scripts": {
     "dev": "vitepress --port 3344 --open",
