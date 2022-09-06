@@ -46,6 +46,7 @@ import validation from '~/pages/validation/validation.vue'
 import timeline from '~/pages/state/timeline.vue'
 import undo from '~/pages/state/undo.vue'
 import valueSync from '~/pages/state/valueSync.vue'
+import title from '~/pages/meta/title.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -53,6 +54,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/title',
+      component: title,
     },
     {
       path: '/valueSync',

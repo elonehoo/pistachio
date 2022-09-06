@@ -305,6 +305,15 @@ export default defineConfig({
           ],
         },
         {
+          text: 'Meta',
+          items: [
+            {
+              text: 'title',
+              link: '/composable/meta/title'
+            }
+          ]
+        },
+        {
           text: 'Validation',
           items: [
             {
@@ -560,6 +569,15 @@ export default defineConfig({
               link: '/composable/web/timeout',
             },
           ],
+        },
+        {
+          text: 'Meta',
+          items: [
+            {
+              text: 'title',
+              link: '/composable/meta/title'
+            }
+          ]
         },
         {
           text: 'Validation',
