@@ -43,6 +43,7 @@ import workerFunction from '~/pages/web/workerFunction.vue'
 import share from '~/pages/web/share.vue'
 import timeout from '~/pages/web/timeout.vue'
 import validation from '~/pages/validation/validation.vue'
+import timeline from '~/pages/state/timeline.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/timeline',
+      component: timeline,
     },
     {
       path: '/validation',
