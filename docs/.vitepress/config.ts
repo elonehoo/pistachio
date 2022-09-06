@@ -330,6 +330,10 @@ export default defineConfig({
               text: 'undo',
               link: '/composable/state/undo',
             },
+            {
+              text: 'valueSync',
+              link: '/composable/state/valueSync',
+            },
           ],
         },
       ],

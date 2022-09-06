@@ -45,6 +45,7 @@ import timeout from '~/pages/web/timeout.vue'
 import validation from '~/pages/validation/validation.vue'
 import timeline from '~/pages/state/timeline.vue'
 import undo from '~/pages/state/undo.vue'
+import valueSync from '~/pages/state/valueSync.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +53,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/valueSync',
+      component: valueSync,
     },
     {
       path: '/undo',
