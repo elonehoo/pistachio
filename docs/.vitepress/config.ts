@@ -296,6 +296,10 @@ export default defineConfig({
               text: 'worker',
               link: '/composable/web/worker',
             },
+            {
+              text: 'workerFunction',
+              link: '/composable/web/workerFunction',
+            },
           ],
         },
       ],
