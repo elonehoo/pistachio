@@ -40,6 +40,7 @@ import geolocation from '~/pages/web/geolocation.vue'
 import cssVariables from '~/pages/web/cssVariables.vue'
 import worker from '~/pages/web/worker.vue'
 import workerFunction from '~/pages/web/workerFunction.vue'
+import share from '~/pages/web/share.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,6 +48,10 @@ const router = createRouter({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/share',
+      component: share,
     },
     {
       path: '/workerFunction',

@@ -300,6 +300,10 @@ export default defineConfig({
               text: 'workerFunction',
               link: '/composable/web/workerFunction',
             },
+            {
+              text: 'share',
+              link: '/composable/web/share',
+            },
           ],
         },
       ],
