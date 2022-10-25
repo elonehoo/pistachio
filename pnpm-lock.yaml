@@ -13,7 +13,7 @@ importers:
       '@vue/shared': 3.2.41
       bumpp: 8.2.1
       eslint: 8.26.0
-      happy-dom: 6.0.4
+      happy-dom: 7.6.2
       typescript: 4.8.4
       vite: 3.1.8
       vue: 3.2.41
@@ -29,7 +29,7 @@ importers:
       '@types/node': 18.7.14
       bumpp: 8.2.1
       eslint: 8.26.0
-      happy-dom: 6.0.4
+      happy-dom: 7.6.2
       typescript: 4.8.4
       vite: 3.1.8
 
@@ -2497,6 +2497,20 @@ packages:
 
   /happy-dom/6.0.4:
     resolution: {integrity: sha512-b+ID23Ms0BY08UNLymsOMG7EI2jSlwEt4cbJs938GZfeNAg+fqgkSO3TokQMgSOFoHznpjWmpVjBUL5boJ9PWw==}
+    dependencies:
+      css.escape: 1.5.1
+      he: 1.2.0
+      node-fetch: 2.6.7
+      sync-request: 6.1.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 2.0.0
+      whatwg-mimetype: 3.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
+  /happy-dom/7.6.2:
+    resolution: {integrity: sha512-CyAPzfTGGXKtWlAIzHWmT2psL8lZblIjQxv8IKThEGa+QH3tmHhcmsBgyPXNi7Ae4+EUaKwj+lN7WLiqEgAXvQ==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
