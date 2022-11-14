@@ -12,6 +12,6 @@
   "devDependencies": {
     "@elonehoo/pistachio":"workspace:*",
     "@vitejs/plugin-vue": "3.2.0",
-    "@vue/compiler-sfc": "3.2.41"
+    "@vue/compiler-sfc": "3.2.45"
   }
 }
