@@ -56,10 +56,10 @@ importers:
 
   packages/core:
     specifiers:
-      '@elonehoo/vite-plugin-record-time': 0.0.1
+      '@elonehoo/vite-plugin-record-time': 0.0.3
       '@elonehoo/vite-plugin-type-ts': 0.0.1
     devDependencies:
-      '@elonehoo/vite-plugin-record-time': 0.0.1_vite@3.0.9
+      '@elonehoo/vite-plugin-record-time': 0.0.3_vite@3.2.4
       '@elonehoo/vite-plugin-type-ts': 0.0.1
 
   test:
@@ -376,12 +376,12 @@ packages:
       glob: 8.0.3
     dev: true
 
-  /@elonehoo/vite-plugin-record-time/0.0.1_vite@3.0.9:
-    resolution: {integrity: sha512-3LuOaF0No8Mt/3IR1A3yECBP226F5Pcn/Uv3LgOhX+tv9+SYAj9F9aQUJ3v0WEAjKfcQPd293onYkN8ndGjQhw==}
+  /@elonehoo/vite-plugin-record-time/0.0.3_vite@3.2.4:
+    resolution: {integrity: sha512-4si5eEtx9J2V+oReT0QP6JfWWaV7yM8aLMikQW/il0DN89shTD801KKwWovcYvjOKQ1YGMG76egPb9ElO9QwnA==}
     peerDependencies:
-      vite: 3.0.9
+      vite: '>=3.1.0'
     dependencies:
-      vite: 3.0.9
+      vite: 3.2.4
     dev: true
 
   /@elonehoo/vite-plugin-type-ts/0.0.1:
@@ -3894,33 +3894,6 @@ packages:
 
   /vite/3.0.8:
     resolution: {integrity: sha512-AOZ4eN7mrkJiOLuw8IA7piS4IdOQyQCA81GxGsAQvAZzMRi9ZwGB3TOaYsj4uLAWK46T5L4AfQ6InNGlxX30IQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.14.54
-      postcss: 8.4.18
-      resolve: 1.22.1
-      rollup: 2.77.3
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vite/3.0.9:
-    resolution: {integrity: sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
