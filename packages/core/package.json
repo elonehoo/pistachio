@@ -1,7 +1,7 @@
 {
   "name": "@elonehoo/pistachio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "description": "out-of-the-box ready to use composables",
   "author": "Elone Hoo <huchengyea@163.com>",
