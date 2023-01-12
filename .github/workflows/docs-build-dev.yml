@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "docs/**"
+      - "packages.json"
     branches: [main]
 
 jobs:
