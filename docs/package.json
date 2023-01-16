@@ -10,6 +10,6 @@
   },
   "devDependencies": {
     "@elonehoo/pistachio":"workspace:*",
-    "vitepress": "1.0.0-alpha.35"
+    "vitepress": "1.0.0-alpha.36"
   }
 }
