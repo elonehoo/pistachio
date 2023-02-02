@@ -5,6 +5,7 @@ on:
     paths:
       - "docs/**"
       - "package.json"
+      - "README.md"
     branches: [main]
 
 jobs:
