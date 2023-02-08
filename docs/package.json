@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vitepress --port 3344 --open",
-    "build": "vitepress build",
+    "build": "pnpm -C ../ run build && vitepress build",
     "serve": "vitepress serve"
   },
   "devDependencies": {
