@@ -49,7 +49,7 @@ const { remove } = useResize()
 ```vue
 <script setup lang='ts'>
 import { useResize } from '@elonehoo/pistachio'
-const { height, width, remove } = useResize(document.body)
+const { height, width, remove } = useResize(body)
 </script>
 <template>
   <div>
