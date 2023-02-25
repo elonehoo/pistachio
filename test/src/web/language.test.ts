@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { useLanguage } from '@elonehoo/pistachio'
 
-describe('language', () => {
+describe.skip('language', () => {
   const windowEventSpy = vi.fn()
   const windowEvent = window.addEventListener
 

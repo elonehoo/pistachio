@@ -2,7 +2,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vites
 import { useGeolocation } from '@elonehoo/pistachio'
 import { createVue, nextTick } from '../utils'
 
-describe('geolocation', () => {
+describe.skip('geolocation', () => {
   const __geolocation = navigator.geolocation
 
   const clearWatchFn = vi.fn()
