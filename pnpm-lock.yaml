@@ -67,11 +67,13 @@ importers:
   test:
     specifiers:
       '@elonehoo/pistachio': workspace:*
+      '@vitest/coverage-c8': ^0.28.5
       c8: ^7.13.0
       happy-dom: 8.9.0
       vitest: ^0.28.5
     devDependencies:
       '@elonehoo/pistachio': link:../packages/core
+      '@vitest/coverage-c8': 0.28.5_happy-dom@8.9.0
       c8: 7.13.0
       happy-dom: 8.9.0
       vitest: 0.28.5_happy-dom@8.9.0
@@ -964,6 +966,27 @@ packages:
     dependencies:
       vite: 4.1.4
       vue: 3.2.47
+    dev: true
+
+  /@vitest/coverage-c8/0.28.5_happy-dom@8.9.0:
+    resolution: {integrity: sha512-zCNyurjudoG0BAqAgknvlBhkV2V9ZwyYLWOAGtHSDhL/St49MJT+V2p1G0yPaoqBbKOTATVnP5H2p1XL15H75g==}
+    dependencies:
+      c8: 7.13.0
+      picocolors: 1.0.0
+      std-env: 3.3.2
+      vitest: 0.28.5_happy-dom@8.9.0
+    transitivePeerDependencies:
+      - '@edge-runtime/vm'
+      - '@vitest/browser'
+      - '@vitest/ui'
+      - happy-dom
+      - jsdom
+      - less
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
     dev: true
 
   /@vitest/expect/0.28.5:
