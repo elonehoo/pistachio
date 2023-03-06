@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@elonehoo/eslint-config': 2.0.0
       '@elonehoo/rimraf': 0.0.1
-      '@types/node': 18.14.2
+      '@types/node': 18.14.6
       '@vue/compiler-dom': 3.2.47
       '@vue/devtools-api': 6.5.0
       '@vue/runtime-dom': 3.2.47
@@ -26,21 +26,21 @@ importers:
     devDependencies:
       '@elonehoo/eslint-config': 2.0.0_ycpbpc6yetojsgtrx3mwntkhsu
       '@elonehoo/rimraf': 0.0.1
-      '@types/node': 18.14.2
+      '@types/node': 18.14.6
       bumpp: 9.0.0
       eslint: 8.35.0
       happy-dom: 8.9.0
       typescript: 4.9.5
-      vite: 4.1.4_@types+node@18.14.2
+      vite: 4.1.4_@types+node@18.14.6
 
   docs:
     specifiers:
       '@elonehoo/pistachio': workspace:*
-      vitepress: 1.0.0-alpha.48
+      vitepress: 1.0.0-alpha.49
       vue: 3.2.47
     devDependencies:
       '@elonehoo/pistachio': link:../packages/core
-      vitepress: 1.0.0-alpha.48_2r467mdhb7mblpaox4bg7fatdi
+      vitepress: 1.0.0-alpha.49_2r467mdhb7mblpaox4bg7fatdi
       vue: 3.2.47
 
   example:
@@ -816,8 +816,8 @@ packages:
     resolution: {integrity: sha512-QH+37Qds3E0eDlReeboBxfHbX9omAcBCXEzswCu6jySP642jiM3cYSIkU/REqwhCUqXdonHFuBfJDiAJxMNhaQ==}
     dev: true
 
-  /@types/node/18.14.2:
-    resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==}
+  /@types/node/18.14.6:
+    resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -3850,7 +3850,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/4.1.4_@types+node@18.14.2:
+  /vite/4.1.4_@types+node@18.14.6:
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3875,7 +3875,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.14.2
+      '@types/node': 18.14.6
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
@@ -3884,8 +3884,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.48_2r467mdhb7mblpaox4bg7fatdi:
-    resolution: {integrity: sha512-vu9J6Eg1l+o33lfDAMD9+cxomMNQGNQEW/GPu32tkffagMBxoBqhzxfqjaOqtTQ2VdS+dauOdROtrWQrElyivw==}
+  /vitepress/1.0.0-alpha.49_2r467mdhb7mblpaox4bg7fatdi:
+    resolution: {integrity: sha512-3nUZJow4qL8NHRWYatqqVj45AJDxWst/TuOj+IbQRhxesEswa+Fpwayj9/FxzRzBl665fuiG5y+QeVhOeUm0OA==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
