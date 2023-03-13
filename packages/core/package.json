@@ -35,7 +35,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@elonehoo/vite-plugin-record-time": "0.0.5",
+    "@elonehoo/vite-plugin-record-time": "0.0.7",
     "@elonehoo/vite-plugin-type-ts": "0.0.1"
   }
 }
